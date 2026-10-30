@@ -1,6 +1,7 @@
 ---
 /* The badges of an add-on, the same row on the tile and on its page: the
- * stars and "active" from the GitHub API (when the build could fetch them),
+ * stars (from one up) and "active" from the GitHub API (when the build could
+ * fetch them),
  * "Beta" when the README says experimental, "ABAP Cloud" and "7.02" when the
  * README promises them, and where a tile leads when it leaves the site. */
 import { stats, active, type Addon } from "../data/addons";
@@ -9,7 +10,7 @@ const { addon: a, org, label } = Astro.props;
 const s = stats(org, a.repo);
 ---
 <span class="badges">
-  {s && <span class="badge stars" title={`${s.stars} stars on GitHub`}>★ {s.stars}</span>}
+  {s && s.stars > 0 && <span class="badge stars" title={`${s.stars} stars on GitHub`}>★ {s.stars}</span>}
   {a.status === "experimental" && <span class="badge beta">Beta</span>}
   {a.cloud && <span class="badge cloud">ABAP Cloud</span>}
   {a.nw702 && <span class="badge nw702">7.02</span>}
