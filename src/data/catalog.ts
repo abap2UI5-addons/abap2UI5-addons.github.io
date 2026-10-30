@@ -14,53 +14,59 @@ export type Entry = { repo: string; site?: string; label?: string; org?: string 
 export const orgOf = (e: Entry) => e.org ?? "abap2UI5-addons";
 export type Group = { id: string; title: string; lead: string; entries: Entry[] };
 
+// Grouped by what a reader is after, not by technique: an app to install and
+// use, pieces to build an app from, a way to reach apps from elsewhere, what
+// many apps in production need, and the tools a developer works with.
 export const groups: Group[] = [
   {
-    id: "classic",
-    title: "Classic ABAP on the web",
-    lead: "The selection screen, the ALV, the table maintenance and the transactions you know, as abap2UI5 apps on ABAP Cloud and NW 7.02.",
+    id: "apps",
+    title: "Ready-made apps",
+    lead: "Install and open: classic transactions and tools of the SAP GUI, running in the browser.",
     entries: [
-      { repo: "abap-cloud-gui", site: "https://abap2ui5-addons.github.io/abap-cloud-gui/" },
-      { repo: "selection-screen" },
       { repo: "sapgui" },
       { repo: "se16n" },
       { repo: "table-maintenance" },
       { repo: "sql-console" },
       { repo: "table-content-loader" },
+      { repo: "fork-abapToC" },
+      { repo: "open-source-libs" },
+    ],
+  },
+  {
+    id: "building-blocks",
+    title: "Building blocks",
+    lead: "Pieces to build your own apps from: the report model, selection screens, popups, user layouts and controls.",
+    entries: [
+      { repo: "abap-cloud-gui", site: "https://abap2ui5-addons.github.io/abap-cloud-gui/" },
+      { repo: "selection-screen" },
       { repo: "popups" },
+      { repo: "layout-management" },
+      { repo: "rap-ext" },
+      { repo: "custom-controls" },
+      { repo: "custom-controls-customer" },
     ],
   },
   {
     id: "integration",
     title: "Integration",
-    lead: "Where an abap2UI5 app meets the rest of the landscape: RFC and HTTP, the Fiori Launchpad, RAP, Excel and AI agents.",
+    lead: "Your apps beyond the abap2UI5 page: other systems, the Fiori Launchpad, Excel, other UI5 apps and AI agents.",
     entries: [
       { repo: "rfc-connector" },
       { repo: "http-connector" },
       { repo: "launchpad-kpi" },
-      { repo: "rap-ext" },
       { repo: "office-addin" },
+      { repo: "embed-control", site: "https://github.com/abap2UI5/embed-control", label: "repository", org: "abap2UI5" },
       { repo: "abap-agent-runtime" },
     ],
   },
   {
-    id: "infrastructure",
-    title: "App infrastructure",
-    lead: "What apps share once there are many of them: layouts, configuration, locks and an administrator's view of the installation.",
+    id: "operations",
+    title: "Operations",
+    lead: "What many apps in production need: configuration in tables, real locks and an administrator's view.",
     entries: [
-      { repo: "layout-management" },
       { repo: "config-management" },
       { repo: "lock-manager" },
       { repo: "admin-cockpit" },
-    ],
-  },
-  {
-    id: "frontend",
-    title: "Frontend artefacts",
-    lead: "Custom controls, icon fonts and CSS, delivered in a BSP of their own so the framework stays untouched.",
-    entries: [
-      { repo: "custom-controls" },
-      { repo: "custom-controls-customer" },
     ],
   },
   {
@@ -73,16 +79,6 @@ export const groups: Group[] = [
       { repo: "mcp-server", site: "https://github.com/abap2UI5/mcp-server", label: "repository", org: "abap2UI5" },
       { repo: "app-template", site: "https://github.com/abap2UI5/app-template", label: "repository", org: "abap2UI5" },
       { repo: "headless-frontend", site: "https://github.com/abap2UI5/headless-frontend", label: "repository", org: "abap2UI5" },
-      { repo: "embed-control", site: "https://github.com/abap2UI5/embed-control", label: "repository", org: "abap2UI5" },
-    ],
-  },
-  {
-    id: "open-source",
-    title: "Open-source projects",
-    lead: "UIs for other open-source projects of the ABAP community, and a fork kept for abap2UI5.",
-    entries: [
-      { repo: "open-source-libs" },
-      { repo: "fork-abapToC" },
     ],
   },
 ];
