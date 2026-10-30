@@ -96,6 +96,9 @@ img { max-width: 100%; height: auto; }
 .tile .text { font-size: 14px; line-height: 1.5; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .tile, .tile::after { transition: none; } .tile:hover { transform: none; } }
 
+/* the tiles here lead to pages of this site, so the arrow is a plain one;
+ * the entry page's tiles all leave it and carry ↗ */
+.tile::after { content: "→"; }
 .tag.quiet { background: var(--line); color: var(--muted); }
 
 .skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--brand); color: #fff; }
