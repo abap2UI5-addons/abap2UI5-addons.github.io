@@ -1,13 +1,13 @@
-/* The catalogue: every add-on of github.com/abap2UI5-addons, in groups, in
- * the order the overview shows them. The facts of an add-on - what it does,
+/* The catalogue: every addon of github.com/abap2UI5-addons, in groups, in
+ * the order the overview shows them. The facts of an addon - what it does,
  * what it needs, how it is installed - live in src/data/addons/<repo>.json;
- * this file only places it. A new add-on is one line here and one JSON file
+ * this file only places it. A new addon is one line here and one JSON file
  * there.
  *
- * `site` names an add-on that publishes a site of its own at
+ * `site` names an addon that publishes a site of its own at
  * https://abap2ui5-addons.github.io/<repo>/ - the project site of its
  * repository, which GitHub Pages serves in front of anything this site would
- * put at that address. For such an add-on the overview links there and this
+ * put at that address. For such an addon the overview links there and this
  * site builds no page. */
 
 export type Entry = { repo: string; site?: string; label?: string; org?: string };

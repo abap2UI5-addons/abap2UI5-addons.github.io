@@ -1,5 +1,5 @@
-/* The add-ons of abap2UI5 - the one stylesheet, the hub's (abap2UI5.github.io)
- * plus the add-on page: ink and white, Inter, the brand red of the logo for the
+/* The addons of abap2UI5 - the one stylesheet, the hub's (abap2UI5.github.io)
+ * plus the addon page: ink and white, Inter, the brand red of the logo for the
  * hover of a tile and for a link. Light and dark follow the reader's system.
  * Nothing that needs a script. */
 
@@ -134,7 +134,7 @@ img { max-width: 100%; height: auto; }
 .skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--brand); color: #fff; }
 .skip:focus { top: 12px; }
 
-/* ---- the add-on page ---------------------------------------------------- */
+/* ---- the addon page ---------------------------------------------------- */
 .hero-addon .wrap { padding-top: 40px; }
 .eyebrow { margin: 0 0 8px; font-size: 13px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .hero-addon h1 { margin: 0; color: var(--ink); font-size: clamp(30px, 4vw, 42px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15; text-wrap: balance; }
@@ -173,3 +173,22 @@ img { max-width: 100%; height: auto; }
 .foot { border-top: 1px solid var(--line); margin-top: 24px; padding: 20px 0 36px; font-size: 13px; color: var(--muted); }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--brand); }
+
+/* ---- the menu of the overview: the groups, always in view --------------- */
+.layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 40px; align-items: start; }
+.toc { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.toc a { display: flex; justify-content: space-between; gap: 10px; padding: 7px 12px; border-left: 2px solid var(--line); color: var(--muted); font-size: 14px; font-weight: 500; text-decoration: none; transition: color .15s, border-color .15s; }
+.toc a span { font-variant-numeric: tabular-nums; opacity: .7; }
+.toc a:hover { color: var(--ink); }
+.toc a[aria-current="true"] { color: var(--ink); font-weight: 600; border-left-color: var(--brand); }
+.group { scroll-margin-top: 24px; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .toc { top: 0; z-index: 5; flex-direction: row; overflow-x: auto; scrollbar-width: none; gap: 4px; margin: 0 -16px; padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc a { flex: none; border-left: 0; border-bottom: 2px solid transparent; padding: 6px 10px; }
+  .toc a span { display: none; }
+  .toc a[aria-current="true"] { border-bottom-color: var(--brand); }
+  .group { scroll-margin-top: 64px; }
+}
+@media (prefers-reduced-motion: reduce) { .toc a { transition: none; } }

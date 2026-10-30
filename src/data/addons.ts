@@ -1,4 +1,4 @@
-/* The facts of every add-on, read from src/data/addons/<repo>.json at build
+/* The facts of every addon, read from src/data/addons/<repo>.json at build
  * time. The shape is the contract between the JSON and the two pages; a
  * missing or malformed file fails the build, not the reader. */
 import fs from "node:fs";

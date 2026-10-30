@@ -1,17 +1,24 @@
 ---
-/* The overview: every add-on, in groups, one tile each. A tile opens the
- * add-on's page on this site, or its own site where it has one. */
+/* The overview: every addon, in groups, one tile each. A tile opens the
+ * addon's page on this site, or its own site where it has one. A menu on
+ * the left lists the groups and stays in view; public/toc.js marks the
+ * group the reader is in. */
 import Page from "../layouts/Page.astro";
 import Tile from "../components/Tile.astro";
 import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 ---
-<Page title="abap2UI5 add-ons & tools" description="Every add-on and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+<Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
-  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> Add-ons &amp; Tools</h1>
+  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> Addons &amp; Tools</h1>
 
+  <div class="layout">
+    <nav class="toc" aria-label="Sections">
+      {groups.map((g) => <a href={`#${g.id}`}>{g.title}<span>{g.entries.length}</span></a>)}
+    </nav>
+    <div class="content">
   {groups.map((g) => (
     <section class="group" id={g.id}>
       <h2>{g.title}</h2>
@@ -20,6 +27,9 @@ const base = import.meta.env.BASE_URL;
       </ul>
     </section>
   ))}
+    </div>
+  </div>
 </div>
+<script is:inline src={`${base}toc.js`} defer></script>
 
 </Page>
