@@ -15,10 +15,10 @@ committed as JSON, not fetched.
 | `src/data/catalog.ts` | The catalogue: every add-on, in groups, in order; which add-on has a site of its own |
 | `src/data/addons/<repo>.json` | The facts of one add-on - title, tagline, summary, features, requirements, install notes, usage snippet, links, status, license |
 | `src/data/addons.ts` | Reads the JSON at build time and holds it to the shape; a missing or empty file fails the build |
-| `src/pages/index.astro` | The overview: a greeting, the groups, a tile per add-on |
+| `src/pages/index.astro` | The overview: the greeting, the groups, a tile per add-on - no prose |
 | `src/pages/[repo].astro` | The add-on page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview |
-| `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line, the one-line foot |
+| `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (abap2UI5, GitHub, and the way back on an add-on page), the one-line foot |
 | `src/styles/global.css` | The one stylesheet; the entry page's, plus the add-on page |
 | `public/shots/` | Optional: `<repo>.png` (or jpg, webp, gif) is shown on that add-on's page. Empty today: the README images sit on GitHub's asset host and have to be saved here by hand |
 | `test/site.test.mjs` | `node:test` over `dist/` |
