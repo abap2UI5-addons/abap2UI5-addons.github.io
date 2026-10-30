@@ -18,7 +18,7 @@ committed as JSON, not fetched.
 | `src/pages/index.astro` | The overview: the greeting, the groups, a tile per add-on - no prose |
 | `src/pages/[repo].astro` | The add-on page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview |
-| `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Add-ons as tabs, GitHub), the one-line foot |
+| `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Add-ons as tabs), the one-line foot |
 | `src/styles/global.css` | The one stylesheet; the entry page's, plus the add-on page |
 | `public/shots/` | Optional: `<repo>.png` (or jpg, webp, gif) is shown on that add-on's page. Empty today: the README images sit on GitHub's asset host and have to be saved here by hand |
 | `test/site.test.mjs` | `node:test` over `dist/` |
