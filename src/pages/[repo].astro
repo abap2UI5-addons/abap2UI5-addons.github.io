@@ -21,7 +21,7 @@ const github = `https://github.com/abap2UI5-addons/${a.repo}`;
 // the screenshot, when it was fetched into public/shots/<repo>.<ext>
 const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).find((p) => fs.existsSync(`public/${p}`));
 ---
-<Page title={`${a.title} — abap2UI5 add-on`} description={a.tagline} image={shot ? `${base}${shot}` : undefined} back>
+<Page title={`${a.title} — abap2UI5 add-on`} description={a.tagline} image={shot ? `${base}${shot}` : undefined}>
 
 <section class="hero hero-addon">
   <div class="wrap">
