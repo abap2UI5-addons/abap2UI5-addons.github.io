@@ -10,7 +10,8 @@
  * put at that address. For such an add-on the overview links there and this
  * site builds no page. */
 
-export type Entry = { repo: string; site?: string; label?: string };
+export type Entry = { repo: string; site?: string; label?: string; org?: string };
+export const orgOf = (e: Entry) => e.org ?? "abap2UI5-addons";
 export type Group = { id: string; title: string; lead: string; entries: Entry[] };
 
 export const groups: Group[] = [
@@ -67,12 +68,12 @@ export const groups: Group[] = [
     title: "Developer tools",
     lead: "What goes into your editor, your pipeline or your agent once you build apps for real.",
     entries: [
-      { repo: "linter", site: "https://abap2ui5.github.io/docs/advanced/linter.html", label: "manual" },
-      { repo: "vscode-extension", site: "https://github.com/abap2UI5/vscode-extension", label: "repository" },
-      { repo: "mcp-server", site: "https://github.com/abap2UI5/mcp-server", label: "repository" },
-      { repo: "app-template", site: "https://github.com/abap2UI5/app-template", label: "repository" },
-      { repo: "headless-frontend", site: "https://github.com/abap2UI5/headless-frontend", label: "repository" },
-      { repo: "embed-control", site: "https://github.com/abap2UI5/embed-control", label: "repository" },
+      { repo: "linter", site: "https://abap2ui5.github.io/docs/advanced/linter.html", label: "manual", org: "abap2UI5" },
+      { repo: "vscode-extension", site: "https://github.com/abap2UI5/vscode-extension", label: "repository", org: "abap2UI5" },
+      { repo: "mcp-server", site: "https://github.com/abap2UI5/mcp-server", label: "repository", org: "abap2UI5" },
+      { repo: "app-template", site: "https://github.com/abap2UI5/app-template", label: "repository", org: "abap2UI5" },
+      { repo: "headless-frontend", site: "https://github.com/abap2UI5/headless-frontend", label: "repository", org: "abap2UI5" },
+      { repo: "embed-control", site: "https://github.com/abap2UI5/embed-control", label: "repository", org: "abap2UI5" },
     ],
   },
   {

@@ -1,7 +1,8 @@
 # Build, test and publish the page to GitHub Pages at
 # https://abap2ui5-addons.github.io/.
 #
-# On a pull request it builds and tests only. On main it also deploys.
+# On a pull request it builds and tests only. On main, and once a day, it
+# also deploys. Before the build it fetches the stars of every repository.
 #
 # Needs Settings → Pages → Source: "GitHub Actions" once.
 name: pages
@@ -11,6 +12,9 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # once a day, so the stars and the "active" badges stay fresh
+  schedule:
+    - cron: "17 4 * * *"
 
 permissions:
   contents: read
@@ -30,6 +34,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - run: node scripts/stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run: npm run check
         env:
           ASTRO_TELEMETRY_DISABLED: "1"

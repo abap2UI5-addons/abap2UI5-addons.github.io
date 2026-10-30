@@ -1,7 +1,7 @@
 {
   "repo": "open-source-libs",
   "title": "Open Source Libs",
-  "tagline": "abap2UI5 sample apps that put eleven open-source ABAP libraries to work in the browser.",
+  "tagline": "Sample apps for eleven open-source ABAP libraries.",
   "summary": "Each package in src/ is one abap2UI5 app for one community library: statistics, Excel, JSON, OpenAPI, diffs, PDF and Word documents, test data and validation. The libraries are installed as dependencies and never copied. It is for ABAP developers who want to see and try a library on their own system before they use it, for library authors who want to show their library at work and for abap2UI5 developers looking for complete apps to learn from.",
   "features": [
     "Eleven sample apps, one package per library, e.g. z2ui5_cl_osl_abap2xlsx",
@@ -57,5 +57,7 @@
   ],
   "screenshot": "https://raw.githubusercontent.com/abap2UI5-addons/open-source-libs/main/img/tbox-stats/explore.png",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

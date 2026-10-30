@@ -1,7 +1,7 @@
 {
   "repo": "table-maintenance",
   "title": "Table Maintenance",
-  "tagline": "Table maintenance in the browser: add, edit, copy and delete entries of any table, no SAP GUI needed.",
+  "tagline": "Add, edit, copy and delete table entries, no SAP GUI needed.",
   "summary": "One generic abap2UI5 app shows the entries of a database table and lets you add, edit, copy and delete them, with value helps from check tables, fixed values and search helps, and records the changes on a transport request. It reads the table's structure at runtime, so nothing has to be generated per table. It is for developers and admins who maintain customizing and Z tables, on ABAP Cloud as well as on Standard ABAP, including systems without SM30.",
   "features": [
     "Generic maintenance screen built from the table structure at runtime",
@@ -39,5 +39,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/51a1d7e5-ca7e-4359-9e12-39b00b3c11bf",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }

@@ -1,7 +1,7 @@
 {
   "repo": "table-content-loader",
   "title": "Table Content Loader",
-  "tagline": "Upload, edit and download the content of database tables as JSON, CSV or XLSX in the browser.",
+  "tagline": "Upload, edit and download table content as JSON, CSV or XLSX.",
   "summary": "A start page with one tile per format and direction leads into small step-by-step abap2UI5 apps: pick a table, convert its content to or from a file, preview it and download it or save it to the database. It is meant for developers who move test data or Z table content between systems, on ABAP Cloud as well as on Standard ABAP. It is a developer tool, not an end-user app: it reads from any table the user names and writes into Z/Y tables without an authorization check of its own.",
   "features": [
     "Start page with one tile per format (JSON, CSV, XLSX) and direction",
@@ -39,5 +39,7 @@
   ],
   "screenshot": "https://github.com/abap2UI5-addons/table-content-loader/assets/102328295/73e044dc-137d-49fe-b6ac-0247fb542a0f",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }

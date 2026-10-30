@@ -1,7 +1,7 @@
 {
   "repo": "linter",
   "title": "Linter",
-  "tagline": "Static and headless-render checks over an app class and its view, without an SAP system.",
+  "tagline": "Check an app class and its view without an SAP system.",
   "summary": "Static and headless-render checks over an app class and its view, without an SAP system.",
   "features": [],
   "requirements": [],
@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

@@ -1,7 +1,7 @@
 {
   "repo": "lock-manager",
   "title": "Lock Manager",
-  "tagline": "Hold a real SAP lock across the HTTP roundtrips of a stateless abap2UI5 app.",
+  "tagline": "Hold a real SAP lock across the roundtrips of a stateless app.",
   "summary": "Every stateless ABAP web call loses its SAP locks when the roundtrip ends. This addon decouples lock ownership from the web session: a background handler takes and holds the kernel locks on behalf of the web users, and a persistent registry records who actually holds what. On top of the classic exclusive lock it supports shared and optimistic locks, including the promotion of an optimistic lock to an exclusive one at save time. It is for abap2UI5 apps that change business objects where durable locks or RAP draft handling are not an option.",
   "features": [
     "Single API z2ui5_cl_lock_manager=>request for any generated ENQUEUE_* lock module",
@@ -33,5 +33,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

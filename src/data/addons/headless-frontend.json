@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

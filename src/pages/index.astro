@@ -3,7 +3,7 @@
  * add-on's page on this site, or its own site where it has one. */
 import Page from "../layouts/Page.astro";
 import Tile from "../components/Tile.astro";
-import { groups } from "../data/catalog";
+import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 ---
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
     <section class="group" id={g.id}>
       <h2>{g.title}</h2>
       <ul class="tiles">
-        {g.entries.map((e) => <Tile addon={addon(e.repo)} href={e.site ?? `${base}${e.repo}/`} external={!!e.site} label={e.label} />)}
+        {g.entries.map((e) => <Tile addon={addon(e.repo)} href={e.site ?? `${base}${e.repo}/`} org={orgOf(e)} external={!!e.site} label={e.label} />)}
       </ul>
     </section>
   ))}

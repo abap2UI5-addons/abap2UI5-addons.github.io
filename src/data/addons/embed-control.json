@@ -1,7 +1,7 @@
 {
   "repo": "embed-control",
   "title": "Embed Control",
-  "tagline": "Run an app inside your own UI5 app, Fiori elements page or Work Zone card.",
+  "tagline": "Run an app inside your UI5 app, Fiori elements page or Work Zone.",
   "summary": "Run an app inside your own UI5 app, Fiori elements page or Work Zone card.",
   "features": [],
   "requirements": [],
@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

@@ -1,7 +1,7 @@
 {
   "repo": "vscode-extension",
   "title": "VS Code Extension",
-  "tagline": "Lints while you type, runs a class against a real system, registers the MCP servers.",
+  "tagline": "Lints while you type, runs a class against a real system.",
   "summary": "Lints while you type, runs a class against a real system, registers the MCP servers.",
   "features": [],
   "requirements": [],
@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

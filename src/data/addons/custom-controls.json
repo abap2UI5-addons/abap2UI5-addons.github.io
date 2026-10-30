@@ -1,7 +1,7 @@
 {
   "repo": "custom-controls",
   "title": "Custom Controls",
-  "tagline": "Thirteen ready-to-use custom controls for abap2UI5, each a builder class with one render( ) method.",
+  "tagline": "Thirteen ready-to-use custom controls, one builder class each.",
   "summary": "A library of thirteen custom controls for abap2UI5: signature pad, Chart.js charts, barcodes, a camera scanner that reads several barcodes at once, Excel export, form validation, product tours, Font Awesome, animations, clickable image maps, Markdown, a code editor and a rich text editor. The controls ship in their own BSP Z2UI5_CCI, so nothing in abap2UI5 or its frontend has to change. Each control is used from ABAP through a builder class with one render( ) method; properties bind, values come back into ABAP variables and events arrive in the app like for any built-in control. The overview app z2ui5_cl_cci_sample_00 lists every control with its sample.",
   "features": [
     "SignaturePad, Validator, ExportSpreadsheet, CodeEditor without external libraries",
@@ -57,5 +57,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/8aa59505-c73e-4f56-8df9-71b127fea574",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

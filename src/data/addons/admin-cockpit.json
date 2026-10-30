@@ -1,7 +1,7 @@
 {
   "repo": "admin-cockpit",
   "title": "Admin Cockpit",
-  "tagline": "See whether abap2UI5 is used, fast and safely configured, in one abap2UI5 app with a security traffic light.",
+  "tagline": "Usage, errors, performance and a security traffic light at a glance.",
   "summary": "An abap2UI5 app for administrators and IT leads that shows usage and errors per app, response times with their phases, the draft table and a security traffic light of the installation. The Installation & Security and Drafts & Housekeeping tabs need no logging at all; the usage, error and performance tabs fill once a one-line hook in your HTTP handler or the monitor hook of abap2UI5 records the roundtrips. It steps through what a user did session by session, replays failed events with the headless frontend, records requests and responses, raises alerts and purges its own tables. Privacy mode is on by default: no user names are stored.",
   "features": [
     "Overview tiles: active users, roundtrips, p95 response time, error rate, alerts",
@@ -52,5 +52,7 @@
   ],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }

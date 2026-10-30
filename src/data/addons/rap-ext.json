@@ -1,7 +1,7 @@
 {
   "repo": "rap-ext",
   "title": "RAP Extension",
-  "tagline": "Fiori-Elements-style apps for CDS views, generated at runtime from UI annotations and rendered with abap2UI5.",
+  "tagline": "Fiori-elements-style apps for CDS views, generated at runtime.",
   "summary": "rap-ext reads a CDS entity and its UI annotations, metadata extensions included, and builds a list report, worklist, tree, flexible column layout, object page, overview page, value help or action dialog from them, writing through RAP where the entity is a business object. It is for ABAP developers on a standard ABAP system who want such a UI with one line of code and can still redefine any step of it with plain abap2UI5 view code, since every floorplan is a non-final class with protected methods. It is not for plain internal tables. The README states that none of it has been clicked through in an SAP system yet.",
   "features": [
     "Eight floorplans from list report and object page to value help and action dialog",
@@ -29,6 +29,8 @@
   "usage": "client->nav_app_call( NEW z2ui5_cl_rap_list_report(\n  cds_view_name = `I_COUNTRY`\n  title         = `Countries` ) ).",
   "links": [],
   "screenshot": "",
-  "status": "unknown",
-  "license": "MIT"
+  "status": "experimental",
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

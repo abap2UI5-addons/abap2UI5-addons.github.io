@@ -4,9 +4,10 @@ The add-ons of abap2UI5: the overview at the root of
 https://abap2ui5-addons.github.io/ and one page per add-on below it, at
 `/<repo>/`. Built the way the entry page abap2UI5/abap2UI5.github.io is built
 (Astro, no script, nothing from another origin) and in the same look, so a
-reader moves between the two sites without noticing a seam. Nothing here
-depends on another repository at build time: the facts of every add-on are
-committed as JSON, not fetched.
+reader moves between the two sites without noticing a seam. The facts of
+every add-on are committed as JSON, not fetched; only the stars and the last
+push come from the GitHub API at build time (`scripts/stats.mjs`), and the
+build does not depend on them.
 
 ## Layout
 
@@ -17,7 +18,9 @@ committed as JSON, not fetched.
 | `src/data/addons.ts` | Reads the JSON at build time and holds it to the shape; a missing or empty file fails the build |
 | `src/pages/index.astro` | The overview: the greeting, the groups, a tile per add-on - no prose |
 | `src/pages/[repo].astro` | The add-on page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
-| `src/components/Tile.astro` | One tile of the overview |
+| `src/components/Tile.astro` | One tile of the overview: title, tagline, badges |
+| `src/components/Badges.astro` | The badge row, the same on the tile and on the add-on page |
+| `scripts/stats.mjs` | Writes `src/data/stats.json` (stars, last push) from the GitHub API; run by the workflow, never fails |
 | `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Add-ons as tabs), the one-line foot |
 | `src/styles/global.css` | The one stylesheet; the entry page's, plus the add-on page |
 | `public/shots/` | Optional: `<repo>.png` (or jpg, webp, gif) is shown on that add-on's page. Empty today: the README images sit on GitHub's asset host and have to be saved here by hand |
@@ -44,6 +47,11 @@ npm run check    # build + test, what CI runs
   the page then says so in one line (`requirements`, `usage`) rather than
   inventing. `status` is `stable`, `experimental`, `archived` or `unknown`,
   as the README states it; `unknown` shows nothing.
+- **Badges say only what is true.** Stars and "Active" (a push in the last 60
+  days) come from the API at build time. "Beta" is `status: experimental`;
+  "ABAP Cloud" (`cloud`) and "7.02" (`nw702`) are set by hand in the JSON,
+  only where the README promises them - "the downport is linted" is not a
+  promise. Every tile opens in a new tab.
 - **Every page has the same five sections**, `what`, `requirements`,
   `install`, `usage`, `links`, in that order, present even when thin. The
   test holds every page to them. Do not add a section to one page.

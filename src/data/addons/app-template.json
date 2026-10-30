@@ -1,7 +1,7 @@
 {
   "repo": "app-template",
   "title": "App Template",
-  "tagline": "Starter repository for an app project: example app, linting and CI preconfigured.",
+  "tagline": "Starter repository with an example app, linting and CI set up.",
   "summary": "Starter repository for an app project: example app, linting and CI preconfigured.",
   "features": [],
   "requirements": [],
@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

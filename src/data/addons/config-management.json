@@ -1,7 +1,7 @@
 {
   "repo": "config-management",
   "title": "Config Management",
-  "tagline": "Store the settings of the abap2UI5 page in database tables instead of in code.",
+  "tagline": "Keep the settings of the abap2UI5 page in tables, not in code.",
   "summary": "Theme, UI5 bootstrap source, custom CSS and Content-Security-Policy are kept in database tables and edited in a popup app; a user exit of your own applies them to every page abap2UI5 serves. It is for abap2UI5 administrators who want to change those settings at runtime without touching the HTTP handler. The service caches the configuration, supports user-specific and global values and keeps the abap2UI5 default wherever nothing is stored.",
   "features": [
     "Configurable parameters: THEME, APP_TITLE, UI5_SRC, DEBUG_MODE, STYLES_CSS, CSP_POLICY",
@@ -30,5 +30,7 @@
   "links": [],
   "screenshot": "https://github.com/user-attachments/assets/d2b1d0ba-4343-47b1-96f4-ff53c3a5e4d7",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

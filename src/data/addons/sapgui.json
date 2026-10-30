@@ -1,7 +1,7 @@
 {
   "repo": "sapgui",
   "title": "SAP GUI in the browser",
-  "tagline": "The SAP GUI in your browser: thirty classic transactions rebuilt as abap2UI5 apps in pure ABAP.",
+  "tagline": "Thirty classic SAP GUI transactions, rebuilt to run in the browser.",
   "summary": "sapgui rebuilds a selection of classic SAP GUI transactions - SE80, SE16N, SM37, ST22, SU01, SLG1, WE02 and more - as abap2UI5 apps, starting from a SAP Easy Access screen with command field and menu tree. Every screen is one ABAP class, installed with abapGit into a standard ABAP system; nothing is installed on the client and no Fiori launchpad or OData service is needed. Use it to look into a system without the SAP GUI, for browser-based development with SE80, or to learn abap2UI5 from 29 full apps. It is not the WebGUI and not for ABAP Cloud; SE80 writes are switched off by default.",
   "features": [
     "SAP Easy Access start screen with command field (/nSE80, /oSE80) and the real SAP menu",
@@ -55,5 +55,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/4617ae21-079f-4a1f-acb4-6e51a563b118",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

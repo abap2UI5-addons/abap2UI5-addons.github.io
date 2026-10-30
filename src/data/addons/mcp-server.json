@@ -1,7 +1,7 @@
 {
   "repo": "mcp-server",
   "title": "MCP Server",
-  "tagline": "An agent searches the samples, validates, deploys, runs and screenshots an app.",
+  "tagline": "Lets an agent find samples, validate, run and screenshot an app.",
   "summary": "An agent searches the samples, validates, deploys, runs and screenshots an app.",
   "features": [],
   "requirements": [],
@@ -13,5 +13,7 @@
   "links": [],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

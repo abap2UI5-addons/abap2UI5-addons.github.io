@@ -1,7 +1,7 @@
 {
   "repo": "abap-cloud-gui",
   "title": "abap-cloud-gui",
-  "tagline": "Write abap2UI5 apps the way you write a classic ABAP report: selection screen, WRITE list, ALV, events.",
+  "tagline": "Write apps like classic reports: selection screen, WRITE list, ALV.",
   "summary": "abap-cloud-gui is a framework for writing abap2UI5 apps with the classic report programming model: you write a class with parameters, event blocks such as START-OF-SELECTION and AT LINE-SELECTION, write( ) and alv( ), and get a UI5 app with a selection screen, result list or ALV grid, drilldown, value helps and messages. It runs on ABAP Cloud as well as on NetWeaver down to 7.02 and needs no UI5, CDS or RAP knowledge. Use it for quick reports or tools on ABAP Cloud, for moving existing reports to ABAP Cloud with the report2cloud converter, or to start with abap2UI5 in familiar terms. It is not a way to run existing reports unchanged and not a SAP GUI clone.",
   "features": [
     "Selection screen with parameters, select-options, blocks, checkboxes, radio buttons and F4",
@@ -56,5 +56,7 @@
   ],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": true
 }

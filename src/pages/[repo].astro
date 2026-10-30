@@ -5,7 +5,8 @@
  * read more. Every section is there on every page; one without content says
  * so in one line, so the pages stay comparable. */
 import Page from "../layouts/Page.astro";
-import { entries } from "../data/catalog";
+import { entries, orgOf } from "../data/catalog";
+import Badges from "../components/Badges.astro";
 import { addon as load } from "../data/addons";
 import fs from "node:fs";
 
@@ -29,12 +30,9 @@ const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).fi
       <p class="eyebrow">github.com/abap2UI5-addons/{a.repo}</p>
       <h1>{a.title}</h1>
       <p class="lede">{a.tagline}</p>
-      <p class="chips">
-        {a.status !== "unknown" && <span class:list={["chip", a.status]}>{a.status}</span>}
-        {a.license !== "unknown" && <span class="chip">{a.license} license</span>}
-      </p>
+      <p class="chips"><Badges addon={a} org={orgOf(entries.find((e) => e.repo === repo)!)} />{a.license !== "unknown" && <span class="badge where">{a.license} license</span>}</p>
       <div class="cta">
-        <a class="btn btn-primary" href={github}>Repository on GitHub</a>
+        <a class="btn btn-primary" href={github} target="_blank" rel="noopener">Repository on GitHub</a>
         <a class="btn btn-outline" href="#install">Install with abapGit</a>
       </div>
     </div>

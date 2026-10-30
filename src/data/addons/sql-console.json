@@ -1,7 +1,7 @@
 {
   "repo": "sql-console",
   "title": "SQL Console",
-  "tagline": "An SQL console in your browser: type a query, run it and see the result as a table, with history.",
+  "tagline": "Type a query, see the result as a table, keep the history.",
   "summary": "sql-console is an abap2UI5 app that runs an SQL query entered in the browser and shows the result as a table with search, filter, spreadsheet export and a per-user query history. The Open SQL console (src/abap) is ABAP-Cloud-clean; the native SQL console (src/native) runs statements through ADBC on Standard ABAP. Use it when you want a quick look at the data of a system without starting Eclipse or SAP GUI. It is a developer tool without authorization checks of its own, so read the Security section before using it beyond a development system.",
   "features": [
     "ABAP SQL console (z2ui5_sql_cl_app_01) with Max Rows and a result table",
@@ -46,5 +46,7 @@
   ],
   "screenshot": "https://github.com/abap2UI5-addons/sql-console/assets/102328295/0be2bb38-d68a-475c-910a-b341757e5862",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }
