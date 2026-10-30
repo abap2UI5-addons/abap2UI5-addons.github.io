@@ -57,22 +57,14 @@ img { max-width: 100%; height: auto; }
 .wrap { max-width: var(--width); margin: 0 auto; padding: 0 24px; }
 @media (max-width: 620px) { .wrap { padding: 0 16px; } }
 
-/* ---- the top line: the wordmark, the two sites as tabs ------------------- */
-.topline { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; margin: 0 auto; padding-top: 18px; font-size: 13.5px; }
-.topline a { color: var(--muted); text-decoration: none; font-weight: 500; }
-.topline a:hover { color: var(--brand); }
-.sites { display: flex; align-items: center; gap: 16px; }
-.sites .brand { color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-right: 6px; }
-.sites a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; }
-
 /* ---- the greeting -------------------------------------------------------- */
 .welcome {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  margin: 28px 0 40px; color: var(--ink);
+  margin: 48px 0 40px; color: var(--ink);
   font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15;
 }
 .welcome img { width: 40px; height: 40px; flex: none; }
-@media (max-width: 620px) { .welcome { margin: 24px 0 28px; } }
+@media (max-width: 620px) { .welcome { margin: 32px 0 28px; } }
 
 /* ---- the groups: a label, two tiles to a row at most --------------------- */
 /* the page is one reading column (--width); in it the tiles fall into two
@@ -116,6 +108,17 @@ img { max-width: 100%; height: auto; }
 .links .mark { width: 18px; height: 18px; flex: none; color: var(--muted); }
 .links a:hover .mark { color: var(--brand); }
 @media (prefers-reduced-motion: reduce) { .tile, .tile::after, .links a { transition: none; } .tile:hover, .links a:hover { transform: none; } }
+
+/* ---- the top line: the logo and the word lead home, then this site ------- */
+.topline { display: flex; align-items: center; gap: 10px; width: 100%; margin: 0 auto; padding-top: 18px; font-size: 14px; }
+.topline .home { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; letter-spacing: -.01em; text-decoration: none; }
+.topline .home img { width: 26px; height: 26px; }
+.topline .home:hover { color: var(--brand); }
+.topline .sep { color: var(--line); font-weight: 400; }
+.topline .site { color: var(--muted); font-weight: 500; text-decoration: none; }
+.topline a.site:hover { color: var(--brand); }
+.topline .site[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.welcome { margin-top: 28px; }
 
 /* the tiles: title, tagline, and a row of badges at the foot */
 .tile { display: flex; flex-direction: column; }

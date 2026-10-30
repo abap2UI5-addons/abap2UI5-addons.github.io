@@ -72,6 +72,10 @@ npm run check    # build + test, what CI runs
   refuses them.
 - **Nothing from another origin.** No CDN, no web font service, no analytics,
   no image from GitHub; the font, the logo and any screenshot are in `public/`.
+- **The family's convention.** Top left the logo and "abap2UI5", which lead
+  to the home page abap2ui5.github.io, then "/ Addons & Tools". No bar that
+  lists the other sites: the way to another tool is the home page. Links
+  to other sites sit in the content where they belong.
 - **The look is the entry page's.** `global.css` starts with a copy of
   abap2UI5/abap2UI5.github.io's stylesheet; change the shared part there
   first, then here.

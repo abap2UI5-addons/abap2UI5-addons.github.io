@@ -13,10 +13,10 @@ import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 const total = groups.reduce((n, g) => n + g.entries.length, 0);
 ---
-<Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+<Page home title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
-  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> Addons &amp; Tools</h1>
+  <h1 class="welcome">Addons &amp; Tools</h1>
 
   <form class="finder" role="search" hidden>
     <input class="finder-q" id="finder-q" type="search" placeholder="Search addons and tools, e.g. table, RFC, Excel" aria-label="Search" autocomplete="off">
