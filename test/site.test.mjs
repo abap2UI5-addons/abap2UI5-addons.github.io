@@ -13,6 +13,7 @@ const home = fs.readFileSync(path.join(DIST, "index.html"), "utf8");
 const facts = fs.readdirSync(path.join(import.meta.dirname, "..", "src", "data", "addons")).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""));
 const catalog = fs.readFileSync(path.join(import.meta.dirname, "..", "src", "data", "catalog.ts"), "utf8");
 const own = [...catalog.matchAll(/repo: "([^"]+)", site: "([^"]+)"/g)].map((m) => [m[1], m[2]]);
+const hosts = ["abap2ui5.github.io", "abap2ui5-addons.github.io", "github.com/abap2UI5"];
 const pages = facts.filter((r) => !own.some(([o]) => o === r));
 
 function noScript(html, name) {
@@ -42,7 +43,10 @@ test("every add-on in the catalogue has a fact file, and every fact file is in t
 test("the overview is the greeting and a tile per add-on", () => {
   assert.match(home, /<h1 class="welcome">[\s\S]*abap2UI5 add-ons/);
   for (const r of pages) assert.match(home, new RegExp(`<a class="tile" href="/${r}/"`), `a tile for ${r}`);
-  for (const [r, site] of own) assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
+  for (const [r, site] of own) {
+    assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
+    assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);
+  }
   assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no navigation, no prose");
   noScript(home, "index");
   localOnly(home, "index");

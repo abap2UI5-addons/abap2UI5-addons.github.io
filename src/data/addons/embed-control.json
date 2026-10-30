@@ -1,0 +1,17 @@
+{
+  "repo": "embed-control",
+  "title": "Embed Control",
+  "tagline": "Run an app inside your own UI5 app, Fiori elements page or Work Zone card.",
+  "summary": "Run an app inside your own UI5 app, Fiori elements page or Work Zone card.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5/embed-control",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

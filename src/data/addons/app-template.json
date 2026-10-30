@@ -1,0 +1,17 @@
+{
+  "repo": "app-template",
+  "title": "App Template",
+  "tagline": "Starter repository for an app project: example app, linting and CI preconfigured.",
+  "summary": "Starter repository for an app project: example app, linting and CI preconfigured.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5/app-template",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

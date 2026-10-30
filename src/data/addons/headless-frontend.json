@@ -1,0 +1,17 @@
+{
+  "repo": "headless-frontend",
+  "title": "Headless Frontend",
+  "tagline": "Drive and test apps from ABAP. No browser, no UI5, no HTTP.",
+  "summary": "Drive and test apps from ABAP. No browser, no UI5, no HTTP.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5/headless-frontend",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}
