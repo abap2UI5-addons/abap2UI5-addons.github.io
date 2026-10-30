@@ -1,0 +1,40 @@
+{
+  "repo": "selection-screen",
+  "title": "Selection Screen",
+  "tagline": "Select-options with saved variants for abap2UI5 apps, generated from a table name or your data.",
+  "summary": "selection-screen builds one select-option per field of a database table or an internal table, read via RTTI, and renders them inline in your page or as a filter popup. Users enter ranges in a popup and save or load the whole selection as a variant, kept in the table z2ui5_t_13 per app and optionally per user. Your app gets the filter back and turns it into a SQL WHERE clause or filters an internal table with it. Use it in data browsers and reports on abap2UI5 that select data on user-defined criteria.",
+  "features": [
+    "Select-options for every field of a table name, an internal table or a filter",
+    "Range popup per field, Clear, Load and Save variant handled in main( )",
+    "Inline rendering into your view or as a filter popup app",
+    "Variants persisted in table z2ui5_t_13, per app, optionally per user, with a default",
+    "Filter result usable as dynamic SQL WHERE or to filter an internal table"
+  ],
+  "requirements": [
+    "abap2UI5",
+    "ABAP Cloud (S/4 Public Cloud, BTP ABAP Environment), S/4 Private Cloud or On-Premise, or NetWeaver 7.50 or higher",
+    "No 7.02 downport branch"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/selection-screen",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5, 2. this repository (branch main)",
+      "Contains classes and the table z2ui5_t_13 for the variants; nothing else to set up",
+      "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_sel_sample_01"
+    ]
+  },
+  "usage": "\" on init\nmo_variant = z2ui5_cl_sel_multisel_pop=>factory_by_data( data        = mt_table\n                                                         var_handle1 = `ZMY_APP` ).\n\" on the Filter button\nclient->nav_app_call( mo_variant ).\n\n\" back in your app\nIF client->check_on_navigated( ).\n  DATA(lo_filter) = CAST z2ui5_cl_sel_multisel_pop( client->get_app_prev( ) ).\n  IF lo_filter->result( )-check_confirmed = abap_true.\n    z2ui5_cl_util=>filter_itab( EXPORTING filter = lo_filter->result( )-t_filter\n                                CHANGING  val    = mt_table ).\n  ENDIF.\nENDIF.",
+  "links": [
+    {
+      "text": "abap2UI5-addons/abap-cloud-gui",
+      "href": "https://github.com/abap2UI5-addons/abap-cloud-gui"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "https://github.com/user-attachments/assets/47eb179e-c563-402d-907f-58ac77b43941",
+  "status": "unknown",
+  "license": "MIT"
+}

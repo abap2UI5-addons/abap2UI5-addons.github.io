@@ -1,0 +1,14 @@
+---
+/* One add-on on the overview: the title and the tagline. The tile leads to
+ * the page of this site, or to the add-on's own site if it has one (then it
+ * says so); the status is shown when it is not simply stable. */
+import type { Addon } from "../data/addons";
+interface Props { addon: Addon; href: string; external?: boolean }
+const { addon, href, external = false } = Astro.props;
+---
+<li>
+  <a class="tile" href={href}>
+    <strong>{addon.title}{addon.status !== "stable" && addon.status !== "unknown" && <span class="tag">{addon.status}</span>}{external && <span class="tag quiet">own site</span>}</strong>
+    <span class="text">{addon.tagline}</span>
+  </a>
+</li>

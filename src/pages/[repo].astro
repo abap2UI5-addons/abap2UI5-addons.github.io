@@ -1,0 +1,85 @@
+---
+/* One page per add-on, all the same shape: the title and the tagline, the
+ * two things to do (open the repository, copy the abapGit address), then
+ * what it does, what it needs, how it is installed, how it is used, where to
+ * read more. Every section is there on every page; one without content says
+ * so in one line, so the pages stay comparable. */
+import Page from "../layouts/Page.astro";
+import { entries } from "../data/catalog";
+import { addon as load } from "../data/addons";
+import fs from "node:fs";
+
+export function getStaticPaths() {
+  // an add-on with a site of its own gets no page here: its project site
+  // would shadow it anyway
+  return entries.filter((e) => !e.site).map((e) => ({ params: { repo: e.repo } }));
+}
+const { repo } = Astro.params;
+const a = load(repo);
+const base = import.meta.env.BASE_URL;
+const github = `https://github.com/abap2UI5-addons/${a.repo}`;
+// the screenshot, when it was fetched into public/shots/<repo>.<ext>
+const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).find((p) => fs.existsSync(`public/${p}`));
+---
+<Page title={`${a.title} — abap2UI5 add-on`} description={a.tagline} image={shot ? `${base}${shot}` : undefined}>
+
+<section class="hero hero-addon">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">github.com/abap2UI5-addons/{a.repo}</p>
+      <h1>{a.title}</h1>
+      <p class="lede">{a.tagline}</p>
+      <p class="chips">
+        {a.status !== "unknown" && <span class:list={["chip", a.status]}>{a.status}</span>}
+        {a.license !== "unknown" && <span class="chip">{a.license} license</span>}
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href={github}>Repository on GitHub</a>
+        <a class="btn btn-outline" href="#install">Install with abapGit</a>
+      </div>
+    </div>
+    {shot && <figure class="shot"><img src={`${base}${shot}`} alt={`${a.title}, as shown in its README`} loading="eager"></figure>}
+  </div>
+</section>
+
+<div class="wrap article">
+
+  <section class="part" id="what">
+    <h2>What it does</h2>
+    <p>{a.summary}</p>
+    {a.features.length > 0 && <ul class="features">{a.features.map((f) => <li>{f}</li>)}</ul>}
+  </section>
+
+  <section class="part" id="requirements">
+    <h2>Requirements</h2>
+    {a.requirements.length > 0
+      ? <ul class="plain">{a.requirements.map((r) => <li>{r}</li>)}</ul>
+      : <p class="none">The README names no requirement beyond an abap2UI5 installation. Check the repository for the ABAP releases it is verified on.</p>}
+  </section>
+
+  <section class="part" id="install">
+    <h2>Installation</h2>
+    <p>Pull the repository with abapGit into a package of your own. abap2UI5 itself has to be installed first.</p>
+    <p class="address"><code>{a.install.abapgit_url}</code></p>
+    {a.install.notes.length > 0 && <ol class="plain">{a.install.notes.map((n) => <li>{n}</li>)}</ol>}
+  </section>
+
+  <section class="part" id="usage">
+    <h2>Usage</h2>
+    {a.usage
+      ? <pre><code>{a.usage}</code></pre>
+      : <p class="none">The add-on is used through its own apps and needs no code of yours; the README shows how to start them.</p>}
+  </section>
+
+  <section class="part" id="links">
+    <h2>Links</h2>
+    <ul class="plain links">
+      <li><a href={github}>Repository, README and issues</a></li>
+      {a.links.map((l) => <li><a href={l.href}>{l.text}</a></li>)}
+      <li><a href="https://abap2ui5.github.io/docs/">abap2UI5 documentation</a></li>
+    </ul>
+  </section>
+
+</div>
+
+</Page>

@@ -1,0 +1,36 @@
+{
+  "repo": "launchpad-kpi",
+  "title": "Launchpad KPI",
+  "tagline": "Send KPIs of your abap2UI5 apps to the SAP Fiori Launchpad by implementing one interface method.",
+  "summary": "A connector that lets an abap2UI5 app show a live number on a SAP Fiori Launchpad tile. A tile reads its number from an OData $count call, which an abap2UI5 app does not have; this repository brings the generic OData service Z2UI5_PROXY_KPI_SRV, which creates the class named in the filter and asks it for the count. Every app only has to implement the interface Z2UI5_IF_LP_KPI with its method count. A second FILTER condition in the OData call can pass a JSON string for different calculations.",
+  "features": [
+    "Generic OData service Z2UI5_PROXY_KPI_SRV answers $count for the class in the filter",
+    "Implement one interface and one method (z2ui5_if_lp_kpi~count) in your app",
+    "Optional FILTER parameter as a JSON string for different calculations",
+    "Sample class Z2UI5_CL_LP_KPI_HELLO_WORLD included"
+  ],
+  "requirements": [
+    "S/4 Private Cloud or On-Premise, or R/3 NetWeaver AS ABAP 7.50 or higher (Standard ABAP)",
+    "abap2UI5",
+    "ABAP for Cloud: not yet, a CDS/SADL based OData service is on the todo list"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/launchpad-kpi",
+    "notes": [
+      "Install with abapGit in this order: abap2UI5, then this repository from branch standard",
+      "Brings the interface Z2UI5_IF_LP_KPI, the sample Z2UI5_CL_LP_KPI_HELLO_WORLD and the OData service Z2UI5_PROXY_KPI_SRV",
+      "Test with .../sap/opu/odata/sap/Z2UI5_PROXY_KPI_SRV/ENTITYCollection/$count?$filter=CLASS eq 'z2ui5_cl_lp_kpi_hello_world'",
+      "Maintain the tile at the launchpad with the same $count endpoint and your class name in the CLASS filter"
+    ]
+  },
+  "usage": "INTERFACE z2ui5_if_lp_kpi\n  PUBLIC.\n\n  METHODS count\n    IMPORTING\n      filter        TYPE string\n    RETURNING\n      VALUE(result) TYPE i.\n\nENDINTERFACE.",
+  "links": [
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "https://github.com/abap2UI5/abap2UI5-connector_launchpad_kpi/assets/102328295/1b24c31e-5570-4324-92d0-5db915394ceb",
+  "status": "unknown",
+  "license": "MIT"
+}

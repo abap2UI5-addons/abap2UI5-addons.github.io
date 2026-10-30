@@ -1,0 +1,38 @@
+{
+  "repo": "http-connector",
+  "title": "HTTP Connector",
+  "tagline": "Remotely call abap2UI5 apps via HTTP through a consumer system that forwards every request.",
+  "summary": "The browser talks to a consumer system, which forwards each abap2UI5 roundtrip through an SM59 destination to the source system where the abap2UI5 apps run. The apps stay where they are and run unchanged. It is for landscapes where users should reach the apps of another system through one entry point, and follows the same approach as the rfc-connector with an HTTP connection instead of RFC.",
+  "features": [
+    "Thin ICF handler Z2UI5_CL_HTTP_CON_HANDLER on the consumer system",
+    "Server endpoint Z2UI5_CL_HTTP_CON_SERVER on the source system",
+    "Forwards method, body, query string and HTTP status via SM59 destination",
+    "Apps run unchanged on the source system",
+    "Stateless apps only; headers and the consumer path are not forwarded"
+  ],
+  "requirements": [
+    "Standard ABAP 7.50 or higher on both systems",
+    "abap2UI5 on both systems: consumer newer than 1.146.0, source 1.143.0 or newer",
+    "ABAP Cloud: only an unmaintained prototype branch cloud (consumer side, no CI)",
+    "SM59 destination (type G or H) on the consumer system with path prefix /sap/bc/z2ui5_http_srv/ and login data"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/http-connector",
+    "notes": [
+      "Install abap2UI5 on both systems, then this repository (branch standard) on both the consumer and the source system",
+      "On the consumer system replace the destination NONE in Z2UI5_CL_HTTP_CON_HANDLER with your source system destination or maintain the URL constant",
+      "Activate the ICF nodes in SICF: /sap/bc/z2ui5_http on the consumer system and /sap/bc/z2ui5_http_srv on the source system",
+      "Open .../sap/bc/z2ui5_http of the consumer system in the browser"
+    ]
+  },
+  "usage": "",
+  "links": [
+    {
+      "text": "rfc-connector",
+      "href": "https://github.com/abap2UI5-addons/rfc-connector"
+    }
+  ],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

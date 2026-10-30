@@ -1,0 +1,61 @@
+{
+  "repo": "custom-controls",
+  "title": "Custom Controls",
+  "tagline": "Thirteen ready-to-use custom controls for abap2UI5, each a builder class with one render( ) method.",
+  "summary": "A library of thirteen custom controls for abap2UI5: signature pad, Chart.js charts, barcodes, a camera scanner that reads several barcodes at once, Excel export, form validation, product tours, Font Awesome, animations, clickable image maps, Markdown, a code editor and a rich text editor. The controls ship in their own BSP Z2UI5_CCI, so nothing in abap2UI5 or its frontend has to change. Each control is used from ABAP through a builder class with one render( ) method; properties bind, values come back into ABAP variables and events arrive in the app like for any built-in control. The overview app z2ui5_cl_cci_sample_00 lists every control with its sample.",
+  "features": [
+    "SignaturePad, Validator, ExportSpreadsheet, CodeEditor without external libraries",
+    "ChartJs, Barcode, DriverJs, FontAwesome, AnimateCss, Markdown wrap well-known JS libraries",
+    "BarcodeScanner reads every barcode in the picture at once, or counts identical labels",
+    "RichTextEditor (SunEditor) works on OpenUI5 too, with DOMPurify sanitizing",
+    "Branch main loads libraries from jsDelivr, branch local vendors them for offline systems",
+    "One builder class per control, one sample app per control"
+  ],
+  "requirements": [
+    "Standard ABAP 7.50 or higher",
+    "abap2UI5 with the reserved resourceRoot z2ui5_cci in the frontend manifest",
+    "ExportSpreadsheet needs SAPUI5 (sap.ui.export is missing under OpenUI5)",
+    "Branch main needs browser access to jsDelivr; branch local does not",
+    "BarcodeScanner needs https and 'wasm-unsafe-eval' in the CSP script-src"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/custom-controls",
+    "notes": [
+      "Install with abapGit in this order: abap2UI5, then this repository",
+      "Branch main: the sources with libraries from jsDelivr (default); branch local: the same with every library vendored into the BSP, for browsers without internet access",
+      "Brings the ABAP classes, the BSP application Z2UI5_CCI and the two ICF nodes it is served from",
+      "Start ?app_start=z2ui5_cl_cci_sample_00; if it says ICF Node NOT found, activate the node z2ui5_cci in SICF",
+      "Bind configuration structures with omit_initial = abap_true and the camelCase mapper where the library expects it"
+    ]
+  },
+  "usage": "z2ui5_cl_cci_rich_text_editor=>render(\n    view   = page\n    value  = client->_bind( mv_html )\n    height = `20rem`\n    change = client->_event( `TEXT_CHANGED` ) ).",
+  "links": [
+    {
+      "text": "abap2UI5-addons/custom-controls-customer",
+      "href": "https://github.com/abap2UI5-addons/custom-controls-customer"
+    },
+    {
+      "text": "abap2UI5-addons/js-libraries-obsolet (replaced)",
+      "href": "https://github.com/abap2UI5-addons/js-libraries-obsolet"
+    },
+    {
+      "text": "abap2UI5-addons/custom-controls-obsolet (replaced)",
+      "href": "https://github.com/abap2UI5-addons/custom-controls-obsolet"
+    },
+    {
+      "text": "Chart.js",
+      "href": "https://www.chartjs.org"
+    },
+    {
+      "text": "zxing-wasm",
+      "href": "https://github.com/Sec-ant/zxing-wasm"
+    },
+    {
+      "text": "SunEditor",
+      "href": "https://github.com/JiHong88/SunEditor"
+    }
+  ],
+  "screenshot": "https://github.com/user-attachments/assets/8aa59505-c73e-4f56-8df9-71b127fea574",
+  "status": "unknown",
+  "license": "MIT"
+}

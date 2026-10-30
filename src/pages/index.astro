@@ -1,0 +1,26 @@
+---
+/* The overview: every add-on, in groups, one tile each. A tile opens the
+ * add-on's page on this site, or its own site where it has one. */
+import Page from "../layouts/Page.astro";
+import Tile from "../components/Tile.astro";
+import { groups } from "../data/catalog";
+import { addon } from "../data/addons";
+const base = import.meta.env.BASE_URL;
+---
+<Page title="abap2UI5 add-ons" description="Every add-on of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+
+<div class="wrap">
+  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> abap2UI5 add-ons</h1>
+  <p class="intro">What you install next to the framework with abapGit. Each add-on is its own repository and has a page here: what it does, what it needs, how it is installed.</p>
+
+  {groups.map((g) => (
+    <section class="group" id={g.id}>
+      <h2>{g.title}</h2>
+      <ul class="tiles">
+        {g.entries.map((e) => <Tile addon={addon(e.repo)} href={e.site ?? `${base}${e.repo}/`} external={!!e.site} />)}
+      </ul>
+    </section>
+  ))}
+</div>
+
+</Page>

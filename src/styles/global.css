@@ -1,0 +1,139 @@
+/* The add-ons of abap2UI5 - the one stylesheet, the hub's (abap2UI5.github.io)
+ * plus the add-on page: ink and white, Inter, the brand red of the logo for the
+ * hover of a tile and for a link. Light and dark follow the reader's system.
+ * Nothing that needs a script. */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-roman-latin.woff2") format("woff2");
+}
+
+:root {
+  --brand: #d03c4a;
+  --brand-strong: #b02e3b;
+  --brand-soft: #fdecee;
+  --ink: #0f172a;
+  --text: #1e293b;
+  --muted: #5b6474;
+  --line: #e2e6ec;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 8px 24px rgba(15, 23, 42, .06);
+  --width: 1080px;
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #f0606d;
+    --brand-strong: #ff7a86;
+    --brand-soft: #3a1d22;
+    --ink: #f1f4f9;
+    --text: #d8dee8;
+    --muted: #9aa4b5;
+    --line: #273042;
+    --bg: #0f1522;
+    --card: #172033;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 var(--font); font-feature-settings: "cv11", "ss01";
+  overflow-wrap: break-word;
+}
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--brand-strong); }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: var(--width); margin: 0 auto; padding: 0 24px; }
+@media (max-width: 620px) { .wrap { padding: 0 16px; } }
+
+/* ---- the greeting -------------------------------------------------------- */
+.welcome {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin: 64px 0 40px; color: var(--ink);
+  font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15;
+}
+.welcome img { width: 40px; height: 40px; flex: none; }
+@media (max-width: 620px) { .welcome { margin: 40px 0 28px; } }
+
+/* ---- the groups: a label, a row of tiles --------------------------------- */
+.group { margin: 0 0 36px; }
+.group h2 { margin: 0 0 12px; font-size: 13px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.tiles li { min-width: 0; }
+.tile {
+  display: grid; gap: 4px; align-content: start; height: 100%;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
+  color: var(--text); text-decoration: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.tile:hover { color: var(--text); border-color: var(--brand); box-shadow: var(--shadow); }
+.tile strong { color: var(--ink); font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.tile .text { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.tag { display: inline-block; margin-left: 7px; padding: 1px 7px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 500; vertical-align: 2px; letter-spacing: 0; }
+/* a channel that does not exist yet: the tile stays, says so, and is quiet */
+.tile.planned { border-style: dashed; background: transparent; }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+
+.welcome { margin-top: 28px; }
+.intro { margin: -24px 0 36px; max-width: 64ch; color: var(--muted); font-size: 16px; }
+.tag.quiet { background: var(--line); color: var(--muted); }
+
+/* ---- the top line ------------------------------------------------------- */
+.topline { display: flex; justify-content: space-between; gap: 16px; margin: 0 auto; padding-top: 18px; padding-bottom: 0; font-size: 13.5px; }
+.topline a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.topline a:hover { color: var(--brand); }
+.topline span { display: flex; gap: 18px; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--brand); color: #fff; }
+.skip:focus { top: 12px; }
+
+/* ---- the add-on page ---------------------------------------------------- */
+.hero-addon .wrap { padding-top: 40px; }
+.eyebrow { margin: 0 0 8px; font-size: 13px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.hero-addon h1 { margin: 0; color: var(--ink); font-size: clamp(30px, 4vw, 42px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15; text-wrap: balance; }
+.lede { margin: 12px 0 0; max-width: 60ch; font-size: 18px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.chip { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; font-weight: 500; }
+.chip.experimental { border-color: var(--brand); color: var(--brand); }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn { display: inline-block; padding: 0 18px; border-radius: 10px; font-weight: 600; font-size: 14.5px; line-height: 40px; text-decoration: none; white-space: nowrap; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-strong); color: #fff; }
+.btn-outline { border: 1px solid var(--line); color: var(--ink); background: var(--card); }
+.btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+.shot { margin: 28px 0 0; }
+.shot img { display: block; border: 1px solid var(--line); border-radius: 12px; }
+
+.article { display: grid; gap: 8px; padding-top: 24px; padding-bottom: 40px; }
+.article > * { min-width: 0; }
+.hero-addon .wrap > * { min-width: 0; }
+.part { padding: 24px 0; border-top: 1px solid var(--line); }
+.part h2 { margin: 0 0 10px; font-size: 13px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.part p { margin: 0 0 10px; max-width: 70ch; }
+.part p:last-child { margin-bottom: 0; }
+.part ul, .part ol { margin: 0; padding-left: 20px; max-width: 70ch; }
+.part li { margin: 4px 0; }
+.features { list-style: none; padding: 0; display: grid; gap: 6px; }
+.features li { padding-left: 18px; position: relative; }
+.features li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+.none { color: var(--muted); }
+.address code { display: inline-block; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; user-select: all; overflow-wrap: anywhere; }
+.part pre { margin: 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); overflow-x: auto; font-size: 13px; line-height: 1.55; }
+.part pre code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.links { list-style: none; padding: 0; }
+.links a { text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+/* ---- the foot ----------------------------------------------------------- */
+.foot { border-top: 1px solid var(--line); margin-top: 24px; padding: 20px 0 36px; font-size: 13px; color: var(--muted); }
+.foot a { color: var(--muted); text-decoration: none; }
+.foot a:hover { color: var(--brand); }

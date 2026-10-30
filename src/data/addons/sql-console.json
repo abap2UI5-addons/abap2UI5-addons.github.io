@@ -1,0 +1,50 @@
+{
+  "repo": "sql-console",
+  "title": "SQL Console",
+  "tagline": "An SQL console in your browser: type a query, run it and see the result as a table, with history.",
+  "summary": "sql-console is an abap2UI5 app that runs an SQL query entered in the browser and shows the result as a table with search, filter, spreadsheet export and a per-user query history. The Open SQL console (src/abap) is ABAP-Cloud-clean; the native SQL console (src/native) runs statements through ADBC on Standard ABAP. Use it when you want a quick look at the data of a system without starting Eclipse or SAP GUI. It is a developer tool without authorization checks of its own, so read the Security section before using it beyond a development system.",
+  "features": [
+    "ABAP SQL console (z2ui5_sql_cl_app_01) with Max Rows and a result table",
+    "Native SQL console via ADBC (zcl_2ui5_native_sql_console) on Standard ABAP",
+    "Search, range filter and spreadsheet export of the result",
+    "Per-user query history to reload or clear queries and results",
+    "Association path expressions mapped to joins in the native console"
+  ],
+  "requirements": [
+    "abap2UI5",
+    "abap2UI5-addons/popups",
+    "abap2UI5-addons/custom-controls (spreadsheet export, z2ui5_cl_cci_spreadsheet)",
+    "ABAP Cloud or Standard ABAP on NetWeaver 7.50 or higher",
+    "Native SQL console (ADBC) needs Standard ABAP; on ABAP Cloud use the Open SQL console"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/sql-console",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5, 2. popups, 3. custom-controls, 4. this repository (branch main)",
+      "Start with ?app_start=z2ui5_sql_cl_app_01 (Open SQL) or ?app_start=zcl_2ui5_native_sql_console (native, Standard ABAP only)",
+      "Add your own authorization checks before using it beyond a development system"
+    ]
+  },
+  "usage": "?app_start=z2ui5_sql_cl_app_01",
+  "links": [
+    {
+      "text": "abap2UI5-addons/popups",
+      "href": "https://github.com/abap2UI5-addons/popups"
+    },
+    {
+      "text": "abap2UI5-addons/custom-controls",
+      "href": "https://github.com/abap2UI5-addons/custom-controls"
+    },
+    {
+      "text": "ZTOAD (query translation credits)",
+      "href": "https://github.com/marianfoo/ztoad"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "https://github.com/abap2UI5-addons/sql-console/assets/102328295/0be2bb38-d68a-475c-910a-b341757e5862",
+  "status": "unknown",
+  "license": "MIT"
+}

@@ -1,0 +1,37 @@
+{
+  "repo": "lock-manager",
+  "title": "Lock Manager",
+  "tagline": "Hold a real SAP lock across the HTTP roundtrips of a stateless abap2UI5 app.",
+  "summary": "Every stateless ABAP web call loses its SAP locks when the roundtrip ends. This addon decouples lock ownership from the web session: a background handler takes and holds the kernel locks on behalf of the web users, and a persistent registry records who actually holds what. On top of the classic exclusive lock it supports shared and optimistic locks, including the promotion of an optimistic lock to an exclusive one at save time. It is for abap2UI5 apps that change business objects where durable locks or RAP draft handling are not an option.",
+  "features": [
+    "Single API z2ui5_cl_lock_manager=>request for any generated ENQUEUE_* lock module",
+    "Three lock modes (exclusive, shared, optimistic) plus promotion to exclusive",
+    "Persistent registry of every request and lock in tables z2ui5_t_05 and z2ui5_t_06",
+    "Locked-by answer names the real web user, not the technical background user",
+    "Background handler that owns the kernel locks and runs only while needed",
+    "Auto-release after a configurable lifetime and recovery after a handler restart",
+    "Sample app z2ui5_cl_lock_sample and SM12-style admin app z2ui5_cl_app_sm12"
+  ],
+  "requirements": [
+    "Standard ABAP 7.54 or higher",
+    "abap2UI5",
+    "ABAP Cloud: no (Standard ABAP only)",
+    "A background user that may set the requested locks and one background work process while any lock is held"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/lock-manager",
+    "notes": [
+      "Install with abapGit: abap2UI5, then this repository (branch main) into a Z-package",
+      "Create the background event LOCK_HANDLER in SM62 (and LOCK_HANDLER_<client> per client for client-dependent jobs)",
+      "Create a variant for report Z2UI5_RE_LOCK_BACKGROUND in SE38 with p_wait, p_user and p_time",
+      "Schedule a periodic job in SM36 for the report, started after event LOCK_HANDLER, running as the background user",
+      "Give the background user the authorizations to set the requested locks",
+      "Try ?app_start=z2ui5_cl_lock_sample and ?app_start=z2ui5_cl_app_sm12"
+    ]
+  },
+  "usage": "DATA(lt_params) = VALUE z2ui5_cl_lock_manager=>ty_params( (\n  name  = 'VBELN'\n  value = mv_vbeln\n) ).\n\nDATA(ls_result) = z2ui5_cl_lock_manager=>request(\n  iv_process  = z2ui5_cl_lock_manager=>c_process_enqueue\n  iv_function = 'ENQUEUE_EVVBAKE'\n  iv_obj_type = 'VBAK'\n  iv_obj_key  = mv_vbeln\n  it_params   = lt_params\n).\n\n\" ls_result-msg_type = 'Success' | 'Error'\n\" on a collision, ls_result-msg_desc = 'Locked by <USER>'",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}
