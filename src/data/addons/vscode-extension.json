@@ -1,0 +1,17 @@
+{
+  "repo": "vscode-extension",
+  "title": "VS Code Extension",
+  "tagline": "Lints while you type, runs a class against a real system, registers the MCP servers.",
+  "summary": "Lints while you type, runs a class against a real system, registers the MCP servers.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5/vscode-extension",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

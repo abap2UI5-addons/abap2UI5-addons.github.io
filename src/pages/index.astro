@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
     <section class="group" id={g.id}>
       <h2>{g.title}</h2>
       <ul class="tiles">
-        {g.entries.map((e) => <Tile addon={addon(e.repo)} href={e.site ?? `${base}${e.repo}/`} external={!!e.site} />)}
+        {g.entries.map((e) => <Tile addon={addon(e.repo)} href={e.site ?? `${base}${e.repo}/`} external={!!e.site} label={e.label} />)}
       </ul>
     </section>
   ))}

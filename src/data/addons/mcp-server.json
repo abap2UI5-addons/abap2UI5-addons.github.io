@@ -1,0 +1,17 @@
+{
+  "repo": "mcp-server",
+  "title": "MCP Server",
+  "tagline": "An agent searches the samples, validates, deploys, runs and screenshots an app.",
+  "summary": "An agent searches the samples, validates, deploys, runs and screenshots an app.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5/mcp-server",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

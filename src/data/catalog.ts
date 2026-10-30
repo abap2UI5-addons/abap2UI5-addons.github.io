@@ -10,7 +10,7 @@
  * put at that address. For such an add-on the overview links there and this
  * site builds no page. */
 
-export type Entry = { repo: string; site?: string };
+export type Entry = { repo: string; site?: string; label?: string };
 export type Group = { id: string; title: string; lead: string; entries: Entry[] };
 
 export const groups: Group[] = [
@@ -60,6 +60,19 @@ export const groups: Group[] = [
     entries: [
       { repo: "custom-controls" },
       { repo: "custom-controls-customer" },
+    ],
+  },
+  {
+    id: "developer-tools",
+    title: "Developer tools",
+    lead: "What goes into your editor, your pipeline or your agent once you build apps for real.",
+    entries: [
+      { repo: "linter", site: "https://abap2ui5.github.io/docs/advanced/linter.html", label: "manual" },
+      { repo: "vscode-extension", site: "https://github.com/abap2UI5/vscode-extension", label: "repository" },
+      { repo: "mcp-server", site: "https://github.com/abap2UI5/mcp-server", label: "repository" },
+      { repo: "app-template", site: "https://github.com/abap2UI5/app-template", label: "repository" },
+      { repo: "headless-frontend", site: "https://github.com/abap2UI5/headless-frontend", label: "repository" },
+      { repo: "embed-control", site: "https://github.com/abap2UI5/embed-control", label: "repository" },
     ],
   },
   {

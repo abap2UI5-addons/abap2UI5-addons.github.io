@@ -47,10 +47,12 @@ npm run check    # build + test, what CI runs
 - **Every page has the same five sections**, `what`, `requirements`,
   `install`, `usage`, `links`, in that order, present even when thin. The
   test holds every page to them. Do not add a section to one page.
-- **An add-on with a site of its own** (`site` in the catalogue, today only
-  abap-cloud-gui) gets no page here: GitHub Pages serves a repository's
+- **An entry with a site of its own** (`site` in the catalogue: abap-cloud-gui,
+  and the developer tools of the abap2UI5 organization, which are listed here
+  so the overview is the one place for everything around the framework) gets
+  no page here: GitHub Pages serves a repository's
   project site at `/<repo>/` in front of anything this site puts there. The
-  tile leads to that site and says so.
+  tile leads to that site and says so (`label`, default "own site").
 - **No script.** The policy is `script-src 'self'` and the pages ship none:
   no inline script, no `on…=` handler, no inline `style=""`.
 - **Nothing from another origin.** No CDN, no web font service, no analytics,

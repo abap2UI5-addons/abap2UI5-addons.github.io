@@ -57,9 +57,10 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 620px) { .wrap { padding: 0 16px; } }
 
 /* ---- the top line: links on the right, nothing else ---------------------- */
-.topline { display: flex; justify-content: flex-end; gap: 18px; margin: 0 auto; padding-top: 18px; font-size: 13.5px; }
+.topline { display: flex; align-items: center; justify-content: flex-end; gap: 18px; margin: 0 auto; padding-top: 18px; font-size: 13.5px; }
 .topline a { color: var(--muted); text-decoration: none; font-weight: 500; }
 .topline a:hover { color: var(--brand); }
+.topline .gh { width: 20px; height: 20px; display: block; }
 
 /* ---- the greeting -------------------------------------------------------- */
 .welcome {
@@ -75,19 +76,31 @@ img { max-width: 100%; height: auto; }
 .group h2 { margin: 0 0 12px; font-size: 13px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
 .tiles li { min-width: 0; }
+/* a tile is a link and looks it: a shadow at rest, an arrow in the corner,
+ * and on hover it lifts, the border and the arrow turn to the brand colour */
 .tile {
-  display: grid; gap: 4px; align-content: start; height: 100%;
-  padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
-  color: var(--text); text-decoration: none;
-  transition: border-color .15s, box-shadow .15s;
+  position: relative; display: grid; gap: 4px; align-content: start; height: 100%;
+  padding: 14px 40px 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
+  color: var(--text); text-decoration: none; box-shadow: 0 1px 2px rgba(15, 23, 42, .05);
+  transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-.tile:hover { color: var(--text); border-color: var(--brand); box-shadow: var(--shadow); }
+.tile::after { content: "→"; position: absolute; top: 12px; right: 14px; font-size: 16px; color: var(--muted); opacity: .55; transition: color .15s, opacity .15s, transform .15s; }
+.tile:hover { color: var(--text); border-color: var(--brand); box-shadow: var(--shadow); transform: translateY(-2px); }
+.tile:hover::after { color: var(--brand); opacity: 1; transform: translateX(3px); }
 .tile strong { color: var(--ink); font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.tile .mark { width: 18px; height: 18px; margin-right: 9px; vertical-align: -3px; color: var(--muted); }
+/* who a tile is for, above its title */
+.tile .for { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); }
 .tile .text { font-size: 14px; line-height: 1.5; color: var(--muted); }
 .tag { display: inline-block; margin-left: 7px; padding: 1px 7px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 500; vertical-align: 2px; letter-spacing: 0; }
+/* the way to all items of a group: tinted, the title in the brand colour */
+.tile.more { background: var(--brand-soft); border-color: transparent; }
+.tile.more strong { color: var(--brand); }
+.tile.more::after { color: var(--brand); opacity: 1; }
+.tile.more:hover { border-color: var(--brand); }
 /* a channel that does not exist yet: the tile stays, says so, and is quiet */
 .tile.planned { border-style: dashed; background: transparent; }
-@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .tile, .tile::after { transition: none; } .tile:hover { transform: none; } }
 
 .tag.quiet { background: var(--line); color: var(--muted); }
 

@@ -1,0 +1,17 @@
+{
+  "repo": "linter",
+  "title": "Linter",
+  "tagline": "Static and headless-render checks over an app class and its view, without an SAP system.",
+  "summary": "Static and headless-render checks over an app class and its view, without an SAP system.",
+  "features": [],
+  "requirements": [],
+  "install": {
+    "abapgit_url": "https://abap2ui5.github.io/docs/advanced/linter.html",
+    "notes": []
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}
