@@ -1,0 +1,42 @@
+{
+  "repo": "layout-management",
+  "title": "Layout Management",
+  "tagline": "Tables and forms in abap2UI5 apps that users lay out themselves and save as variants.",
+  "summary": "layout-management renders an internal table or a structure as a table or a simple form with a settings button. In the layout popup the user picks the visible columns or fields, their order, labels and sorting, and saves the result as a layout variant in the tables z2ui5_t_11 and z2ui5_t_12; the default variant is loaded automatically at the next start. A generic mode personalizes the controls of any view built with the view builder. Use it when you want ALV-like layouts in abap2UI5 apps without building them; other addons such as popups build on it.",
+  "features": [
+    "Generic table and simple form rendering from your data via RTTI",
+    "Layout popup: visible columns or fields, order, labels and sorting",
+    "Generic mode: hide, reorder and relabel the controls of any view by id",
+    "Layout variants persisted in z2ui5_t_11 and z2ui5_t_12 per app (handle01 to handle04)",
+    "Default layout loaded automatically at startup",
+    "Authorization hook z2ui5_if_layo_auth for shared layouts and deletions"
+  ],
+  "requirements": [
+    "abap2UI5",
+    "ABAP Cloud (S/4 Public Cloud, BTP ABAP Environment), S/4 Private Cloud or On-Premise, or NetWeaver 7.50 or higher",
+    "NetWeaver 7.02 - 7.40 with the downported branch 702"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/layout-management",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5, 2. this repository from the branch that fits your system",
+      "Branch main for ABAP Cloud, S/4HANA and NetWeaver 7.50 or higher; branch 702 for NetWeaver 7.02 - 7.40",
+      "Contains classes and the tables z2ui5_t_11 and z2ui5_t_12 for the layout variants",
+      "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_layo_sample_01"
+    ]
+  },
+  "usage": "\" in check_on_init( ) - once\nmo_layout = z2ui5_cl_layo_manager=>factory_generic( handle01 = `ZCL_MY_APP`\n                                                    handle02 = `MAIN_VIEW` ).\nmo_layout->register( id = `inpName` label = `Name` ).\nmo_layout->register( id = `btnSave` label = `Save` ).\nmo_layout->register( id = `lstNotes` label = `Notes` label_attr = `headerText` ).\n\n\" in the view - the settings button, then the layout applied to the XML\nz2ui5_cl_layo_pop=>render_layout_function( xml    = header\n                                           client = client\n                                           layout = mo_layout ).\n...\nclient->view_display( z2ui5_cl_layo_xml_builder=>xml_apply_layout( i_xml    = view->stringify( )\n                                                                     i_layout = mo_layout ) ).",
+  "links": [
+    {
+      "text": "abap2UI5-addons/popups",
+      "href": "https://github.com/abap2UI5-addons/popups"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "https://github.com/user-attachments/assets/5e5f9291-3817-4a66-a886-cd0ac0c6e175",
+  "status": "unknown",
+  "license": "MIT"
+}

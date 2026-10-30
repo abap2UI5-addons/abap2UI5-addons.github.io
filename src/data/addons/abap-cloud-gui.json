@@ -1,0 +1,60 @@
+{
+  "repo": "abap-cloud-gui",
+  "title": "abap-cloud-gui",
+  "tagline": "Write abap2UI5 apps the way you write a classic ABAP report: selection screen, WRITE list, ALV, events.",
+  "summary": "abap-cloud-gui is a framework for writing abap2UI5 apps with the classic report programming model: you write a class with parameters, event blocks such as START-OF-SELECTION and AT LINE-SELECTION, write( ) and alv( ), and get a UI5 app with a selection screen, result list or ALV grid, drilldown, value helps and messages. It runs on ABAP Cloud as well as on NetWeaver down to 7.02 and needs no UI5, CDS or RAP knowledge. Use it for quick reports or tools on ABAP Cloud, for moving existing reports to ABAP Cloud with the report2cloud converter, or to start with abap2UI5 in familiar terms. It is not a way to run existing reports unchanged and not a SAP GUI clone.",
+  "features": [
+    "Selection screen with parameters, select-options, blocks, checkboxes, radio buttons and F4",
+    "WRITE lists with ULINE, SKIP, colors, hotspots and HIDE; ALV grid and ALV tree",
+    "Event blocks as methods: initialization, start_of_selection, at_line_selection",
+    "Messages with classic semantics, message popover, application log and popups",
+    "Selection variants and ALV layouts stored in Z2UI5_CGUI_VAR and Z2UI5_CGUI_LAY",
+    "Command field, transaction catalog, Fiori launchpad intents and dynpro stand-ins",
+    "report2cloud converter rewrites classic reports into report classes"
+  ],
+  "requirements": [
+    "abap2UI5 (nothing else needed)",
+    "ABAP Cloud (BTP ABAP Environment, S/4HANA Cloud) or Standard ABAP 7.50 or higher",
+    "NetWeaver 7.02 with the downported copy (abap-cloud-gui-X.Y.Z-702.zip of a release)",
+    "UI5 1.71 is the floor, as for abap2UI5 itself"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/abap-cloud-gui",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5, 2. this repository",
+      "Contains classes, two interfaces and the tables Z2UI5_CGUI_VAR and Z2UI5_CGUI_LAY; nothing else to set up",
+      "Pin a release tag vX.Y.Z or import the zip of its GitHub release; branch main is the newest CI-proven state",
+      "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_cgui_sample_05"
+    ]
+  },
+  "usage": "METHOD selection_screen.\n  screen->radiobutton( val = p_disp   text = `Display` group = `MODE` user_command = `MODE`\n      )->radiobutton( val = p_create text = `Create`  group = `MODE`\n      )->parameter( val = p_matnr text = `Material`    modif_id = `DIS`\n      )->parameter( val = p_name  text = `Description` modif_id = `CRE` ).\nENDMETHOD.\n\nMETHOD at_selection_screen_output.\n  DATA(lt_screen) = screen->loop_at_screen( ).\n  LOOP AT lt_screen INTO DATA(ls_screen).\n    CASE ls_screen-group1.\n      WHEN `DIS`. ls_screen-active = p_disp.\n      WHEN `CRE`. ls_screen-active = p_create.\n    ENDCASE.\n    screen->modify_screen( ls_screen ).\n  ENDLOOP.\nENDMETHOD.",
+  "links": [
+    {
+      "text": "Try the report converter in the browser",
+      "href": "https://abap2ui5-addons.github.io/abap-cloud-gui/#playground"
+    },
+    {
+      "text": "report2cloud README",
+      "href": "https://github.com/abap2UI5-addons/abap-cloud-gui/blob/main/tools/report2cloud/README.md"
+    },
+    {
+      "text": "GitHub releases",
+      "href": "https://github.com/abap2UI5-addons/abap-cloud-gui/releases"
+    },
+    {
+      "text": "CHANGELOG",
+      "href": "https://github.com/abap2UI5-addons/abap-cloud-gui/blob/main/CHANGELOG.md"
+    },
+    {
+      "text": "abap2UI5-addons/sapgui",
+      "href": "https://github.com/abap2UI5-addons/sapgui"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

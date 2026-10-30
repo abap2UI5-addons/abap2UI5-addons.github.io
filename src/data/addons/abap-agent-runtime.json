@@ -1,0 +1,63 @@
+{
+  "repo": "abap-agent-runtime",
+  "title": "ABAP Agent Runtime",
+  "tagline": "An ABAP-native MCP endpoint that lets AI agents read, fill and operate abap2UI5 apps as the real SAP user.",
+  "summary": "An MCP server inside the SAP system, built on the headless frontend simulator, through which AI agents such as Claude, Copilot Studio or Joule read the screen of an abap2UI5 app as structured data, fill its fields and fire its events. Every call runs as the SAP user of the HTTP request through the app's own main( ), with its validation and authority checks; no second API per app is needed. Apps opt in with the interface z2ui5_if_agent_app, events can be classified allowed, confirm or forbidden, and every call is audited. On top of the endpoint it brings a language model client, generative UI and an in-app copilot, all off by default.",
+  "features": [
+    "MCP Streamable HTTP endpoint with the tools app_list, app_start, app_describe and app_act",
+    "Agent snapshot v1 of the screen: fields, actions, tables, messages, pending values",
+    "Runs as the real SAP user through the app's own main( ), no technical user",
+    "Opt-in per app, events classified allowed/confirm/forbidden, handover to a human",
+    "Audit log of every call, settings app and audit app included",
+    "Language model client (Claude API or own provider), generative UI, in-app copilot",
+    "Disabled after installation until an administrator switches it on"
+  ],
+  "requirements": [
+    "abap2UI5 (installed first)",
+    "abap2UI5/headless-frontend (installed before this addon)",
+    "ABAP Cloud (BTP ABAP environment, S/4HANA Cloud Public Edition) or ABAP Standard 7.50 or higher",
+    "ABAP 7.02 downport is lint-only in CI, not run on a 7.02 system"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/abap-agent-runtime",
+    "notes": [
+      "Install in this order with abapGit: abap2UI5, abap2UI5/headless-frontend, then this repository",
+      "Pull from the branch of your platform: standard (ABAP Standard, packages 01-03 and ICF node /sap/bc/z2ui5_agent) or cloud (ABAP Cloud, packages 01, 02, 04); main holds all four packages and does not activate on one system",
+      "Not yet in a release; a release will tag the branches as X.Y.Z-standard and X.Y.Z-cloud",
+      "After installation the endpoint is disabled: add the first agent administrator with z2ui5_cl_agent_settings=>admin_add( '<USER>' ) and commit",
+      "Open the settings app ?app_start=z2ui5_cl_agent_app_admin and switch 'Agents may operate apps' on",
+      "ABAP Standard: activate the ICF node /sap/bc/z2ui5_agent in SICF; ABAP Cloud: create an HTTP service with handler class Z2UI5_CL_AGENT_HTTP_CLOUD and expose it through a communication arrangement (to verify)",
+      "Opt your apps in with the interface z2ui5_if_agent_app; z2ui5_cl_agent_demo is a complete example"
+    ]
+  },
+  "usage": "CLASS zcl_sales_order_app DEFINITION PUBLIC.\n  PUBLIC SECTION.\n    INTERFACES z2ui5_if_app.\n    INTERFACES z2ui5_if_agent_app.\n    ...\n\n  METHOD z2ui5_if_agent_app~describe.\n    result-description = `Create and change sales orders`.\n    result-t_event = VALUE #( ( event = `DELETE*` policy = z2ui5_if_agent_app=>cs_policy-forbidden )\n                              ( event = `POST`    policy = z2ui5_if_agent_app=>cs_policy-confirm ) ).\n    result-t_sensitive = VALUE #( ( `/MS_PARTNER/IBAN` ) ).\n  ENDMETHOD.",
+  "links": [
+    {
+      "text": "abap2UI5/headless-frontend",
+      "href": "https://github.com/abap2UI5/headless-frontend"
+    },
+    {
+      "text": "abap2UI5/mcp-server (reference implementation)",
+      "href": "https://github.com/abap2UI5/mcp-server"
+    },
+    {
+      "text": "Agent snapshot specification",
+      "href": "https://github.com/abap2UI5/mcp-server/blob/main/docs/agent-snapshot.md"
+    },
+    {
+      "text": "abap2UI5/protocol snapshot schema",
+      "href": "https://github.com/abap2UI5/protocol/blob/main/schema/snapshot.schema.json"
+    },
+    {
+      "text": "Model Context Protocol",
+      "href": "https://modelcontextprotocol.io"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "",
+  "status": "experimental",
+  "license": "MIT"
+}

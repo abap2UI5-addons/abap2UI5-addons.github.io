@@ -1,0 +1,51 @@
+{
+  "repo": "custom-controls-customer",
+  "title": "Custom Controls (customer)",
+  "tagline": "A template repository for your own frontend artefacts in abap2UI5, served from a BSP that belongs to you.",
+  "summary": "A template repository for a company's own frontend artefacts in abap2UI5: a UI5 reuse library, an icon font, corporate CSS or a custom control, served from the BSP Z2UI5_CCC under the resourceRoot z2ui5_ccc that abap2UI5 reserves. Fork it, put your files under app/webapp/, declare resource roots, libraries, icon fonts and stylesheets in cc/Extension.js, run npm run app2bsp and install the result with abapGit. Nothing in abap2UI5 or its frontend BSP has to be patched, so the artefacts survive framework updates. Use it for things only your company needs; generally useful controls belong in abap2UI5-addons/custom-controls.",
+  "features": [
+    "Registers resource roots, UI5 reuse libraries, icon fonts and stylesheets at page level",
+    "Replaces the four framework patches that a framework update would overwrite",
+    "Template custom control Example.js and ABAP class z2ui5_cl_ccc with xmlns( ) and render( )",
+    "npm run app2bsp generates the abapGit BSP artefacts; CI fails on a stale BSP",
+    "Keeps an existing reuse-library BSP in place, registered by one entry",
+    "Check app z2ui5_cl_ccc_sample_00 verifies the installation"
+  ],
+  "requirements": [
+    "Standard ABAP 7.50 or higher",
+    "abap2UI5 in a version that reserves the z2ui5_ccc resourceRoot",
+    "abap2UI5/frontend (the frontend BSP) when running in BSP or launchpad mode"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/custom-controls-customer",
+    "notes": [
+      "Install with abapGit in this order: abap2UI5 (and abap2UI5/frontend for BSP or launchpad mode), then your fork of this repository (branch main)",
+      "Fork or copy the repository first and put your artefacts under app/webapp/, then run npm run app2bsp and commit",
+      "Brings the ABAP classes, the BSP application Z2UI5_CCC and the two ICF nodes it is served from",
+      "Start ?app_start=z2ui5_cl_ccc_sample_00: if the badge renders, is styled and reacts to a click, the BSP is deployed",
+      "Binary files such as fonts cannot be BSP pages: use base64 data URIs in CSS or MIME objects"
+    ]
+  },
+  "usage": "DATA(view) = z2ui5_cl_ui5_view_builder=>factory( ).\n\nDATA(root) = view->ele( n  = `View`\n                        ns = `mvc`\n    )->a( n = `xmlns`     v = `sap.m`\n    )->a( n = `xmlns:mvc` v = `sap.ui.core.mvc` ).\n\nz2ui5_cl_ccc=>xmlns( root ).             \" declares xmlns:z2ui5_ccc - once per view\n\nDATA(page) = root->ele( `Page` )->a( n = `title` v = `Warehouse` ).\n\nz2ui5_cl_ccc=>render( page ).            \" loads and installs the extension\n\npage->tag( `Button`\n    )->a( n = `icon` v = `sap-icon://my-icons/Regal`   \" your own icon font\n    )->a( n = `text` v = `Rack` ).\n\nclient->view_display( view->stringify( ) ).",
+  "links": [
+    {
+      "text": "abap2UI5-addons/custom-controls",
+      "href": "https://github.com/abap2UI5-addons/custom-controls"
+    },
+    {
+      "text": "abap2UI5/frontend",
+      "href": "https://github.com/abap2UI5/frontend"
+    },
+    {
+      "text": "abap2UI5/samples",
+      "href": "https://github.com/abap2UI5/samples"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "",
+  "status": "unknown",
+  "license": "MIT"
+}

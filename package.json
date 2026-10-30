@@ -1,0 +1,21 @@
+{
+  "name": "abap2ui5-addons-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The add-ons of abap2UI5 - https://abap2ui5-addons.github.io/",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "astro": "7.3.8"
+  }
+}

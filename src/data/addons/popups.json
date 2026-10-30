@@ -1,0 +1,48 @@
+{
+  "repo": "popups",
+  "title": "Popups",
+  "tagline": "Ready-to-use popups and dialogs for abap2UI5 apps, one factory( ) call each.",
+  "summary": "popups is a library of finished dialog classes for abap2UI5 apps: confirm, inform, select from a list, decide, get values, edit a text, upload and download files, show a table, a PDF, HTML or messages, pick a range, a value help or a search help. Each popup is an abap2UI5 app of its own that you call with client->nav_app_call( ) and that hands its result back as an event you name or through its result( ) method. The classes were moved here from the abap2UI5 core framework. Use it when you need standard dialogs without writing views, or as counterparts for POPUP_TO_CONFIRM, POPUP_TO_INFORM and CL_DEMO_OUTPUT when moving classic code.",
+  "features": [
+    "Confirm, Inform, Select, Decide and Get Values popups",
+    "File upload and download, including binary and multiple files",
+    "Table, data and CL_DEMO_OUTPUT style output popups",
+    "Text editor, HTML and PDF display; messages, error and input validation",
+    "Range selection, value help and search help popups",
+    "Transport request popup (on-premise only)",
+    "A sample app for every popup (z2ui5_cl_popup_sample_*)"
+  ],
+  "requirements": [
+    "abap2UI5",
+    "abap2UI5-addons/layout-management (current version, pulled together with this repository)",
+    "ABAP Cloud (S/4 Public Cloud, BTP ABAP Environment), S/4 Private Cloud or On-Premise, or NetWeaver 7.50 or higher",
+    "NetWeaver 7.02 - 7.40 with the downported branch 702",
+    "Transports only on On-Premise; search help not yet on the Cloud stack"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/popups",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5, 2. layout-management, 3. this repository from the branch that fits your system",
+      "Branch main for ABAP Cloud, S/4HANA and NetWeaver 7.50 or higher; branch 702 for NetWeaver 7.02 - 7.40 (pull layout-management from 702 as well)",
+      "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_popup_sample_05"
+    ]
+  },
+  "usage": "METHOD z2ui5_if_app~main.\n\n  IF client->check_on_event( `DELETE` ).\n    client->nav_app_call( z2ui5_cl_popup_to_confirm=>factory(\n        i_question_text = `Delete the entry?`\n        i_event_confirm = `DELETE_CONFIRMED`\n        i_event_cancel  = `DELETE_CANCELED` ) ).\n\n  ELSEIF client->check_on_event( `DELETE_CONFIRMED` ).\n    client->message_box_display( `Entry deleted` ).\n\n  ELSEIF client->check_on_event( `DELETE_CANCELED` ).\n    client->message_box_display( `Nothing changed` ).\n\n  ENDIF.\n\nENDMETHOD.",
+  "links": [
+    {
+      "text": "abap2UI5-addons/layout-management",
+      "href": "https://github.com/abap2UI5-addons/layout-management"
+    },
+    {
+      "text": "abap-util",
+      "href": "https://github.com/abap-util/abap-util"
+    },
+    {
+      "text": "abap2UI5",
+      "href": "https://github.com/abap2UI5/abap2UI5"
+    }
+  ],
+  "screenshot": "https://github.com/user-attachments/assets/e7662e27-d16d-4949-87dc-bb8f13246719",
+  "status": "unknown",
+  "license": "MIT"
+}

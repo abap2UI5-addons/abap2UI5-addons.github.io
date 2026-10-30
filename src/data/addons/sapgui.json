@@ -1,0 +1,59 @@
+{
+  "repo": "sapgui",
+  "title": "SAP GUI in the browser",
+  "tagline": "The SAP GUI in your browser: thirty classic transactions rebuilt as abap2UI5 apps in pure ABAP.",
+  "summary": "sapgui rebuilds a selection of classic SAP GUI transactions - SE80, SE16N, SM37, ST22, SU01, SLG1, WE02 and more - as abap2UI5 apps, starting from a SAP Easy Access screen with command field and menu tree. Every screen is one ABAP class, installed with abapGit into a standard ABAP system; nothing is installed on the client and no Fiori launchpad or OData service is needed. Use it to look into a system without the SAP GUI, for browser-based development with SE80, or to learn abap2UI5 from 29 full apps. It is not the WebGUI and not for ABAP Cloud; SE80 writes are switched off by default.",
+  "features": [
+    "SAP Easy Access start screen with command field (/nSE80, /oSE80) and the real SAP menu",
+    "Around thirty transactions: SE80, SE11, SE16N, SM37, SM21, ST22, SU01, PFCG, STMS and more",
+    "Window frame like the SAP GUI: menu bar, command field, toolbar, status bar",
+    "Authorization checks as in the original transactions (S_TCODE, S_DEVELOP, S_TABU_DIS, ...)",
+    "Read-only by default; SE80 editing only after switching c_write_enabled in the code",
+    "629 unit tests, transpiled with @abaplint/transpiler"
+  ],
+  "requirements": [
+    "SAP_BASIS 7.50 or higher, standard ABAP (on-premise, private cloud or developer trial)",
+    "Not ABAP Cloud; no 7.02 version",
+    "abap2UI5 with its HTTP handler set up",
+    "abap-cloud-gui (for the pilot ZCL_SAPGUI_SM37_CGUI)"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/sapgui",
+    "notes": [
+      "Install with abapGit in this order: 1. abap2UI5 (HTTP handler set up per quickstart), 2. abap-cloud-gui, 3. this repository (branch main)",
+      "Start with the ICF path of the handler, e.g. /sap/bc/http/sap/z2ui5?app_start=ZCL_SAPGUI_START",
+      "Upgrading from a version before October 2026: objects were renamed to ZCL_SAPGUI_*, ZIF_SAPGUI_*, message class ZSAPGUI; let abapGit delete the old ones",
+      "Read Authorizations and What changes the system before opening the service to more people"
+    ]
+  },
+  "usage": "/sap/bc/http/sap/z2ui5?app_start=ZCL_SAPGUI_START",
+  "links": [
+    {
+      "text": "abap2UI5 quickstart",
+      "href": "https://abap2ui5.github.io/docs/get_started/quickstart.html"
+    },
+    {
+      "text": "abap2UI5-addons/abap-cloud-gui",
+      "href": "https://github.com/abap2UI5-addons/abap-cloud-gui"
+    },
+    {
+      "text": "abap2UI5 linter",
+      "href": "https://github.com/abap2UI5/linter"
+    },
+    {
+      "text": "@abaplint/transpiler",
+      "href": "https://github.com/abaplint/transpiler"
+    },
+    {
+      "text": "open-abap-core",
+      "href": "https://github.com/open-abap/open-abap-core"
+    },
+    {
+      "text": "CONCEPT.md",
+      "href": "https://github.com/abap2UI5-addons/sapgui/blob/main/CONCEPT.md"
+    }
+  ],
+  "screenshot": "https://github.com/user-attachments/assets/4617ae21-079f-4a1f-acb4-6e51a563b118",
+  "status": "unknown",
+  "license": "MIT"
+}
