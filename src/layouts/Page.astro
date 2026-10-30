@@ -7,13 +7,14 @@
  * no inline script, no handler attribute - and everything it loads is this
  * origin too. test/site.test.mjs holds every page to it.
  *
- * THE TOP LINE. No header, no navigation: a few links on the right - the
- * framework and GitHub, and on an add-on page the way back to the overview.
- * The same line as on abap2UI5.github.io. No script anywhere. */
+ * THE TOP LINE. The one thing the two sites share: the wordmark, the two
+ * sites as tabs with the current one marked - here Add-ons, which is also
+ * the way back from an add-on page - and GitHub on the right. The same
+ * line as on abap2UI5.github.io. No script anywhere. */
 import "../styles/global.css";
 
-interface Props { title: string; description: string; image?: string; back?: boolean }
-const { title, description, image, back = false } = Astro.props;
+interface Props { title: string; description: string; image?: string }
+const { title, description, image } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const CSP = [
@@ -48,7 +49,14 @@ const CSP = [
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<p class="topline wrap">{back && <a href={base}>All add-ons</a>}<a href="https://abap2ui5.github.io/">abap2UI5</a><a href="https://github.com/abap2UI5-addons" aria-label="abap2UI5-addons on GitHub" title="GitHub"><svg class="gh" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></p>
+<div class="topline wrap">
+  <nav class="sites" aria-label="Sites">
+    <a class="brand" href="https://abap2ui5.github.io/">abap2UI5</a>
+    <a href="https://abap2ui5.github.io/">Home</a>
+    <a href={base} aria-current="page">Add-ons</a>
+  </nav>
+  <a href="https://github.com/abap2UI5-addons" aria-label="abap2UI5-addons on GitHub" title="GitHub"><svg class="gh" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a>
+</div>
 <main id="main">
   <slot />
 </main>

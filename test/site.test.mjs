@@ -47,7 +47,8 @@ test("the overview is the greeting and a tile per add-on", () => {
     assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
     assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);
   }
-  assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no navigation, no prose");
+  assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no section navigation, no prose");
+  assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*aria-current="page">Add-ons<\/a>/, "the top line names both sites, Add-ons current");
   noScript(home, "index");
   localOnly(home, "index");
 });
@@ -59,7 +60,7 @@ test("every add-on page is built in the same shape", () => {
     const html = fs.readFileSync(file, "utf8");
     for (const id of ["what", "requirements", "install", "usage", "links"]) assert.match(html, new RegExp(`<section class="part" id="${id}"`), `${r}: #${id}`);
     assert.match(html, new RegExp(`https://github.com/abap2UI5-addons/${r}"`), `${r}: links its repository`);
-    assert.match(html, /<a href="\/">All add-ons<\/a>/, `${r}: leads back to the overview`);
+    assert.match(html, /<a href="\/" aria-current="page">Add-ons<\/a>/, `${r}: leads back to the overview`);
     assert.match(html, /<link rel="canonical" href="https:\/\/abap2ui5-addons\.github\.io\/[a-zA-Z0-9-]+\/">/, `${r}: canonical`);
     noScript(html, r);
     localOnly(html, r);
