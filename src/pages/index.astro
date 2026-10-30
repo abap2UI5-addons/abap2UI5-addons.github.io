@@ -7,10 +7,10 @@ import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 ---
-<Page title="abap2UI5 add-ons" description="Every add-on of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+<Page title="abap2UI5 add-ons & tools" description="Every add-on and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
-  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> abap2UI5 add-ons</h1>
+  <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> Add-ons &amp; Tools</h1>
 
   {groups.map((g) => (
     <section class="group" id={g.id}>
