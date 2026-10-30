@@ -2,19 +2,37 @@
 /* The overview: every addon, in groups, one tile each. A tile opens the
  * addon's page on this site, or its own site where it has one. A menu at the
  * top folds out to every group and stays in view while the page scrolls;
- * public/toc.js names the group the reader is in. The tiles run across the
- * full width, three to a row, as on the entry page. */
+ * public/toc.js names the group the reader is in. The tiles run in two
+ * columns, as on the entry page. Above the menu a search - words, kind,
+ * ABAP Cloud, 7.02, beta - narrows the tiles; public/filter.js runs it and
+ * the form stays hidden without the script. */
 import Page from "../layouts/Page.astro";
 import Tile from "../components/Tile.astro";
 import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
+const total = groups.reduce((n, g) => n + g.entries.length, 0);
 ---
 <Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
   <h1 class="welcome"><img src={`${base}logo.png`} alt="" width="40" height="40"> Addons &amp; Tools</h1>
 
+  <form class="finder" role="search" hidden>
+    <input class="finder-q" id="finder-q" type="search" placeholder="Search addons and tools, e.g. table, RFC, Excel" aria-label="Search" autocomplete="off">
+    <div class="finder-row">
+      <fieldset class="finder-chips">
+        <legend>Show</legend>
+        <label><input type="checkbox" name="kind" value="addon" checked> Addons</label>
+        <label><input type="checkbox" name="kind" value="tool" checked> Tools</label>
+        <label><input type="checkbox" name="cloud"> ABAP Cloud</label>
+        <label><input type="checkbox" name="nw702"> 7.02</label>
+        <label><input type="checkbox" name="nobeta"> Without beta</label>
+      </fieldset>
+      <p class="finder-count" aria-live="polite"><strong class="finder-shown">{total}</strong> of {total} shown</p>
+    </div>
+    <p class="finder-empty" hidden>Nothing matches. <button type="reset" class="finder-reset">Clear the search</button></p>
+  </form>
   <nav class="toc" aria-label="Sections">
     <details>
       <summary><span class="toc-hint">Jump to</span> <span class="toc-current">{groups[0].title}</span></summary>
@@ -33,5 +51,6 @@ const base = import.meta.env.BASE_URL;
   ))}
 </div>
 <script is:inline src={`${base}toc.js`} defer></script>
+<script is:inline src={`${base}filter.js`} defer></script>
 
 </Page>
