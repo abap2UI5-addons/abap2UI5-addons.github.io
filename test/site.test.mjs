@@ -19,7 +19,7 @@ const pages = facts.filter((r) => !own.some(([o]) => o === r));
 function noScript(html, name) {
   // the one script allowed is the menu marker, a file of this origin
   for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    assert.match(m[1], /\ssrc="\/toc\.js"/, `${name}: a script other than /toc.js`);
+    assert.match(m[1], /\ssrc="\/(toc|filter)\.js"/, `${name}: a script other than /toc.js and /filter.js`);
     assert.equal(m[2].trim(), "", `${name}: inline script code`);
   }
   assert.doesNotMatch(html, /\son[a-z]+=/i, `${name}: an inline event handler`);
@@ -61,6 +61,12 @@ test("the overview is the greeting and a tile per addon", () => {
     assert.match(home, new RegExp(`<section class="group" id="${id}"`), `#${id} is a section`);
   }
   assert.ok(fs.existsSync(path.join(DIST, "toc.js")), "toc.js is published");
+  assert.ok(fs.existsSync(path.join(DIST, "filter.js")), "filter.js is published");
+  // the search: hidden without the script, every tile carries what it filters on
+  assert.match(home, /<form class="finder" role="search" hidden>/);
+  const tilesWithData = (home.match(/<li data-kind="(addon|tool)"[^>]* data-words="/g) || []).length;
+  assert.equal(tilesWithData, facts.length, "every tile carries its kind and its words");
+  assert.equal((home.match(/data-kind="tool"/g) || []).length, 6, "six developer tools");
   assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*aria-current="page">Addons &amp; Tools<\/a>/, "the top line names both sites, Addons current");
   noScript(home, "index");
   localOnly(home, "index");
