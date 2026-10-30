@@ -1,7 +1,7 @@
 {
   "repo": "se16n",
   "title": "SE16N",
-  "tagline": "Browse and filter table content in your browser: the classic SE16N as an abap2UI5 app.",
+  "tagline": "Browse and filter table content: the classic SE16N in the browser.",
   "summary": "se16n is an abap2UI5 app that shows the content of any table: enter a table name, narrow the selection with select-options for every field, pick a saved layout and see the result as a table whose columns you can rearrange and save as a layout. It runs on ABAP Cloud, where there is no SE16N, as well as on premise. The selection comes from the selection-screen addon and the result table and its layouts from layout-management. It is a developer tool without authorization checks of its own, so add your own before using it beyond a development system.",
   "features": [
     "Table name input with select-options for all fields and saved variants",
@@ -42,5 +42,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/903c6a3b-a4bb-4c52-85c7-c63cc680580a",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }

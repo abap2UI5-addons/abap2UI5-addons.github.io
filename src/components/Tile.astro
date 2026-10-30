@@ -1,14 +1,16 @@
 ---
-/* One add-on on the overview: the title and the tagline. The tile leads to
- * the page of this site, or to the add-on's own site if it has one (then it
- * says so); the status is shown when it is not simply stable. */
+/* One add-on on the overview: the title, the tagline and the badges. Every
+ * tile opens in a new tab - the add-on's page here, or the site of its own
+ * where it has one (then the last badge says where). */
 import type { Addon } from "../data/addons";
-interface Props { addon: Addon; href: string; external?: boolean; label?: string }
-const { addon, href, external = false, label = "own site" } = Astro.props;
+import Badges from "./Badges.astro";
+interface Props { addon: Addon; href: string; org: string; external?: boolean; label?: string }
+const { addon, href, org, external = false, label = "own site" } = Astro.props;
 ---
 <li>
-  <a class="tile" href={href}>
-    <strong>{addon.title}{addon.status !== "stable" && addon.status !== "unknown" && <span class="tag">{addon.status}</span>}{external && <span class="tag quiet">{label}</span>}</strong>
+  <a class="tile" href={href} target="_blank" rel="noopener">
+    <strong>{addon.title}</strong>
     <span class="text">{addon.tagline}</span>
+    <Badges addon={addon} org={org} label={external ? label : undefined} />
   </a>
 </li>

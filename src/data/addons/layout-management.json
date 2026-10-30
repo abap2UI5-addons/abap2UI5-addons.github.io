@@ -1,7 +1,7 @@
 {
   "repo": "layout-management",
   "title": "Layout Management",
-  "tagline": "Tables and forms in abap2UI5 apps that users lay out themselves and save as variants.",
+  "tagline": "Tables and forms users lay out themselves and save as variants.",
   "summary": "layout-management renders an internal table or a structure as a table or a simple form with a settings button. In the layout popup the user picks the visible columns or fields, their order, labels and sorting, and saves the result as a layout variant in the tables z2ui5_t_11 and z2ui5_t_12; the default variant is loaded automatically at the next start. A generic mode personalizes the controls of any view built with the view builder. Use it when you want ALV-like layouts in abap2UI5 apps without building them; other addons such as popups build on it.",
   "features": [
     "Generic table and simple form rendering from your data via RTTI",
@@ -38,5 +38,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/5e5f9291-3817-4a66-a886-cd0ac0c6e175",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": true
 }

@@ -1,7 +1,7 @@
 {
   "repo": "popups",
   "title": "Popups",
-  "tagline": "Ready-to-use popups and dialogs for abap2UI5 apps, one factory( ) call each.",
+  "tagline": "Ready-to-use popups and dialogs, one factory( ) call each.",
   "summary": "popups is a library of finished dialog classes for abap2UI5 apps: confirm, inform, select from a list, decide, get values, edit a text, upload and download files, show a table, a PDF, HTML or messages, pick a range, a value help or a search help. Each popup is an abap2UI5 app of its own that you call with client->nav_app_call( ) and that hands its result back as an event you name or through its result( ) method. The classes were moved here from the abap2UI5 core framework. Use it when you need standard dialogs without writing views, or as counterparts for POPUP_TO_CONFIRM, POPUP_TO_INFORM and CL_DEMO_OUTPUT when moving classic code.",
   "features": [
     "Confirm, Inform, Select, Decide and Get Values popups",
@@ -44,5 +44,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/e7662e27-d16d-4949-87dc-bb8f13246719",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": true
 }

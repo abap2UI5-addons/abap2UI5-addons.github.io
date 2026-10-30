@@ -42,7 +42,9 @@ test("every add-on in the catalogue has a fact file, and every fact file is in t
 
 test("the overview is the greeting and a tile per add-on", () => {
   assert.match(home, /<h1 class="welcome">[\s\S]*abap2UI5 add-ons/);
-  for (const r of pages) assert.match(home, new RegExp(`<a class="tile" href="/${r}/"`), `a tile for ${r}`);
+  for (const r of pages) assert.match(home, new RegExp(`<a class="tile" href="/${r}/" target="_blank" rel="noopener"`), `a tile for ${r}, in a new tab`);
+  assert.ok((home.match(/class="badge beta"/g) || []).length >= 3, "the beta add-ons say so");
+  assert.ok((home.match(/class="badge cloud"/g) || []).length >= 8, "the ABAP Cloud add-ons say so");
   for (const [r, site] of own) {
     assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
     assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);

@@ -93,13 +93,39 @@ img { max-width: 100%; height: auto; }
 .tile .mark { width: 20px; height: 20px; margin-right: 9px; vertical-align: -4px; color: var(--muted); }
 /* who a tile is for, above its title */
 .tile .for { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); }
-.tile .text { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.tile .text { font-size: 14px; line-height: 1.5; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .tile, .tile::after { transition: none; } .tile:hover { transform: none; } }
 
-/* the tiles here lead to pages of this site, so the arrow is a plain one;
- * the entry page's tiles all leave it and carry ↗ */
-.tile::after { content: "→"; }
-.tag.quiet { background: var(--line); color: var(--muted); }
+/* the tiles: title, tagline, and a row of badges at the foot */
+.tile { display: flex; flex-direction: column; }
+.tile .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 10px; }
+.chips .badges { display: contents; }
+
+/* ---- the badges: one colour each, readable in light and dark ------------ */
+:root {
+  --b-stars-bg: #fff4d6; --b-stars-fg: #8a5a00;
+  --b-beta-bg: #ffe8d9;  --b-beta-fg: #a3410b;
+  --b-cloud-bg: #e3efff; --b-cloud-fg: #1f5bb5;
+  --b-702-bg: #efe7ff;   --b-702-fg: #5b3ab0;
+  --b-active-bg: #e2f6ea; --b-active-fg: #17723f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --b-stars-bg: #3a2e0d; --b-stars-fg: #f3c75a;
+    --b-beta-bg: #3d2416;  --b-beta-fg: #ffa36b;
+    --b-cloud-bg: #16294a; --b-cloud-fg: #8db8ff;
+    --b-702-bg: #291f45;   --b-702-fg: #b9a2ff;
+    --b-active-bg: #12301f; --b-active-fg: #6fd69a;
+  }
+}
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 600; line-height: 1.5; letter-spacing: 0; white-space: nowrap; }
+.badge.stars { background: var(--b-stars-bg); color: var(--b-stars-fg); }
+.badge.beta { background: var(--b-beta-bg); color: var(--b-beta-fg); }
+.badge.cloud { background: var(--b-cloud-bg); color: var(--b-cloud-fg); }
+.badge.nw702 { background: var(--b-702-bg); color: var(--b-702-fg); }
+.badge.active { background: var(--b-active-bg); color: var(--b-active-fg); }
+.badge.active::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge.where { background: var(--line); color: var(--muted); font-weight: 500; }
 
 .skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--brand); color: #fff; }
 .skip:focus { top: 12px; }
@@ -110,8 +136,6 @@ img { max-width: 100%; height: auto; }
 .hero-addon h1 { margin: 0; color: var(--ink); font-size: clamp(30px, 4vw, 42px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15; text-wrap: balance; }
 .lede { margin: 12px 0 0; max-width: 60ch; font-size: 18px; color: var(--muted); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
-.chip { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; font-weight: 500; }
-.chip.experimental { border-color: var(--brand); color: var(--brand); }
 .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .btn { display: inline-block; padding: 0 18px; border-radius: 10px; font-weight: 600; font-size: 14.5px; line-height: 40px; text-decoration: none; white-space: nowrap; }
 .btn-primary { background: var(--brand); color: #fff; }

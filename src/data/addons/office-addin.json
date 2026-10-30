@@ -1,7 +1,7 @@
 {
   "repo": "office-addin",
   "title": "abap2UI5 for Excel",
-  "tagline": "An Office add-in that shows an abap2UI5 app in Excel's task pane and lets it read and write the workbook.",
+  "tagline": "Show an app in Excel's task pane and read and write the workbook.",
   "summary": "An Office add-in that opens an abap2UI5 app in the task pane of Microsoft Excel: the real abap2UI5 UI5 frontend, served by your SAP system through a host page in the BSP Z2UI5_XL. The app stays an ABAP class and talks to the workbook through the custom control z2ui5.cc.ExcelBridge, which writes tables into sheets and reads selected cells. The repository holds the host page, a demo app, the manifest generator and the tests. It is a proof of concept: CI tests it against a stand-in for Office.js, nobody has run it in a real Excel yet.",
   "features": [
     "Any abap2UI5 app runs in Excel's task pane, started by the manifest's --app option",
@@ -44,5 +44,7 @@
   ],
   "screenshot": "",
   "status": "experimental",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

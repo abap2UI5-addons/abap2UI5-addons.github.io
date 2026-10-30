@@ -1,7 +1,7 @@
 {
   "repo": "fork-abapToC",
   "title": "ABAP Transport of Copies",
-  "tagline": "Create, release and import Transports of Copies with one click, in SAP GUI or in an abap2UI5 app.",
+  "tagline": "Create, release and import Transports of Copies with one click.",
   "summary": "A fork of Kaszub09/abapToC with an abap2UI5 front end. It brings the transaction ZTOC and the app zcl_zabap_toc_ui5, from which a developer creates, releases and imports Transports of Copies from one list, one click per transport or as a mass action on all selected ones. The Transport of Copies logic is the upstream one; changes to it belong upstream first.",
   "features": [
     "Create, release and import a Transport of Copies with one click",
@@ -38,5 +38,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/b9ba4d10-0db1-4b93-9d67-ff1f9017a716",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

@@ -1,7 +1,7 @@
 {
   "repo": "selection-screen",
   "title": "Selection Screen",
-  "tagline": "Select-options with saved variants for abap2UI5 apps, generated from a table name or your data.",
+  "tagline": "Select-options with saved variants, from a table name or your data.",
   "summary": "selection-screen builds one select-option per field of a database table or an internal table, read via RTTI, and renders them inline in your page or as a filter popup. Users enter ranges in a popup and save or load the whole selection as a variant, kept in the table z2ui5_t_13 per app and optionally per user. Your app gets the filter back and turns it into a SQL WHERE clause or filters an internal table with it. Use it in data browsers and reports on abap2UI5 that select data on user-defined criteria.",
   "features": [
     "Select-options for every field of a table name, an internal table or a filter",
@@ -36,5 +36,7 @@
   ],
   "screenshot": "https://github.com/user-attachments/assets/47eb179e-c563-402d-907f-58ac77b43941",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": true,
+  "nw702": false
 }

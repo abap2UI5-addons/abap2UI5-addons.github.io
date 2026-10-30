@@ -1,7 +1,7 @@
 {
   "repo": "rfc-connector",
   "title": "RFC Connector",
-  "tagline": "Remotely call abap2UI5 apps via RFC: a consumer system forwards every request to the source system.",
+  "tagline": "Call abap2UI5 apps on another system via RFC.",
   "summary": "rfc-connector puts a thin ICF handler on a consumer system that the browser talks to; the handler forwards method, body, path and query string of each roundtrip through an SM59 RFC destination to the source system where the abap2UI5 apps run, and returns body and HTTP status. The apps stay where they are and run unchanged. Use it in landscapes where users should reach the apps of another system through one entry point. It is the same approach as the http-connector, with an RFC connection instead of HTTP.",
   "features": [
     "ICF node /sap/bc/z2ui5_rfc and handler Z2UI5_CL_RFC_CONNECTOR_HANDLER on the consumer",
@@ -39,5 +39,7 @@
   ],
   "screenshot": "https://github.com/abap2UI5/abap2UI5-connector_rfc/assets/102328295/5787755c-f4f1-48d8-a9da-50b4f04db9ed",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }

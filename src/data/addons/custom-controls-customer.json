@@ -1,7 +1,7 @@
 {
   "repo": "custom-controls-customer",
   "title": "Custom Controls (customer)",
-  "tagline": "A template repository for your own frontend artefacts in abap2UI5, served from a BSP that belongs to you.",
+  "tagline": "Template for your own controls, icon fonts and CSS, in your own BSP.",
   "summary": "A template repository for a company's own frontend artefacts in abap2UI5: a UI5 reuse library, an icon font, corporate CSS or a custom control, served from the BSP Z2UI5_CCC under the resourceRoot z2ui5_ccc that abap2UI5 reserves. Fork it, put your files under app/webapp/, declare resource roots, libraries, icon fonts and stylesheets in cc/Extension.js, run npm run app2bsp and install the result with abapGit. Nothing in abap2UI5 or its frontend BSP has to be patched, so the artefacts survive framework updates. Use it for things only your company needs; generally useful controls belong in abap2UI5-addons/custom-controls.",
   "features": [
     "Registers resource roots, UI5 reuse libraries, icon fonts and stylesheets at page level",
@@ -47,5 +47,7 @@
   ],
   "screenshot": "",
   "status": "unknown",
-  "license": "MIT"
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
 }
