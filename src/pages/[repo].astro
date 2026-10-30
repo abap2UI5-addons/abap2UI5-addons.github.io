@@ -1,5 +1,5 @@
 ---
-/* One page per add-on, all the same shape: the title and the tagline, the
+/* One page per addon, all the same shape: the title and the tagline, the
  * two things to do (open the repository, copy the abapGit address), then
  * what it does, what it needs, how it is installed, how it is used, where to
  * read more. Every section is there on every page; one without content says
@@ -11,7 +11,7 @@ import { addon as load } from "../data/addons";
 import fs from "node:fs";
 
 export function getStaticPaths() {
-  // an add-on with a site of its own gets no page here: its project site
+  // an addon with a site of its own gets no page here: its project site
   // would shadow it anyway
   return entries.filter((e) => !e.site).map((e) => ({ params: { repo: e.repo } }));
 }
@@ -22,7 +22,7 @@ const github = `https://github.com/abap2UI5-addons/${a.repo}`;
 // the screenshot, when it was fetched into public/shots/<repo>.<ext>
 const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).find((p) => fs.existsSync(`public/${p}`));
 ---
-<Page title={`${a.title} — abap2UI5 add-on`} description={a.tagline} image={shot ? `${base}${shot}` : undefined}>
+<Page title={`${a.title} — abap2UI5 addon`} description={a.tagline} image={shot ? `${base}${shot}` : undefined}>
 
 <section class="hero hero-addon">
   <div class="wrap">
@@ -66,7 +66,7 @@ const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).fi
     <h2>Usage</h2>
     {a.usage
       ? <pre><code>{a.usage}</code></pre>
-      : <p class="none">The add-on is used through its own apps and needs no code of yours; the README shows how to start them.</p>}
+      : <p class="none">The addon is used through its own apps and needs no code of yours; the README shows how to start them.</p>}
   </section>
 
   <section class="part" id="links">
