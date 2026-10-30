@@ -16,8 +16,8 @@ build does not depend on them.
 | `src/data/catalog.ts` | The catalogue: every addon, in groups, in order; which addon has a site of its own |
 | `src/data/addons/<repo>.json` | The facts of one addon - title, tagline, summary, features, requirements, install notes, usage snippet, links, status, license |
 | `src/data/addons.ts` | Reads the JSON at build time and holds it to the shape; a missing or empty file fails the build |
-| `src/pages/index.astro` | The overview: the heading, a menu of the groups that stays in view, a tile per addon - no prose |
-| `public/toc.js` | Marks the current group in the menu while the page scrolls; the only script |
+| `src/pages/index.astro` | The overview: the heading, a folded menu of the groups that stays in view at the top, a tile per addon across the full width - no prose |
+| `public/toc.js` | Names the current group on the folded menu while the page scrolls and closes the list after a jump; the only script |
 | `src/pages/[repo].astro` | The addon page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview: title, tagline, badges |
 | `src/components/Badges.astro` | The badge row, the same on the tile and on the addon page |
@@ -63,8 +63,9 @@ npm run check    # build + test, what CI runs
   project site at `/<repo>/` in front of anything this site puts there. The
   tile leads to that site and says so (`label`, default "own site").
 - **One script, and only that one.** The policy is `script-src 'self'`. The
-  overview loads `public/toc.js`, which marks the group the reader is in;
-  the menu works without it, its entries are plain anchors. No other script,
+  overview loads `public/toc.js`, which names the group the reader is in on
+  the folded menu; the menu works without it - a `<details>` with plain
+  anchors. No other script,
   no inline script, no `on…=` handler, no inline `style=""` - the test
   refuses them.
 - **Nothing from another origin.** No CDN, no web font service, no analytics,
