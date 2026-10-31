@@ -46,11 +46,12 @@ test("every addon in the catalogue has a fact file, and every fact file is in th
 
 test("the overview is the greeting and a tile per addon", () => {
   assert.match(home, /<h1 class="welcome">[\s\S]*Addons &amp; Tools/);
-  for (const r of pages) assert.match(home, new RegExp(`<a class="tile" href="/${r}/" target="_blank" rel="noopener"`), `a tile for ${r}, in a new tab`);
+  for (const r of pages) assert.match(home, new RegExp(`<a class="tile inside" href="/${r}/">`), `a tile for ${r}, in the same tab`);
+  assert.doesNotMatch(home, /<a class="tile[^"]*"[^>]*target="_blank"/, "no tile leaves in a new tab");
   assert.ok((home.match(/class="badge beta"/g) || []).length >= 3, "the beta addons say so");
   assert.ok((home.match(/class="badge cloud"/g) || []).length >= 8, "the ABAP Cloud addons say so");
   for (const [r, site] of own) {
-    assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
+    assert.match(home, new RegExp(`<a class="tile inside" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
     assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);
   }
   assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no prose");
@@ -78,7 +79,7 @@ test("every addon page is built in the same shape", () => {
     assert.ok(fs.existsSync(file), `${r}/ is built`);
     const html = fs.readFileSync(file, "utf8");
     for (const id of ["what", "requirements", "install", "usage", "links"]) assert.match(html, new RegExp(`<section class="part" id="${id}"`), `${r}: #${id}`);
-    assert.match(html, new RegExp(`https://github.com/abap2UI5-addons/${r}"`), `${r}: links its repository`);
+    assert.match(html, new RegExp(`https://github.com/abap2UI5(-addons)?/${r}"`), `${r}: links its repository`);
     assert.match(html, /<a href="\/" aria-current="page">Addons &amp; Tools<\/a>/, `${r}: leads back to the overview`);
     assert.match(html, /<link rel="canonical" href="https:\/\/abap2ui5-addons\.github\.io\/[a-zA-Z0-9-]+\/">/, `${r}: canonical`);
     noScript(html, r);

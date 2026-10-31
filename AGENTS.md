@@ -53,7 +53,7 @@ npm run check    # build + test, what CI runs
   days) come from the API at build time. "Beta" is `status: experimental`;
   "ABAP Cloud" (`cloud`) and "7.02" (`nw702`) are set by hand in the JSON,
   only where the README promises them - "the downport is linted" is not a
-  promise. Every tile opens in a new tab.
+  promise. Every tile stays on the site, in the same tab, with a straight arrow (→): the developer tools have pages here too.
 - **Every page has the same five sections**, `what`, `requirements`,
   `install`, `usage`, `links`, in that order, present even when thin. The
   test holds every page to them. Do not add a section to one page.
