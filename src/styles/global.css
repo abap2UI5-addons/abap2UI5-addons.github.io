@@ -190,9 +190,12 @@ img { max-width: 100%; height: auto; }
 /* ---- the foot: at the bottom of the window, however short the page ---- */
 main { flex: 1 0 auto; }
 /* The foot is the same on the home page, the samples and the addons: one
- * muted line under a hairline as wide as the column. */
+ * muted line under a hairline as wide as the column, the mail as a mark at
+ * its right end. */
 .foot { margin-top: 8px; padding-bottom: 12px; font-size: 13px; color: var(--muted); }
-.foot-row { border-top: 1px solid var(--line); padding-top: 8px; }
+.foot-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 8px; }
+.foot .mail { display: inline-flex; padding: 2px; }
+.foot .mail svg { width: 18px; height: 18px; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--brand); }
 
