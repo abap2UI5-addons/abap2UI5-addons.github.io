@@ -7,9 +7,10 @@
  * no inline script, no handler attribute - and everything it loads is this
  * origin too. test/site.test.mjs holds every page to it.
  *
- * THE TOP LINE. The family's: the wordmark and the five sites as tabs with
- * the current one marked - here Addons & Tools, which is also the way back
- * from an addon page (CONVENTION.md in abap2UI5/abap2UI5.github.io). The same
+ * THE TOP LINE. The one thing this site and the home page share: the
+ * wordmark, the two as tabs with the current one marked - here Addons & Tools,
+ * which is also the way back from an addon page (CONVENTION.md in
+ * abap2UI5/abap2UI5.github.io). The same
  * line as on abap2UI5.github.io. No script anywhere. */
 import "../styles/global.css";
 
@@ -50,12 +51,9 @@ const CSP = [
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="topline wrap">
-  <nav class="sites" aria-label="abap2UI5 sites">
+  <nav class="sites" aria-label="Sites">
     <a class="brand" href="https://abap2ui5.github.io/">abap2UI5</a>
-    <a href="https://abap2ui5.github.io/why/">For managers</a>
-    <a href="https://abap2ui5.github.io/docs/">Docs</a>
-    <a href="https://abap2ui5.github.io/samples-site/">Samples</a>
-    <a href="https://abap2ui5.github.io/playground/">Playground</a>
+    <a href="https://abap2ui5.github.io/">Home</a>
     <a href={base} aria-current="page">Addons &amp; Tools</a>
   </nav>
 </div>
