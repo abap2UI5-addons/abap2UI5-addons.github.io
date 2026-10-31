@@ -248,3 +248,5 @@ main { flex: 1 0 auto; }
 .toc-list a[aria-current="true"] { color: var(--brand); font-weight: 600; }
 .group { scroll-margin-top: 72px; }
 @media (prefers-reduced-motion: reduce) { .toc summary, .toc summary::after { transition: none; } }
+.topline .trail { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); font-weight: 500; }
+.topline .trail .sep { color: var(--line); margin-left: -6px; }
