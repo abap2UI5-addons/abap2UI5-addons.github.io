@@ -68,7 +68,7 @@ test("the overview is the greeting and a tile per addon", () => {
   const tilesWithData = (home.match(/<li data-kind="(addon|tool)"[^>]* data-words="/g) || []).length;
   assert.equal(tilesWithData, facts.length, "every tile carries its kind and its words");
   assert.equal((home.match(/data-kind="tool"/g) || []).length, 6, "six developer tools");
-  assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*aria-current="page">Addons &amp; Tools<\/a>/, "the top line names both sites, Addons current");
+  assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*\/<\/span>\s*<span aria-current="page">Addons &amp; Tools<\/span>/, "the breadcrumb reads Home / Addons & Tools, Addons current");
   noScript(home, "index");
   localOnly(home, "index");
 });
@@ -80,7 +80,7 @@ test("every addon page is built in the same shape", () => {
     const html = fs.readFileSync(file, "utf8");
     for (const id of ["what", "requirements", "install", "usage", "links"]) assert.match(html, new RegExp(`<section class="part" id="${id}"`), `${r}: #${id}`);
     assert.match(html, new RegExp(`https://github.com/abap2UI5(-addons)?/${r}"`), `${r}: links its repository`);
-    assert.match(html, /<a href="\/" aria-current="page">Addons &amp; Tools<\/a>/, `${r}: leads back to the overview`);
+    assert.match(html, /<a href="\/">Addons &amp; Tools<\/a>[\s\S]*<span aria-current="page">[^<]+<\/span>/, `${r}: leads back to the overview, the addon current`);
     assert.match(html, /<link rel="canonical" href="https:\/\/abap2ui5-addons\.github\.io\/[a-zA-Z0-9-]+\/">/, `${r}: canonical`);
     noScript(html, r);
     localOnly(html, r);
