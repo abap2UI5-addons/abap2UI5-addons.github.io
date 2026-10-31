@@ -189,7 +189,11 @@ img { max-width: 100%; height: auto; }
 
 /* ---- the foot: at the bottom of the window, however short the page ---- */
 main { flex: 1 0 auto; }
-.foot { border-top: 1px solid var(--line); margin-top: 24px; padding: 20px 0 36px; font-size: 13px; color: var(--muted); }
+/* The foot is the same on the home page, the samples and the addons: a
+ * hairline as wide as the column, not the window, two short groups that wrap
+ * on a phone - what the project is, then how to reach it. */
+.foot { margin-top: 16px; padding-bottom: 28px; font-size: 13px; color: var(--muted); }
+.foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-top: 1px solid var(--line); padding-top: 16px; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--brand); }
 

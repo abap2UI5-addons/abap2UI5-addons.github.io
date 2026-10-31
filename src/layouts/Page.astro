@@ -13,6 +13,8 @@
  * abap2UI5/abap2UI5.github.io). The same
  * line as on abap2UI5.github.io. No script anywhere. */
 import "../styles/global.css";
+import { latestRelease } from "../data/release";
+const release = await latestRelease();
 
 interface Props { title: string; description: string; image?: string }
 const { title, description, image } = Astro.props;
@@ -62,7 +64,10 @@ const CSP = [
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span>abap2UI5 addons &amp; tools · MIT licensed · <a href="mailto:contact@abap2UI5.org">contact@abap2UI5.org</a> · <a href="https://abap2ui5.github.io/docs/">Documentation</a> · <a href="https://github.com/abap2UI5-addons/abap2UI5-addons.github.io">Edit this site</a></span>
+    <div class="foot-row">
+      <span>abap2UI5 · open source since 2023 · MIT licensed{release && <> · <a href={`https://github.com/abap2UI5/abap2UI5/releases/tag/${release}`}>release {release}</a></>}</span>
+      <span>No cookies, no tracking · <a href="mailto:contact@abap2UI5.org">contact@abap2UI5.org</a> · <a href="https://abap2ui5.github.io/">Home</a> · <a href="https://github.com/abap2UI5-addons/abap2UI5-addons.github.io">Edit this page</a></span>
+    </div>
   </div>
 </footer>
 </body>
