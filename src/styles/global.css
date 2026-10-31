@@ -61,10 +61,12 @@ img { max-width: 100%; height: auto; }
 .topline { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; margin: 0 auto; padding-top: 18px; font-size: 13.5px; }
 .topline a { color: var(--muted); text-decoration: none; font-weight: 500; }
 .topline a:hover { color: var(--brand); }
-.sites { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 16px; }
-.sites .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-right: 6px; }
+.sites { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+/* a breadcrumb: the ancestors are muted links, only the last entry - where the reader is - is marked */
+.sites .sep { color: var(--line); }
+.sites .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-right: 8px; }
 .sites .brand img { width: 22px; height: 22px; }
-.sites a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; }
+.sites [aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; }
 
 /* ---- the greeting -------------------------------------------------------- */
 .welcome {
@@ -248,7 +250,3 @@ main { flex: 1 0 auto; }
 .toc-list a[aria-current="true"] { color: var(--brand); font-weight: 600; }
 .group { scroll-margin-top: 72px; }
 @media (prefers-reduced-motion: reduce) { .toc summary, .toc summary::after { transition: none; } }
-.topline .trail { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); font-weight: 500; }
-/* the trail is where the reader is, like the current tab: ink, 600, the red underline */
-.topline .trail > a, .topline .trail > span:not(.sep) { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; }
-.topline .trail .sep { color: var(--line); margin-left: -6px; }

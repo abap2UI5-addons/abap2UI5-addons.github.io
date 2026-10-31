@@ -53,11 +53,12 @@ const CSP = [
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="topline wrap">
-  <nav class="sites" aria-label="Sites">
+  <nav class="sites" aria-label="Breadcrumb">
     <a class="brand" href="https://abap2ui5.github.io/"><img src={`${base}logo.png`} alt="" width="22" height="22"> abap2UI5</a>
     <a href="https://abap2ui5.github.io/">Home</a>
-    <a href={base} aria-current="page">Addons &amp; Tools</a>
-    {trail && <span class="trail"><span class="sep" aria-hidden="true">/</span><span>{trail}</span></span>}
+    <span class="sep" aria-hidden="true">/</span>
+    {trail ? <a href={base}>Addons &amp; Tools</a> : <span aria-current="page">Addons &amp; Tools</span>}
+    {trail && <><span class="sep" aria-hidden="true">/</span><span aria-current="page">{trail}</span></>}
   </nav>
 </div>
 <main id="main">
