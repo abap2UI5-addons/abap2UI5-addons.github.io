@@ -1,7 +1,8 @@
 ---
 /* One addon on the overview: the title, the tagline and the badges. Every
- * tile opens in a new tab - the addon's page here, or the site of its own
- * where it has one (then the last badge says where). */
+ * tile stays on this site, in the same tab, with a straight arrow - the
+ * addon's page here, or the site of its own on this host where it has one
+ * (then the last badge says where). */
 import type { Addon } from "../data/addons";
 import Badges from "./Badges.astro";
 interface Props { addon: Addon; href: string; org: string; external?: boolean; label?: string }
@@ -11,7 +12,7 @@ const kind = org === "abap2UI5" ? "tool" : "addon";
 const words = [addon.title, addon.repo, addon.tagline, addon.summary, ...addon.features, ...addon.requirements].join(" ").toLowerCase();
 ---
 <li data-kind={kind} data-cloud={addon.cloud ? "1" : undefined} data-nw702={addon.nw702 ? "1" : undefined} data-beta={addon.status === "experimental" ? "1" : undefined} data-words={words}>
-  <a class="tile" href={href} target="_blank" rel="noopener">
+  <a class="tile inside" href={href}>
     <strong>{addon.title}</strong>
     <span class="text">{addon.tagline}</span>
     <Badges addon={addon} org={org} label={external ? label : undefined} />

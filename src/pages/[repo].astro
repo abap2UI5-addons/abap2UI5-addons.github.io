@@ -18,16 +18,15 @@ export function getStaticPaths() {
 const { repo } = Astro.params;
 const a = load(repo);
 const base = import.meta.env.BASE_URL;
-const github = `https://github.com/abap2UI5-addons/${a.repo}`;
+const github = `https://github.com/${orgOf(entries.find((e) => e.repo === repo)!)}/${a.repo}`;
 // the screenshot, when it was fetched into public/shots/<repo>.<ext>
 const shot = ["png", "jpg", "webp", "gif"].map((x) => `shots/${a.repo}.${x}`).find((p) => fs.existsSync(`public/${p}`));
 ---
-<Page title={`${a.title} — abap2UI5 addon`} description={a.tagline} image={shot ? `${base}${shot}` : undefined}>
+<Page title={`${a.title} — abap2UI5 addon`} description={a.tagline} image={shot ? `${base}${shot}` : undefined} trail={a.repo}>
 
 <section class="hero hero-addon">
   <div class="wrap">
     <div>
-      <p class="eyebrow">github.com/abap2UI5-addons/{a.repo}</p>
       <h1>{a.title}</h1>
       <p class="lede">{a.tagline}</p>
       <p class="chips"><Badges addon={a} org={orgOf(entries.find((e) => e.repo === repo)!)} />{a.license !== "unknown" && <span class="badge where">{a.license} license</span>}</p>
