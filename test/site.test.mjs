@@ -67,7 +67,7 @@ test("the overview is the greeting and a tile per addon", () => {
   const tilesWithData = (home.match(/<li data-kind="(addon|tool)"[^>]* data-words="/g) || []).length;
   assert.equal(tilesWithData, facts.length, "every tile carries its kind and its words");
   assert.equal((home.match(/data-kind="tool"/g) || []).length, 6, "six developer tools");
-  assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*aria-current="page">Addons &amp; Tools<\/a>/, "the top line names both sites, Addons current");
+  assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/why\/">For managers<\/a>[\s\S]*aria-current="page">Addons &amp; Tools<\/a>/, "the top line names the family's sites, Addons current");
   noScript(home, "index");
   localOnly(home, "index");
 });
