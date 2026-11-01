@@ -91,3 +91,21 @@ test("every addon page is built in the same shape", () => {
 test("the canonical address of the overview is the published one", () => {
   assert.match(home, /<link rel="canonical" href="https:\/\/abap2ui5-addons\.github\.io\/">/);
 });
+
+test("the search feed: every addon and tool once, leading to its page or its own site", () => {
+  const feed = JSON.parse(fs.readFileSync(path.join(DIST, "search.json"), "utf8"));
+  assert.equal(feed.site, "Addons & Tools");
+  assert.equal(feed.url, "https://abap2ui5-addons.github.io/");
+  assert.deepEqual(feed.entries.map((e) => e.code).sort(), [...facts].sort(), "one entry per addon");
+  for (const e of feed.entries) {
+    assert.ok(e.title && e.text, `${e.code}: a title and a line`);
+    const ownSite = own.find(([r]) => r === e.code);
+    if (ownSite) assert.equal(e.url, ownSite[1], `${e.code}: its own site`);
+    else {
+      assert.equal(e.url, `https://abap2ui5-addons.github.io/${e.code}/`, `${e.code}: its page here`);
+      const html = fs.readFileSync(path.join(DIST, e.code, "index.html"), "utf8");
+      for (const [, anchor] of e.headings) assert.match(html, new RegExp(`id="${anchor}"`), `${e.code}#${anchor}`);
+    }
+    assert.ok(e.links.length && e.links.every((l) => hosts.some((h) => l.url.includes(h)) || l.url.startsWith("https://github.com/abap2UI5-addons/")), `${e.code}: the repository`);
+  }
+});
