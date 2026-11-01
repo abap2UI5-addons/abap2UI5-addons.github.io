@@ -198,7 +198,7 @@ main { flex: 1 0 auto; }
  * muted line under a hairline as wide as the column, the mail as a mark at
  * its right end. */
 .foot { margin-top: 8px; padding-bottom: 12px; font-size: 13px; color: var(--muted); }
-.foot-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 8px; }
+.foot-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 8px; } /* no rule above it, as there is none under the top bar */
 .foot .mail { display: inline-flex; padding: 2px; }
 .foot .mail svg { width: 18px; height: 18px; }
 .foot a { color: var(--muted); text-decoration: none; }
