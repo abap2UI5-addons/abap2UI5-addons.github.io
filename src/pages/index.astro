@@ -1,9 +1,8 @@
 ---
 /* The overview: every addon, in groups, one tile each. A tile opens the
- * addon's page on this site, or its own site where it has one. A menu at the
- * top folds out to every group and stays in view while the page scrolls;
- * public/toc.js names the group the reader is in. The tiles run in two
- * columns, as on the entry page. There is no search of its own here: the
+ * addon's page on this site, or its own site where it has one. The tiles run
+ * in two columns, as on the entry page; the groups follow each other with
+ * their headings, no menu. There is no search of its own here: the
  * search box on https://abap2ui5.github.io/ finds every addon and tool, from
  * the search.json this site publishes. */
 import Page from "../layouts/Page.astro";
@@ -17,14 +16,6 @@ const base = import.meta.env.BASE_URL;
 <div class="wrap">
   <h1 class="welcome">Addons &amp; Tools</h1>
 
-  <nav class="toc" aria-label="Sections">
-    <details>
-      <summary><span class="toc-hint">Jump to</span> <span class="toc-current">{groups[0].title}</span></summary>
-      <div class="toc-list">
-        {groups.map((g, i) => <a href={`#${g.id}`} aria-current={i === 0 ? "true" : undefined}>{g.title}<span>{g.entries.length}</span></a>)}
-      </div>
-    </details>
-  </nav>
   {groups.map((g) => (
     <section class="group" id={g.id}>
       <h2>{g.title}</h2>
@@ -34,6 +25,5 @@ const base = import.meta.env.BASE_URL;
     </section>
   ))}
 </div>
-<script is:inline src={`${base}toc.js`} defer></script>
 
 </Page>
