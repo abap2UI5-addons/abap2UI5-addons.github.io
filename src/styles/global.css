@@ -204,28 +204,3 @@ main { flex: 1 0 auto; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--brand); }
 
-/* ---- the menu of the overview: folded at the top, always in view -------- */
-.toc { position: sticky; top: 0; z-index: 5; margin: 0 0 24px; padding: 12px 0; background: var(--bg); }
-.toc details { position: relative; display: inline-block; }
-.toc summary {
-  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; cursor: pointer; list-style: none;
-  border: 1px solid var(--line); border-radius: 10px; background: var(--card);
-  font-size: 14px; font-weight: 600; color: var(--ink);
-  transition: border-color .15s;
-}
-.toc summary::-webkit-details-marker { display: none; }
-.toc summary::after { content: ""; width: 7px; height: 7px; margin-left: 4px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-2px) rotate(45deg); transition: transform .15s; }
-.toc details[open] summary::after { transform: translateY(1px) rotate(-135deg); }
-.toc summary:hover, .toc details[open] summary { border-color: var(--brand); }
-.toc .toc-hint { color: var(--muted); font-weight: 500; }
-.toc-list {
-  position: absolute; top: calc(100% + 6px); left: 0; min-width: 260px; padding: 6px;
-  display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px;
-  background: var(--card); box-shadow: var(--shadow);
-}
-.toc-list a { display: flex; justify-content: space-between; gap: 16px; padding: 8px 10px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; }
-.toc-list a span { color: var(--muted); font-variant-numeric: tabular-nums; }
-.toc-list a:hover { background: var(--bg); color: var(--ink); }
-.toc-list a[aria-current="true"] { color: var(--brand); font-weight: 600; }
-.group { scroll-margin-top: 72px; }
-@media (prefers-reduced-motion: reduce) { .toc summary, .toc summary::after { transition: none; } }

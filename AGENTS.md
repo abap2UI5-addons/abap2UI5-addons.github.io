@@ -16,8 +16,7 @@ build does not depend on them.
 | `src/data/catalog.ts` | The catalogue: every addon, in groups, in order; which addon has a site of its own |
 | `src/data/addons/<repo>.json` | The facts of one addon - title, tagline, summary, features, requirements, install notes, usage snippet, links, status, license |
 | `src/data/addons.ts` | Reads the JSON at build time and holds it to the shape; a missing or empty file fails the build |
-| `src/pages/index.astro` | The overview: the heading, a folded menu of the groups that stays in view at the top, a tile per addon across the full width - no prose |
-| `public/toc.js` | Names the current group on the folded menu while the page scrolls and closes the list after a jump |
+| `src/pages/index.astro` | The overview: the heading, then the groups with a tile per addon across the full width - no menu, no search, no prose |
 | `src/pages/[repo].astro` | The addon page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview: title, tagline, badges |
 | `src/components/Badges.astro` | The badge row, the same on the tile and on the addon page |
@@ -63,14 +62,11 @@ npm run check    # build + test, what CI runs
   no page here: GitHub Pages serves a repository's
   project site at `/<repo>/` in front of anything this site puts there. The
   tile leads to that site and says so (`label`, default "own site").
-- **One script, and only this.** The policy is `script-src 'self'`. The
-  overview loads `public/toc.js`, which names the group the reader is in on
-  the folded menu; the menu works without it - a `<details>` with plain
-  anchors. There is no search on the overview: the search box on
-  https://abap2ui5.github.io/ finds every addon and tool, from this site's
-  `search.json`. No other script,
-  no inline script, no `on…=` handler, no inline `style=""` - the test
-  refuses them.
+- **No script.** The policy is `script-src 'self'` and no page ships one -
+  no search, no filter, no menu of the groups on the overview: the search
+  box on https://abap2ui5.github.io/ finds every addon and tool, from this
+  site's `search.json`. No inline script, no `on…=` handler, no inline
+  `style=""` - the test refuses them.
 - **Nothing from another origin.** No CDN, no web font service, no analytics,
   no image from GitHub; the font, the logo and any screenshot are in `public/`.
 - **The look is the entry page's.** `global.css` starts with a copy of

@@ -17,11 +17,8 @@ const hosts = ["abap2ui5.github.io", "abap2ui5-addons.github.io", "github.com/ab
 const pages = facts.filter((r) => !own.some(([o]) => o === r));
 
 function noScript(html, name) {
-  // the one script allowed is the menu marker, a file of this origin
-  for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    assert.match(m[1], /\ssrc="\/toc\.js"/, `${name}: a script other than /toc.js`);
-    assert.equal(m[2].trim(), "", `${name}: inline script code`);
-  }
+  // no script at all: the search of the family is on the entry page
+  assert.doesNotMatch(html, /<script\b/i, `${name}: a script`);
   assert.doesNotMatch(html, /\son[a-z]+=/i, `${name}: an inline event handler`);
   assert.doesNotMatch(html, /\sstyle="/i, `${name}: an inline style the policy would refuse`);
   const csp = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/);
@@ -55,13 +52,10 @@ test("the overview is the greeting and a tile per addon", () => {
     assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);
   }
   assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no prose");
-  const toc = home.match(/<nav class="toc"[^>]*>([\s\S]*?)<\/nav>/);
-  assert.ok(toc, "a menu of the groups");
   for (const id of [...catalog.matchAll(/id: "([^"]+)"/g)].map((m) => m[1])) {
-    assert.match(toc[1], new RegExp(`href="#${id}"`), `the menu links #${id}`);
     assert.match(home, new RegExp(`<section class="group" id="${id}"`), `#${id} is a section`);
   }
-  assert.ok(fs.existsSync(path.join(DIST, "toc.js")), "toc.js is published");
+  assert.doesNotMatch(home, /<nav class="toc"|toc\.js/, "no menu of the groups");
   // no search of its own: the box on the entry page finds every addon (search.json)
   assert.doesNotMatch(home, /<form|role="search"|filter\.js/, "no search on the overview");
   assert.ok(!fs.existsSync(path.join(DIST, "filter.js")), "filter.js is gone");
