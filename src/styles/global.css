@@ -68,7 +68,7 @@ img { max-width: 100%; height: auto; }
 .sites .sep { color: var(--line); }
 .sites .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-right: 8px; }
 .sites .brand img { width: 22px; height: 22px; }
-.sites [aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; }
+.sites [aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--brand); padding-bottom: 1px; margin-bottom: -3px; /* the line takes no height: the word stays level with the trail */ }
 
 /* ---- the greeting -------------------------------------------------------- */
 .welcome {
