@@ -7,11 +7,8 @@ import type { Addon } from "../data/addons";
 import Badges from "./Badges.astro";
 interface Props { addon: Addon; href: string; org: string; external?: boolean; label?: string }
 const { addon, href, org, external = false, label = "own site" } = Astro.props;
-// what the search on the overview matches and filters on (public/filter.js)
-const kind = org === "abap2UI5" ? "tool" : "addon";
-const words = [addon.title, addon.repo, addon.tagline, addon.summary, ...addon.features, ...addon.requirements].join(" ").toLowerCase();
 ---
-<li data-kind={kind} data-cloud={addon.cloud ? "1" : undefined} data-nw702={addon.nw702 ? "1" : undefined} data-beta={addon.status === "experimental" ? "1" : undefined} data-words={words}>
+<li>
   <a class="tile inside" href={href}>
     <strong>{addon.title}</strong>
     <span class="text">{addon.tagline}</span>
