@@ -22,6 +22,7 @@ build does not depend on them.
 | `src/pages/[repo].astro` | The addon page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview: title, tagline, badges |
 | `src/components/Badges.astro` | The badge row, the same on the tile and on the addon page |
+| `src/pages/search.json.ts` | What the family's search finds of this site: one entry per addon and tool (title, tagline, the five sections, the words of its facts, the repository as an action). abap2UI5/docs fetches it at build time into the one search index the home page https://abap2ui5.github.io/ and the playground read; the shape `{ site, url, entries }` is the same on every site of the family |
 | `scripts/stats.mjs` | Writes `src/data/stats.json` (stars, last push) from the GitHub API; run by the workflow, never fails |
 | `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Addons as tabs), the one-line foot |
 | `src/styles/global.css` | The one stylesheet; the entry page's, plus the addon page |
