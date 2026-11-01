@@ -204,30 +204,6 @@ main { flex: 1 0 auto; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--brand); }
 
-/* ---- the search of the overview: a field, a row of switches, a count ---- */
-.finder { display: grid; gap: 12px; margin: -12px 0 20px; }
-.finder-q {
-  width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
-  font: inherit; font-size: 15px; color: var(--ink);
-}
-.finder-q::placeholder { color: var(--muted); }
-.finder-q:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
-.finder-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
-.finder-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
-.finder-chips legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.finder-chips label {
-  display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; cursor: pointer;
-  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
-  font-size: 13px; font-weight: 500; color: var(--muted); user-select: none;
-}
-.finder-chips input { accent-color: var(--brand); margin: 0; }
-.finder-chips label:has(input:checked) { border-color: var(--brand); color: var(--ink); }
-.finder-chips label:has(input:focus-visible) { box-shadow: 0 0 0 3px var(--brand-soft); }
-.finder-count { margin: 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.finder-count strong { color: var(--ink); }
-.finder-empty { margin: 8px 0 0; color: var(--muted); }
-.finder-reset { padding: 0; border: 0; background: none; font: inherit; color: var(--brand); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
-
 /* ---- the menu of the overview: folded at the top, always in view -------- */
 .toc { position: sticky; top: 0; z-index: 5; margin: 0 0 24px; padding: 12px 0; background: var(--bg); }
 .toc details { position: relative; display: inline-block; }
