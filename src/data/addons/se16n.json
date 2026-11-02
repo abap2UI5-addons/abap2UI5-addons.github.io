@@ -21,11 +21,11 @@
     "abapgit_url": "https://github.com/abap2UI5-addons/se16n",
     "notes": [
       "Install with abapGit in this order: 1. abap2UI5, 2. layout-management, 3. selection-screen, 4. this repository (branch main)",
-      "Start with ?app_start=z2ui5_cl_tm_se16_01",
+      "Start with ?app_start=z2ui5_cl_se16_app_01",
       "Add authorization checks (e.g. S_TABU_DIS / S_TABU_NAM) before opening it to other users"
     ]
   },
-  "usage": "?app_start=z2ui5_cl_tm_se16_01",
+  "usage": "?app_start=z2ui5_cl_se16_app_01",
   "links": [
     {
       "text": "abap2UI5-addons/selection-screen",
