@@ -9,7 +9,7 @@
     "User-specific and global configuration with in-memory caching",
     "Admin-only fields and a master user concept for UI5_SRC and CSP_POLICY",
     "Authorization object Z2UI5_CONF with fields ACTVT and CONFIG_TYP",
-    "Theme compatibility matrix by UI5 version (table Z2UI5_THEMES)"
+    "Theme compatibility matrix by UI5 version (table Z2UI5_T_30)"
   ],
   "requirements": [
     "Standard ABAP 7.50 or higher (no 7.02 downport)",
