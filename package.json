@@ -2,8 +2,13 @@
   "name": "abap2ui5-addons-github-io",
   "version": "1.0.0",
   "private": true,
-  "description": "The add-ons of abap2UI5 - https://abap2ui5-addons.github.io/",
+  "description": "The addons of abap2UI5 - https://abap2ui5-addons.github.io/",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abap2UI5-addons/abap2ui5-addons.github.io.git"
+  },
+  "homepage": "https://abap2ui5-addons.github.io/",
   "type": "module",
   "engines": {
     "node": ">=22"

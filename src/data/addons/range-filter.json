@@ -18,7 +18,7 @@
   "install": {
     "abapgit_url": "https://github.com/abap2UI5-addons/range-filter",
     "notes": [
-      "Install with abapGit in this order: 1. abap2UI5, 2. this repository (branch main)",
+      "Install with abapGit in this order: abap2UI5, then this repository (branch main)",
       "Contains classes and the table z2ui5_t_13 for the variants; nothing else to set up",
       "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_sel_sample_01"
     ]

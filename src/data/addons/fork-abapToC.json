@@ -18,7 +18,7 @@
   "install": {
     "abapgit_url": "https://github.com/abap2UI5-addons/fork-abapToC",
     "notes": [
-      "Install with abapGit: abap2UI5 first, then this repository (branch main)",
+      "Install with abapGit in this order: abap2UI5, then this repository (branch main)",
       "Import or transport the project to the target system",
       "In SM59 create a connection for each possible transport target with exactly the same name as the target (for example ZZZ.999 for system ZZZ client 999, or ZZZ without client)",
       "Optional: set the development system as trusted in SMT1 at the target system and use Trust Relationship with Current User to avoid logging in on every import",

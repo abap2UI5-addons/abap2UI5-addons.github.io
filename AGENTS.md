@@ -82,5 +82,6 @@ npm run check    # build + test, what CI runs
   abap2UI5/abap2UI5.github.io's stylesheet; change the shared part there
   first, then here.
 - **Toolchain:** Node 22 (`.nvmrc`, `engines`), every dependency pinned
-  exactly (astro 7.3.8), actions pinned to commits. Deployment needs
-  Settings → Pages → Source: "GitHub Actions" once.
+  exactly (astro - the version is in `package.json`), actions pinned to
+  commits. Deployment needs Settings → Pages → Source: "GitHub Actions"
+  once.
