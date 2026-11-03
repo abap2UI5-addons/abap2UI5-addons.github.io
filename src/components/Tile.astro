@@ -1,17 +1,19 @@
 ---
-/* One addon on the overview: the title, the tagline and the badges. Every
- * tile stays on this site, in the same tab, with a straight arrow - the
- * addon's page here, or the site of its own on this host where it has one
- * (then the last badge says where). */
+/* One addon on the overview: the title, the tagline and the badges. A tile
+ * to the addon's page here has a straight arrow (→); a tile to the site of
+ * its own - the VitePress site every addon of abap2UI5-addons publishes -
+ * leaves this site and says so with the arrow out (↗). Both open in this
+ * tab. `label` adds a badge naming where it leads, for a site that is not an
+ * addon site. */
 import type { Addon } from "../data/addons";
 import Badges from "./Badges.astro";
 interface Props { addon: Addon; href: string; org: string; external?: boolean; label?: string }
-const { addon, href, org, external = false, label = "own site" } = Astro.props;
+const { addon, href, org, external = false, label } = Astro.props;
 ---
 <li>
-  <a class="tile inside" href={href}>
+  <a class={external ? "tile" : "tile inside"} href={href} rel={external ? "external" : undefined}>
     <strong>{addon.title}</strong>
     <span class="text">{addon.tagline}</span>
-    <Badges addon={addon} org={org} label={external ? label : undefined} />
+    <Badges addon={addon} org={org} label={label} />
   </a>
 </li>
