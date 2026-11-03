@@ -11,7 +11,7 @@ import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 ---
-<Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, SAP GUI transactions in the browser, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+<Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
   <h1 class="welcome">Addons &amp; Tools</h1>
@@ -24,6 +24,15 @@ const base = import.meta.env.BASE_URL;
       </ul>
     </section>
   ))}
+
+  <section class="group join" id="join">
+    <h2>Join in</h2>
+    <p>Every addon here is open source and built by the community - contributions are welcome:
+      report an issue, improve the docs or open a pull request in any of the repositories.</p>
+    <p>Built an addon or tool for abap2UI5 yourself? It belongs on this page too - open a
+      pull request on <a href="https://github.com/abap2UI5-addons/abap2UI5-addons.github.io">this site's repository</a>
+      or an issue, and we list it. Community strong!</p>
+  </section>
 </div>
 
 </Page>
