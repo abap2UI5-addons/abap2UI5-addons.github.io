@@ -10,7 +10,7 @@
     "Locked-by answer names the real web user, not the technical background user",
     "Background handler that owns the kernel locks and runs only while needed",
     "Auto-release after a configurable lifetime and recovery after a handler restart",
-    "Sample app z2ui5_cl_lock_sample and SM12-style admin app z2ui5_cl_app_sm12"
+    "Sample app z2ui5_cl_lock_sample and SM12-style admin app z2ui5_cl_lock_app_sm12"
   ],
   "requirements": [
     "Standard ABAP 7.54 or higher",
@@ -26,7 +26,7 @@
       "Create a variant for report Z2UI5_RE_LOCK_BACKGROUND in SE38 with p_wait, p_user and p_time",
       "Schedule a periodic job in SM36 for the report, started after event LOCK_HANDLER, running as the background user",
       "Give the background user the authorizations to set the requested locks",
-      "Try ?app_start=z2ui5_cl_lock_sample and ?app_start=z2ui5_cl_app_sm12"
+      "Try ?app_start=z2ui5_cl_lock_sample and ?app_start=z2ui5_cl_lock_app_sm12"
     ]
   },
   "usage": "DATA(lt_params) = VALUE z2ui5_cl_lock_manager=>ty_params( (\n  name  = 'VBELN'\n  value = mv_vbeln\n) ).\n\nDATA(ls_result) = z2ui5_cl_lock_manager=>request(\n  iv_process  = z2ui5_cl_lock_manager=>c_process_enqueue\n  iv_function = 'ENQUEUE_EVVBAKE'\n  iv_obj_type = 'VBAK'\n  iv_obj_key  = mv_vbeln\n  it_params   = lt_params\n).\n\n\" ls_result-msg_type = 'Success' | 'Error'\n\" on a collision, ls_result-msg_desc = 'Locked by <USER>'",

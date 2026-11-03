@@ -8,7 +8,7 @@
     "WRITE lists with ULINE, SKIP, colors, hotspots and HIDE; ALV grid and ALV tree",
     "Event blocks as methods: initialization, start_of_selection, at_line_selection",
     "Messages with classic semantics, message popover, application log and popups",
-    "Selection variants and ALV layouts stored in Z2UI5_CGUI_VAR and Z2UI5_CGUI_LAY",
+    "Selection variants and ALV layouts stored in Z2UI5_T_19 and Z2UI5_T_18",
     "Command field, transaction catalog, Fiori launchpad intents and dynpro stand-ins",
     "report2cloud converter rewrites classic reports into report classes"
   ],
@@ -22,7 +22,7 @@
     "abapgit_url": "https://github.com/abap2UI5-addons/abap-cloud-gui",
     "notes": [
       "Install with abapGit in this order: 1. abap2UI5, 2. this repository",
-      "Contains classes, two interfaces and the tables Z2UI5_CGUI_VAR and Z2UI5_CGUI_LAY; nothing else to set up",
+      "Contains classes, two interfaces and the tables Z2UI5_T_19 and Z2UI5_T_18; nothing else to set up",
       "Pin a release tag vX.Y.Z or import the zip of its GitHub release; branch main is the newest CI-proven state",
       "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_cgui_sample_05"
     ]
