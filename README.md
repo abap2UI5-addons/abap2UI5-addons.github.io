@@ -12,4 +12,4 @@ npm run check    # build + test, what CI runs
 ```
 
 A new addon is one line in `src/data/catalog.ts` and one file in
-`src/data/addons/<repo>.json`. See `AGENTS.md` for the rules.
+`src/data/addons/<repo>.json`. See [AGENTS.md](AGENTS.md) for the rules.

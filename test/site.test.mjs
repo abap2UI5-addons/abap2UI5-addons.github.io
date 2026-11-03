@@ -48,7 +48,8 @@ test("the overview is the greeting and a tile per addon", () => {
   assert.ok((home.match(/class="badge beta"/g) || []).length >= 3, "the beta addons say so");
   assert.ok((home.match(/class="badge cloud"/g) || []).length >= 8, "the ABAP Cloud addons say so");
   for (const [r, site] of own) {
-    assert.match(home, new RegExp(`<a class="tile inside" href="${site.replace(/[./]/g, "\\$&")}"`), `${r} leads to its own site`);
+    // the site of its own leaves this site: the arrow out, rel="external", same tab
+    assert.match(home, new RegExp(`<a class="tile" href="${site.replace(/[./]/g, "\\$&")}" rel="external">`), `${r} leads to its own site, marked as leaving`);
     assert.ok(hosts.some((h) => site.includes(h)), `${r}: ${site} is not one of the project's places`);
   }
   assert.doesNotMatch(home, /<header|<nav class="nav"|class="intro"/, "no header, no prose");

@@ -10,7 +10,7 @@ const { addon: a, org, label } = Astro.props;
 const s = stats(org, a.repo);
 ---
 <span class="badges">
-  {s && s.stars > 0 && <span class="badge stars" title={`${s.stars} stars on GitHub`}>★ {s.stars}</span>}
+  {s && s.stars > 0 && <span class="badge stars" title={`${s.stars} stars on GitHub`}><span aria-hidden="true">★</span>{s.stars}<span class="vh"> stars on GitHub</span></span>}
   {a.status === "experimental" && <span class="badge beta">Beta</span>}
   {a.cloud && <span class="badge cloud">ABAP Cloud</span>}
   {a.nw702 && <span class="badge nw702">7.02</span>}

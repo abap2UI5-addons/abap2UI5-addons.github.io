@@ -52,16 +52,25 @@ npm run check    # build + test, what CI runs
   days) come from the API at build time. "Beta" is `status: experimental`;
   "ABAP Cloud" (`cloud`) and "7.02" (`nw702`) are set by hand in the JSON,
   only where the README promises them - "the downport is linted" is not a
-  promise. Every tile stays on the site, in the same tab, with a straight arrow (→): the developer tools have pages here too.
+  promise.
+- **Where a tile leads.** A tile to an addon's page here keeps the reader on
+  the site: a straight arrow (→). A tile to the site of its own - every addon
+  of abap2UI5-addons publishes one, a VitePress site from `site/` of its
+  repository - leaves: the arrow out (↗) and `rel="external"`. Both open in
+  the same tab; the test refuses `target="_blank"` on a tile.
 - **Every page has the same five sections**, `what`, `requirements`,
   `install`, `usage`, `links`, in that order, present even when thin. The
   test holds every page to them. Do not add a section to one page.
-- **An entry with a site of its own** (`site` in the catalogue: abap-cloud-gui,
-  and the developer tools of the abap2UI5 organization, which are listed here
-  so the overview is the one place for everything around the framework) gets
-  no page here: GitHub Pages serves a repository's
-  project site at `/<repo>/` in front of anything this site puts there. The
-  tile leads to that site and says so (`label`, default "own site").
+- **An entry with a site of its own** (`site` in the catalogue: every addon
+  of abap2UI5-addons - built from its repository's `site/`, the same shape in
+  each: Home with the five sections, the README as the Guide, the Changelog,
+  the same menu back to this overview) gets no page here: GitHub Pages serves
+  a repository's project site at `/<repo>/` in front of anything this site
+  puts there. The tile leads to that site. Its facts JSON stays: the search
+  feed reads it, and the addon site's home page was generated from it. The
+  entries without `site` - the apps of the organisation not set up yet and the
+  developer tools of the abap2UI5 organization, listed here so the overview is
+  the one place for everything around the framework - keep their page here.
 - **No script.** The policy is `script-src 'self'` and no page ships one -
   no search, no filter, no menu of the groups on the overview: the search
   box on https://abap2ui5.github.io/ finds every addon and tool, from this
@@ -73,5 +82,6 @@ npm run check    # build + test, what CI runs
   abap2UI5/abap2UI5.github.io's stylesheet; change the shared part there
   first, then here.
 - **Toolchain:** Node 22 (`.nvmrc`, `engines`), every dependency pinned
-  exactly (astro 7.3.8), actions pinned to commits. Deployment needs
-  Settings → Pages → Source: "GitHub Actions" once.
+  exactly (astro - the version is in `package.json`), actions pinned to
+  commits. Deployment needs Settings → Pages → Source: "GitHub Actions"
+  once.
