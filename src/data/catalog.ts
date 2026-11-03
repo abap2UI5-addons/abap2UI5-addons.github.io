@@ -25,13 +25,11 @@ export const groups: Group[] = [
     title: "Ready-made apps",
     lead: "Install and open: classic transactions and tools of the SAP GUI, running in the browser.",
     entries: [
-      { repo: "sapgui" },
       { repo: "se16n", site: "https://abap2ui5-addons.github.io/se16n/" },
       { repo: "table-maintenance", site: "https://abap2ui5-addons.github.io/table-maintenance/" },
       { repo: "sql-console", site: "https://abap2ui5-addons.github.io/sql-console/" },
       { repo: "table-content-loader", site: "https://abap2ui5-addons.github.io/table-content-loader/" },
       { repo: "fork-abapToC" },
-      { repo: "open-source-libs", site: "https://abap2ui5-addons.github.io/open-source-libs/" },
     ],
   },
   {
