@@ -2,21 +2,26 @@
 /* The overview: every addon, in groups, one tile each. A tile opens the
  * addon's page on this site, or its own site where it has one. The tiles
  * fill the width in as many columns as fit; the groups follow each other
- * with their headings, no menu. There is no search of its own here: the
- * search box on https://abap2ui5.github.io/ finds every addon and tool, from
- * the search.json this site publishes. */
+ * with their headings, no menu. The search box under the greeting narrows
+ * the tiles of this page (public/filter.js); the family's search on
+ * https://abap2ui5.github.io/ finds every addon from the search.json this
+ * site publishes. */
 import Page from "../layouts/Page.astro";
 import Tile from "../components/Tile.astro";
+import Search from "../components/Search.astro";
 import { groups, orgOf } from "../data/catalog";
 import { addon } from "../data/addons";
 const base = import.meta.env.BASE_URL;
 ---
-<Page title="abap2UI5 Addons & Tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
+<Page search title="abap2UI5 Addons & Tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
-  <div class="welcome-row">
-    <h1 class="welcome">Addons &amp; Tools</h1>
-    <img class="addons-logo" src={`${base}addons-logo.svg`} alt="abap2UI5 addons" width="104" height="104">
+  <div class="hello">
+    <div class="hello-text">
+      <h1 class="welcome">Addons &amp; Tools</h1>
+      <Search />
+    </div>
+    <img class="hello-logo" src={`${base}addons-logo.svg`} alt="abap2UI5 addons" width="104" height="104">
   </div>
 
   {groups.map((g) => (

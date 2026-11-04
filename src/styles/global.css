@@ -78,16 +78,99 @@ img { max-width: 100%; height: auto; }
 }
 .welcome img { width: 40px; height: 40px; flex: none; }
 @media (max-width: 620px) { .welcome { margin: 24px 0 28px; } }
-/* the addons logo on the right of the heading, the size and place the
-   abap2UI5 logo has on the home page (.hello there) */
-.welcome-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin: 28px 0 40px; }
-.welcome-row .welcome { margin: 6px 0 0; }
-.welcome-row .addons-logo { width: 104px; height: 104px; flex: none; align-self: flex-start; }
-@media (max-width: 620px) {
-  .welcome-row { align-items: center; gap: 16px; margin: 24px 0 28px; }
-  .welcome-row .welcome { margin: 0; }
-  .welcome-row .addons-logo { width: 64px; height: 64px; align-self: center; }
+/* the greeting, the search under it and the logo on the right - the block
+ * of the home page (abap2UI5/abap2UI5.github.io), copied as it is there */
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.hello { display: flex; align-items: center; gap: 24px; margin: 28px 0 40px; }
+.hello-text { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.welcome {
+  margin: 0; color: var(--ink);
+  font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15;
 }
+.hello-logo { width: 104px; height: 104px; flex: none; align-self: flex-start; }
+/* on a phone the logo stays beside the greeting and the search takes the
+ * whole width under both */
+@media (max-width: 620px) {
+  .hello { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; margin: 24px 0 28px; }
+  .hello-text { display: contents; }
+  .welcome { grid-area: 1 / 1; }
+  .hello-logo { grid-area: 1 / 2; width: 64px; height: 64px; align-self: center; }
+  .search { grid-area: 2 / 1 / 3 / 3; }
+  .search-key { display: none; }
+}
+
+/* the box: a quiet pill under the greeting - a soft fill, no border, muted
+ * type; it only shows its edge when the reader is in it */
+.search { position: relative; max-width: 190px; }
+.search-field {
+  display: flex; align-items: center; gap: 7px; height: 32px; padding: 0 8px 0 11px;
+  border: 1px solid var(--line); border-radius: 16px; background: var(--card); cursor: text;
+  transition: border-color .15s;
+}
+/* White, as the tiles are, so its hairline is what sets it off the page. */
+.search-field:hover { border-color: color-mix(in srgb, var(--line) 50%, var(--muted)); }
+.search-field:focus-within { border-color: var(--brand); }
+.search-icon { width: 14px; height: 14px; flex: none; color: var(--muted); opacity: .7; }
+.search-field input {
+  flex: 1 1 auto; min-width: 0; height: 100%; padding: 0; border: 0; outline: none; background: none;
+  color: var(--ink); font: inherit; font-size: 13.5px;
+}
+.search-field input::placeholder { color: var(--muted); opacity: .8; }
+.search-field input::-webkit-search-cancel-button { display: none; }
+/* the shortcut in a small key cap, as in the docs' bar */
+.search-key {
+  flex: none; padding: 1px 5px; border: 1px solid var(--line); border-radius: 5px;
+  font: 500 10.5px/1.5 var(--font); color: var(--muted); white-space: nowrap;
+}
+.search-field:focus-within .search-key { visibility: hidden; }
+@media (hover: none) { .search-key { display: none; } }
+
+/* nothing left on the page: the way to the family's search */
+.search-none { margin: -24px 0 32px; color: var(--muted); }
+
+/* the results: a list under the box, grouped the way the index groups them */
+.search-results {
+  position: absolute; z-index: 10; top: calc(100% + 6px); left: 0; width: min(640px, calc(100vw - 32px));
+  max-height: min(70vh, 520px); overflow-y: auto; padding: 6px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow);
+}
+.search-group {
+  display: flex; justify-content: space-between; gap: 12px; padding: 10px 10px 4px;
+  font-size: 11px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+}
+.search-count { font-weight: 500; letter-spacing: 0; text-transform: none; }
+/* a hit: the link and, on the right, its actions (source, README, issues) */
+.search-row { display: flex; align-items: center; gap: 8px; border-radius: 8px; }
+.search-row.is-active { background: var(--brand-soft); }
+.search-hit { flex: 1 1 auto; min-width: 0; display: grid; gap: 1px; padding: 7px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
+.search-hit:hover { color: var(--text); }
+.search-title { color: var(--ink); font-size: 14.5px; font-weight: 550; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-hit.is-out .search-title::after { content: " ↗"; color: var(--muted); font-weight: 400; }
+.search-row.is-best .search-title { font-size: 15px; }
+.search-sub { color: var(--muted); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-hit mark { background: none; color: var(--brand); }
+.search-actions { flex: none; display: flex; gap: 4px; padding-right: 8px; }
+.search-action {
+  padding: 1px 7px; border: 1px solid var(--line); border-radius: 5px; background: var(--card);
+  font-size: 11.5px; line-height: 1.6; color: var(--muted); text-decoration: none; white-space: nowrap;
+}
+.search-action:hover, .search-action.is-active { border-color: var(--brand); color: var(--brand); }
+/* the way out: the query on GitHub, and on the home page the whole list */
+.search-out {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 6px; padding: 10px 10px 6px;
+  border-top: 1px solid var(--line); font-size: 13px; color: var(--muted);
+}
+.search-out a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.search-out a:hover { color: var(--brand); }
+.search-out .search-out-link::after { content: " ↗"; color: var(--muted); font-weight: 400; }
+.search-out .search-all { margin-left: auto; color: var(--brand); }
+/* in the list under the box it stays in view at the bottom, however far
+ * the hits scroll - it is the answer when they are not */
+.search[data-mode="box"] .search-out { position: sticky; bottom: -6px; margin-bottom: -6px; padding-bottom: 10px; background: var(--card); }
+@media (max-width: 620px) { .search-actions { display: none; } }
+.search-note { margin: 0; padding: 10px; font-size: 14px; color: var(--muted); }
+
 
 /* ---- the groups: a label, three tiles to a row at most ------------------- */
 /* the page is as wide as the Insights site (--width); in it the tiles fall

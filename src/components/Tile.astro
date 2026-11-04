@@ -9,8 +9,10 @@ import type { Addon } from "../data/addons";
 import Badges from "./Badges.astro";
 interface Props { addon: Addon; href: string; org: string; external?: boolean; label?: string }
 const { addon, href, org, external = false, label } = Astro.props;
+// what the overview's search box looks in (public/filter.js)
+const search = [addon.title, addon.tagline, addon.repo, addon.summary, ...(addon.features ?? [])].join(" ").toLowerCase();
 ---
-<li>
+<li data-search={search}>
   <a class={external ? "tile" : "tile inside"} href={href} rel={external ? "external" : undefined}>
     <strong>{addon.title}</strong>
     <span class="text">{addon.tagline}</span>
