@@ -3,26 +3,30 @@
  * and the addon pages share it, so they look alike.
  *
  * THE POLICY. GitHub Pages sets no headers of ours, so the Content-Security-
- * Policy is a <meta>. The page runs no script at all - script-src is 'self',
- * no inline script, no handler attribute - and everything it loads is this
- * origin too. test/site.test.mjs holds every page to it.
+ * Policy is a <meta>. The one script is the search box on the overview
+ * (public/search.js, the home page's), a file of this origin - script-src is
+ * 'self', no inline script, no handler attribute; it reads the family's index
+ * from https://abap2ui5.github.io (connect-src), everything else is this
+ * origin. test/site.test.mjs holds every page to it.
  *
  * THE TOP LINE. The one thing this site and the home page share: the
  * wordmark, the two as tabs with the current one marked - here Addons & Tools,
  * which is also the way back from an addon page (CONVENTION.md in
  * abap2UI5/abap2UI5.github.io). The same
- * line as on abap2UI5.github.io. No script anywhere. */
+ * line as on abap2UI5.github.io. */
 import "../styles/global.css";
 
 /* `trail`: on an addon page, the repository's name after the Addons & Tools
  * tab, so the top line says where the page sits and is the way back. */
-interface Props { title: string; description: string; image?: string; trail?: string }
-const { title, description, image, trail } = Astro.props;
+interface Props { title: string; description: string; image?: string; trail?: string; search?: boolean }
+const { title, description, image, trail, search } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const CSP = [
   "default-src 'self'",
   "script-src 'self'",
+  // the search box reads the family's index from the home page's origin
+  "connect-src 'self' https://abap2ui5.github.io",
   "style-src 'self'",
   "img-src 'self'",
   "font-src 'self'",
@@ -37,6 +41,7 @@ const CSP = [
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content={CSP}>
+{search && <script type="module" src={`${base}search.js`} is:inline></script>}
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>

@@ -93,3 +93,11 @@ GitHub API into `src/data/objects.json` before every build (pages workflow);
 the committed file is the fallback. The test fails when two repositories ship
 the same object (type and name). The page is linked from the abap2UI5
 documentation (Resources > Add-ons), not from the overview.
+
+**The search box.** The overview carries the home page's search box
+(`src/components/Search.astro`, `public/search.js`, `public/search-engine.js`,
+the CSS block of `.hello`/`.search`) - copied from abap2UI5/abap2UI5.github.io,
+where it is maintained; take changes from there. It reads the family's index
+from https://abap2ui5.github.io/docs/search-index.json (served with CORS `*`;
+`connect-src` names that origin), and "All results" leads to
+https://abap2ui5.github.io/search/. It is the one script of this site.

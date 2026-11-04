@@ -1,0 +1,20 @@
+---
+/* The search box: the docs, the samples, the repositories, the tools, the
+ * sister sites and the API, from the one index the docs publish
+ * (/docs/search-index.json). public/search.js shows it and drives it: without
+ * a script there is nothing it could do, so the markup ships it hidden.
+ *
+ * `page`: the box of /search/ - the results stay on the page under it instead
+ * of opening as a list under the field, and the query is the page's ?q=. */
+interface Props { page?: boolean }
+const { page = false } = Astro.props;
+---
+<div class="search" id="search" role="search" data-mode={page ? "page" : "box"} hidden>
+  <label class="search-field">
+    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span class="sr-only">Search the documentation, the samples, the repositories and the API</span>
+    <input id="search-input" type="search" placeholder={page ? "Search docs, samples, repos, API" : "Search"} autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">Ctrl K</kbd>
+  </label>
+  <div class="search-results" id="search-results" role="listbox" aria-label="Results" hidden></div>
+</div>
