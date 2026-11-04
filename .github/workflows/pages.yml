@@ -2,7 +2,8 @@
 # https://abap2ui5-addons.github.io/.
 #
 # On a pull request it builds and tests only. On main, and once a day, it
-# also deploys. Before the build it fetches the stars of every repository.
+# also deploys. Before the build it fetches the stars of every repository
+# and the ABAP objects of every addon (the namespaces page).
 #
 # Needs Settings → Pages → Source: "GitHub Actions" once.
 name: pages
@@ -35,6 +36,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      # the objects of every addon for the namespaces page; keeps the
+      # committed objects.json when the API cannot be reached
+      - run: node scripts/objects.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - run: npm run check
