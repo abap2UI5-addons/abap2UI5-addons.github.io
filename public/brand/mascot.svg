@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="abap2UI5 mascot"><title>abap2UI5 mascot</title>
+<!-- inside of the mouth -->
+<path fill="#7a1f28" d="M104 52 L 172 40 L 170 64 L 116 70 Z"/>
+<g fill="#d03c4a">
+<!-- body, tail and leg -->
+<path d="M92 40 C 84 56, 84 78, 86 100 C 88 122, 80 140, 62 154 C 48 165, 32 171, 14 175 C 34 180, 56 178, 76 170 C 88 165, 98 160, 108 160 C 116 161, 121 166, 122 172 L 116 178 C 112 182, 115 187, 121 187 L 160 187 C 167 187, 168 180, 162 176 L 148 167 C 154 152, 152 134, 142 120 C 134 110, 126 104, 124 94 C 122 84, 124 74, 128 66 Z"/>
+<!-- upper jaw and skull -->
+<path d="M92 40 C 96 24, 112 14, 132 14 L 166 18 C 176 19, 180 26, 176 32 L 172 42 L 128 50 C 116 52, 104 54, 98 58 Z"/>
+<!-- lower jaw, opened -->
+<path d="M110 62 L 166 58 C 172 58, 174 64, 170 68 C 160 76, 142 80, 126 80 C 118 80, 112 74, 110 62 Z"/>
+<!-- neck joining both jaws -->
+<path d="M92 40 L 98 58 L 110 62 L 126 80 L 128 66 Z"/>
+</g>
+<!-- teeth -->
+<g fill="#fff">
+<path d="M136 49 l4 7 l4 -8 Z M147 47 l4 7 l4 -8 Z M158 45 l4 7 l3 -8 Z"/>
+<path d="M140 61 l3 -7 l4 7 Z M151 60 l3 -7 l4 7 Z M162 59 l2 -6 l4 6 Z"/>
+</g>
+<!-- eye with brow -->
+<circle cx="130" cy="28" r="4.5" fill="#fff"/>
+<path d="M122 20 L 140 22" stroke="#b02e3b" stroke-width="4" stroke-linecap="round"/>
+<!-- arm with two claws -->
+<path d="M124 96 C 134 96, 142 100, 146 106 M146 106 l8 -2 M146 106 l6 5" stroke="#d03c4a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<!-- body lines -->
+<path d="M98 66 C 102 88, 102 110, 94 130 M106 136 C 120 138, 132 148, 136 162 M64 162 C 54 168, 40 172, 28 174" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".9"/>
+<!-- back ridge -->
+<path d="M92 44 l-6 4 l5 3 l-6 5 l5 3 l-6 5 l5 3 l-5 5" stroke="#b02e3b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+</svg>
