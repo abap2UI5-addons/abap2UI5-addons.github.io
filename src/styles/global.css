@@ -78,10 +78,16 @@ img { max-width: 100%; height: auto; }
 }
 .welcome img { width: 40px; height: 40px; flex: none; }
 @media (max-width: 620px) { .welcome { margin: 24px 0 28px; } }
-/* the addons logo on the right of the heading, as on the addon sites' home */
-.welcome-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.welcome-row .addons-logo { width: 160px; height: 160px; flex: none; margin: 8px 0 24px; }
-@media (max-width: 620px) { .welcome-row .addons-logo { width: 72px; height: 72px; margin: 16px 0 20px; } }
+/* the addons logo on the right of the heading, the size and place the
+   abap2UI5 logo has on the home page (.hello there) */
+.welcome-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin: 28px 0 40px; }
+.welcome-row .welcome { margin: 6px 0 0; }
+.welcome-row .addons-logo { width: 104px; height: 104px; flex: none; align-self: flex-start; }
+@media (max-width: 620px) {
+  .welcome-row { align-items: center; gap: 16px; margin: 24px 0 28px; }
+  .welcome-row .welcome { margin: 0; }
+  .welcome-row .addons-logo { width: 64px; height: 64px; align-self: center; }
+}
 
 /* ---- the groups: a label, three tiles to a row at most ------------------- */
 /* the page is as wide as the Insights site (--width); in it the tiles fall

@@ -117,5 +117,5 @@ test("the namespaces page lists every repository and no object is in two of them
     assert.ok(!seen.has(k) || seen.get(k) === r.repo, `${k} is in ${seen.get(k)} and ${r.repo}`);
     seen.set(k, r.repo);
   }
-  assert.match(home, /href="\/namespaces\/"/, "the overview links the page");
+  // linked from the abap2UI5 documentation (resources/addons), not from the overview
 });
