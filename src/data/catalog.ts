@@ -29,7 +29,7 @@ export const groups: Group[] = [
       { repo: "table-maintenance", site: "https://abap2ui5-addons.github.io/table-maintenance/" },
       { repo: "sql-console", site: "https://abap2ui5-addons.github.io/sql-console/" },
       { repo: "table-content-loader", site: "https://abap2ui5-addons.github.io/table-content-loader/" },
-      { repo: "fork-abapToC" },
+      { repo: "fork-abapToC", site: "https://abap2ui5-addons.github.io/fork-abapToC/" },
     ],
   },
   {
