@@ -91,4 +91,5 @@ and of the abap2UI5 core - name segments, `Z2UI5_T_NN` numbers, ICF nodes,
 BSPs - and shows collisions. `scripts/objects.mjs` collects them from the
 GitHub API into `src/data/objects.json` before every build (pages workflow);
 the committed file is the fallback. The test fails when two repositories ship
-the same object (type and name).
+the same object (type and name). The page is linked from the abap2UI5
+documentation (Resources > Add-ons), not from the overview.
