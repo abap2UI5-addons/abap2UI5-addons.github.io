@@ -1,0 +1,2900 @@
+{
+ "generated": "2026-11-04T13:28:49.002Z",
+ "repos": [
+  {
+   "org": "abap2UI5",
+   "repo": "abap2UI5",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AJSON",
+     "path": "src/00/01/z2ui5_cl_ajson.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AJSON_FILTER_LIB",
+     "path": "src/00/01/z2ui5_cl_ajson_filter_lib.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AJSON_MAPPING",
+     "path": "src/00/01/z2ui5_cl_ajson_mapping.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AJSON_REFINITLIB",
+     "path": "src/00/01/z2ui5_cl_ajson_refinitlib.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AJSON_UTILITIES",
+     "path": "src/00/01/z2ui5_cl_ajson_utilities.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_AJSON_ERROR",
+     "path": "src/00/01/z2ui5_cx_ajson_error.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON",
+     "path": "src/00/01/z2ui5_if_ajson.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON_FILTER",
+     "path": "src/00/01/z2ui5_if_ajson_filter.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON_ITERATOR",
+     "path": "src/00/01/z2ui5_if_ajson_iterator.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON_MAPPING",
+     "path": "src/00/01/z2ui5_if_ajson_mapping.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON_REFINIT",
+     "path": "src/00/01/z2ui5_if_ajson_refinit.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AJSON_TYPES",
+     "path": "src/00/01/z2ui5_if_ajson_types.intf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_AUNIT",
+     "path": "src/00/02/z2ui5_cl_srt_aunit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_CLASSDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_classdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_COMPLEXDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_complexdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_DATADESCR",
+     "path": "src/00/02/z2ui5_cl_srt_datadescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_ELEMDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_elemdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_INTFDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_intfdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_OBJECTDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_objectdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_REFDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_refdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_STRUCTDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_structdescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_TABLEDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_tabledescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SRT_TYPEDESCR",
+     "path": "src/00/02/z2ui5_cl_srt_typedescr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_SRT",
+     "path": "src/00/02/z2ui5_cx_srt.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_UTIL_CONTEXT",
+     "path": "src/00/03/z2ui5_cl_ui5_util_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_UTIL_HTTP",
+     "path": "src/00/03/z2ui5_cl_ui5_util_http.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_UTIL_JSON_FL",
+     "path": "src/00/03/z2ui5_cl_ui5_util_json_fl.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_UI5_UTIL_ERROR",
+     "path": "src/00/03/z2ui5_cx_ui5_util_error.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_DRAFT",
+     "path": "src/01/01/z2ui5_cl_ui5_srv_draft.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_DRAFT_STORE",
+     "path": "src/01/01/z2ui5_if_ui5_draft_store.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_01",
+     "path": "src/01/01/z2ui5_t_01.tabl.xml",
+     "text": "abap2UI5 - drafts"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_ACTION",
+     "path": "src/01/02/z2ui5_cl_ui5_action.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_APP_CONT",
+     "path": "src/01/02/z2ui5_cl_ui5_app_cont.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_CLIENT",
+     "path": "src/01/02/z2ui5_cl_ui5_client.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_FRONTEND",
+     "path": "src/01/02/z2ui5_cl_ui5_frontend.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_HANDLER",
+     "path": "src/01/02/z2ui5_cl_ui5_handler.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SERIALIZER",
+     "path": "src/01/02/z2ui5_cl_ui5_serializer.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_BIND",
+     "path": "src/01/02/z2ui5_cl_ui5_srv_bind.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_EVENT",
+     "path": "src/01/02/z2ui5_cl_ui5_srv_event.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_MODEL",
+     "path": "src/01/02/z2ui5_cl_ui5_srv_model.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_MONITOR",
+     "path": "src/01/02/z2ui5_cl_ui5_srv_monitor.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_SRV_WINDOW",
+     "path": "src/01/02/z2ui5_cl_ui5_srv_window.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_SERIALIZER",
+     "path": "src/01/02/z2ui5_if_ui5_serializer.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_TYPES",
+     "path": "src/01/02/z2ui5_if_ui5_types.intf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_ABAPSRC_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_abapsrc_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_APP_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_app_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_APP_XML",
+     "path": "src/01/03/z2ui5_cl_ui5f_app_xml.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_APPSTATE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_appstate_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_BINDCALL_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_bindcall_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_BINDINGS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_bindings_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_BROWSER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_browser_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CAMPIC_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_campic_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CAMSEL_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_camsel_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CLIPBRD_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_clipbrd_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_COMP_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_comp_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CONSOLE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_console_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CONTEXT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_context_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_CTRLCALL_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_ctrlcall_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DEVTOOLS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_devtools_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DIFF_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_diff_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DIRTY_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_dirty_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DTFORMAT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_dtformat_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DTOOLS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_dtools_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_DTOOLS_XML",
+     "path": "src/01/03/z2ui5_cl_ui5f_dtools_xml.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_ENV_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_env_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_ERRVIEW_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_errview_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_EXCEL_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_excel_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_FORMAT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_format_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_FRONTACT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_frontact_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_GEOLOC_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_geoloc_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_HELP_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_help_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_HTMLFRM_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_htmlfrm_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_INDEX_HTML",
+     "path": "src/01/03/z2ui5_cl_ui5f_index_html.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_INPUTEXT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_inputext_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_INSPECT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_inspect_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_JOURNEY_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_journey_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_LAUNCHPD_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_launchpd_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_LIB_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_lib_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_LIVEEDIT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_liveedit_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_LOG_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_log_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_MANIFEST",
+     "path": "src/01/03/z2ui5_cl_ui5f_manifest.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_MODELS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_models_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_MSGMGR_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_msgmgr_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_MULTIINP_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_multiinp_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_NATSCAN_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_natscan_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_OFFLINE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_offline_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_PERSIST_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_persist_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_PICKER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_picker_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_PRELOAD",
+     "path": "src/01/03/z2ui5_cl_ui5f_preload.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_RECORDER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_recorder_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_REPORT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_report_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_ROOTSLOT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_rootslot_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_ROUTER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_router_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SCRFOCUS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_scrfocus_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SERVER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_server_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SESSION_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_session_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SHORTCUT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_shortcut_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SLOTS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_slots_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SLOTXML_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_slotxml_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_SMARTINP_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_smartinp_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_STORAGE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_storage_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_STYLE_CSS",
+     "path": "src/01/03/z2ui5_cl_ui5f_style_css.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_TABS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_tabs_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_TREE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_tree_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_UITABLE_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_uitable_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_UPLDSET_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_upldset_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_UPLOADER_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_uploader_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_VARIANTS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_variants_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_VIEW1_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_view1_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_VIEWOPS_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_viewops_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_VIEWSLOT_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_viewslot_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_WEBSOCK_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_websock_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5F_WINDOW_JS",
+     "path": "src/01/03/z2ui5_cl_ui5f_window_js.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_APP_HI_WORLD",
+     "path": "src/01/04/z2ui5_cl_ui5_app_hi_world.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_APP_START",
+     "path": "src/01/04/z2ui5_cl_ui5_app_start.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_USER_EXIT",
+     "path": "src/01/04/z2ui5_cl_ui5_user_exit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM_CLAUDE",
+     "path": "src/01/05/z2ui5_cl_ui5_llm_claude.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM_GUIDE",
+     "path": "src/01/05/z2ui5_cl_ui5_llm_guide.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM_HTTP",
+     "path": "src/01/05/z2ui5_cl_ui5_llm_http.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM_LOCAL",
+     "path": "src/01/05/z2ui5_cl_ui5_llm_local.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM_OPENAI",
+     "path": "src/01/05/z2ui5_cl_ui5_llm_openai.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_LLM_HTTP",
+     "path": "src/01/05/z2ui5_if_ui5_llm_http.intf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_HTTP_HANDLER",
+     "path": "src/02/z2ui5_cl_ui5_http_handler.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_LLM",
+     "path": "src/02/z2ui5_cl_ui5_llm.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_UI5_VIEW_BUILDER",
+     "path": "src/02/z2ui5_cl_ui5_view_builder.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_UI5_LLM",
+     "path": "src/02/z2ui5_cx_ui5_llm.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_APP",
+     "path": "src/02/z2ui5_if_app.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CLIENT",
+     "path": "src/02/z2ui5_if_client.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_EXIT",
+     "path": "src/02/z2ui5_if_ui5_exit.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_LLM",
+     "path": "src/02/z2ui5_if_ui5_llm.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_UI5_MONITOR",
+     "path": "src/02/z2ui5_if_ui5_monitor.intf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_DATA",
+     "path": "src/99/02/z2ui5_cl_pop_data.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_DEMO_OUTPUT",
+     "path": "src/99/02/z2ui5_cl_pop_demo_output.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_ERROR",
+     "path": "src/99/02/z2ui5_cl_pop_error.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_FILE_DL",
+     "path": "src/99/02/z2ui5_cl_pop_file_dl.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_FILE_UL",
+     "path": "src/99/02/z2ui5_cl_pop_file_ul.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_GET_RANGE",
+     "path": "src/99/02/z2ui5_cl_pop_get_range.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_GET_RANGE_M",
+     "path": "src/99/02/z2ui5_cl_pop_get_range_m.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_HTML",
+     "path": "src/99/02/z2ui5_cl_pop_html.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_IMAGE_EDITOR",
+     "path": "src/99/02/z2ui5_cl_pop_image_editor.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_INPUT_VAL",
+     "path": "src/99/02/z2ui5_cl_pop_input_val.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_MESSAGES",
+     "path": "src/99/02/z2ui5_cl_pop_messages.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_PDF",
+     "path": "src/99/02/z2ui5_cl_pop_pdf.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_TABLE",
+     "path": "src/99/02/z2ui5_cl_pop_table.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_TEXTEDIT",
+     "path": "src/99/02/z2ui5_cl_pop_textedit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_TO_CONFIRM",
+     "path": "src/99/02/z2ui5_cl_pop_to_confirm.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_TO_INFORM",
+     "path": "src/99/02/z2ui5_cl_pop_to_inform.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POP_TO_SELECT",
+     "path": "src/99/02/z2ui5_cl_pop_to_select.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_HTTP_HANDLER",
+     "path": "src/99/z2ui5_cl_http_handler.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_XML_VIEW",
+     "path": "src/99/z2ui5_cl_xml_view.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_XML_VIEW_CC",
+     "path": "src/99/z2ui5_cl_xml_view_cc.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_EXIT",
+     "path": "src/99/z2ui5_if_exit.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_TYPES",
+     "path": "src/99/z2ui5_if_types.intf.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "se16n",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SE16_APP_01",
+     "path": "src/z2ui5_cl_se16_app_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SE16_APP_02",
+     "path": "src/z2ui5_cl_se16_app_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SE16_CONTEXT",
+     "path": "src/z2ui5_cl_se16_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_SE16_ERROR",
+     "path": "src/z2ui5_cx_se16_error.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "table-maintenance",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TM_001",
+     "path": "src/z2ui5_cl_tm_001.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TM_CONTEXT",
+     "path": "src/z2ui5_cl_tm_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TM_POP",
+     "path": "src/z2ui5_cl_tm_pop.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_TM_ERROR",
+     "path": "src/z2ui5_cx_tm_error.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_TM_001",
+     "path": "src/z2ui5_if_tm_001.intf.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "sql-console",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_APP_01",
+     "path": "src/abap/z2ui5_cl_sql_app_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_CONTEXT",
+     "path": "src/abap/z2ui5_cl_sql_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_DB",
+     "path": "src/abap/z2ui5_cl_sql_db.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_HISTORY_API",
+     "path": "src/abap/z2ui5_cl_sql_history_api.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_QUERY",
+     "path": "src/abap/z2ui5_cl_sql_query.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_SQL_ERROR",
+     "path": "src/abap/z2ui5_cx_sql_error.clas.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_33",
+     "path": "src/abap/z2ui5_t_33.tabl.xml",
+     "text": "sql console - history and draft"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_ASSOC_PROCESSOR",
+     "path": "src/native/z2ui5_cl_sql_assoc_processor.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_NATIVE_CONSOLE",
+     "path": "src/native/z2ui5_cl_sql_native_console.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SQL_NATIVE_CONSOLE_ST",
+     "path": "src/native/z2ui5_cl_sql_native_console_st.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_SQL_ASSOC_PROCESSOR",
+     "path": "src/native/z2ui5_if_sql_assoc_processor.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_32",
+     "path": "src/native/z2ui5_t_32.tabl.xml",
+     "text": "Native SQL Console History"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "table-content-loader",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_XLSX_API",
+     "path": "src/01/z2ui5_cl_tcl_xlsx_api.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_00",
+     "path": "src/z2ui5_cl_tcl_app_00.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_01",
+     "path": "src/z2ui5_cl_tcl_app_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_02",
+     "path": "src/z2ui5_cl_tcl_app_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_03",
+     "path": "src/z2ui5_cl_tcl_app_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_04",
+     "path": "src/z2ui5_cl_tcl_app_04.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_05",
+     "path": "src/z2ui5_cl_tcl_app_05.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_APP_06",
+     "path": "src/z2ui5_cl_tcl_app_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_TCL_CONTEXT",
+     "path": "src/z2ui5_cl_tcl_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_TCL_ERROR",
+     "path": "src/z2ui5_cx_tcl_error.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "abap-cloud-gui",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_CHANGED",
+     "path": "src/01/z2ui5_cgui_var_changed.dtel.xml"
+    },
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_DATA",
+     "path": "src/01/z2ui5_cgui_var_data.dtel.xml"
+    },
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_NAME",
+     "path": "src/01/z2ui5_cgui_var_name.dtel.xml"
+    },
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_OWNER",
+     "path": "src/01/z2ui5_cgui_var_owner.dtel.xml"
+    },
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_PROTECTED",
+     "path": "src/01/z2ui5_cgui_var_protected.dtel.xml"
+    },
+    {
+     "type": "DTEL",
+     "name": "Z2UI5_CGUI_VAR_SHARED",
+     "path": "src/01/z2ui5_cgui_var_shared.dtel.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_ALV",
+     "path": "src/01/z2ui5_cl_cgui_alv.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_ALV_GRID",
+     "path": "src/01/z2ui5_cl_cgui_alv_grid.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_ALV_TOOLBAR",
+     "path": "src/01/z2ui5_cl_cgui_alv_toolbar.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_BROWSER",
+     "path": "src/01/z2ui5_cl_cgui_browser.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_CHART",
+     "path": "src/01/z2ui5_cl_cgui_chart.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_COLUMN_TREE",
+     "path": "src/01/z2ui5_cl_cgui_column_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_COMMAND",
+     "path": "src/01/z2ui5_cl_cgui_command.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_CONTAINER",
+     "path": "src/01/z2ui5_cl_cgui_container.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_CONTEXT",
+     "path": "src/01/z2ui5_cl_cgui_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_DEMO_OUTPUT",
+     "path": "src/01/z2ui5_cl_cgui_demo_output.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_DIALOG",
+     "path": "src/01/z2ui5_cl_cgui_dialog.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_EASY_SPLIT",
+     "path": "src/01/z2ui5_cl_cgui_easy_split.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_FILE",
+     "path": "src/01/z2ui5_cl_cgui_file.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_FRONTEND",
+     "path": "src/01/z2ui5_cl_cgui_frontend.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_GUI",
+     "path": "src/01/z2ui5_cl_cgui_gui.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_HTML_VIEWER",
+     "path": "src/01/z2ui5_cl_cgui_html_viewer.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_LAYOUT",
+     "path": "src/01/z2ui5_cl_cgui_layout.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_LAYOUT_DB",
+     "path": "src/01/z2ui5_cl_cgui_layout_db.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_LIST",
+     "path": "src/01/z2ui5_cl_cgui_list.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_LIST_TREE",
+     "path": "src/01/z2ui5_cl_cgui_list_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_LOG",
+     "path": "src/01/z2ui5_cl_cgui_log.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_MEMORY",
+     "path": "src/01/z2ui5_cl_cgui_memory.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_MSG",
+     "path": "src/01/z2ui5_cl_cgui_msg.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_PDF",
+     "path": "src/01/z2ui5_cl_cgui_pdf.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_PICTURE",
+     "path": "src/01/z2ui5_cl_cgui_picture.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_POPUP",
+     "path": "src/01/z2ui5_cl_cgui_popup.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_RANGE",
+     "path": "src/01/z2ui5_cl_cgui_range.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_REPORT",
+     "path": "src/01/z2ui5_cl_cgui_report.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_COLS",
+     "path": "src/01/z2ui5_cl_cgui_salv_cols.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_COLUMN",
+     "path": "src/01/z2ui5_cl_cgui_salv_column.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_CONFIG",
+     "path": "src/01/z2ui5_cl_cgui_salv_config.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_NODE",
+     "path": "src/01/z2ui5_cl_cgui_salv_node.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_NODES",
+     "path": "src/01/z2ui5_cl_cgui_salv_nodes.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_TABLE",
+     "path": "src/01/z2ui5_cl_cgui_salv_table.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SALV_TREE",
+     "path": "src/01/z2ui5_cl_cgui_salv_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SELECT",
+     "path": "src/01/z2ui5_cl_cgui_select.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SELSCREEN",
+     "path": "src/01/z2ui5_cl_cgui_selscreen.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SIMPLE_TREE",
+     "path": "src/01/z2ui5_cl_cgui_simple_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_TEXTEDIT",
+     "path": "src/01/z2ui5_cl_cgui_textedit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_TOOLBAR",
+     "path": "src/01/z2ui5_cl_cgui_toolbar.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_TRANSPORT",
+     "path": "src/01/z2ui5_cl_cgui_transport.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_TREE",
+     "path": "src/01/z2ui5_cl_cgui_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_VARIANT",
+     "path": "src/01/z2ui5_cl_cgui_variant.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_VARIANT_DB",
+     "path": "src/01/z2ui5_cl_cgui_variant_db.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_VIEW",
+     "path": "src/01/z2ui5_cl_cgui_view.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_CGUI_ERROR",
+     "path": "src/01/z2ui5_cx_cgui_error.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_CGUI_SALV",
+     "path": "src/01/z2ui5_cx_cgui_salv.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_CGUI_STOP",
+     "path": "src/01/z2ui5_cx_cgui_stop.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_CATALOG",
+     "path": "src/01/z2ui5_if_cgui_catalog.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_DEMO_OUTPUT",
+     "path": "src/01/z2ui5_if_cgui_demo_output.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_DIALOGS",
+     "path": "src/01/z2ui5_if_cgui_dialogs.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_FILES",
+     "path": "src/01/z2ui5_if_cgui_files.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_GUI",
+     "path": "src/01/z2ui5_if_cgui_gui.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_JOB",
+     "path": "src/01/z2ui5_if_cgui_job.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_LAYOUTS",
+     "path": "src/01/z2ui5_if_cgui_layouts.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_LOG",
+     "path": "src/01/z2ui5_if_cgui_log.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_SALV_C",
+     "path": "src/01/z2ui5_if_cgui_salv_c.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_TREE_EVENTS",
+     "path": "src/01/z2ui5_if_cgui_tree_events.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_CGUI_VARIANTS",
+     "path": "src/01/z2ui5_if_cgui_variants.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_18",
+     "path": "src/01/z2ui5_t_18.tabl.xml",
+     "text": "cloud gui - ALV layouts on the server"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_19",
+     "path": "src/01/z2ui5_t_19.tabl.xml",
+     "text": "cloud gui - selection variants on the server"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_01",
+     "path": "src/02/z2ui5_cl_cgui_sample_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_02",
+     "path": "src/02/z2ui5_cl_cgui_sample_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_03",
+     "path": "src/02/z2ui5_cl_cgui_sample_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_04",
+     "path": "src/02/z2ui5_cl_cgui_sample_04.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_05",
+     "path": "src/02/z2ui5_cl_cgui_sample_05.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_06",
+     "path": "src/02/z2ui5_cl_cgui_sample_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_07",
+     "path": "src/02/z2ui5_cl_cgui_sample_07.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_08",
+     "path": "src/02/z2ui5_cl_cgui_sample_08.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_09",
+     "path": "src/02/z2ui5_cl_cgui_sample_09.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_10",
+     "path": "src/02/z2ui5_cl_cgui_sample_10.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_SAMPLE_11",
+     "path": "src/02/z2ui5_cl_cgui_sample_11.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_01",
+     "path": "src/03/z2ui5_cl_cgui_r2c_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_03",
+     "path": "src/03/z2ui5_cl_cgui_r2c_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_06",
+     "path": "src/03/z2ui5_cl_cgui_r2c_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_08",
+     "path": "src/03/z2ui5_cl_cgui_r2c_08.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_09",
+     "path": "src/03/z2ui5_cl_cgui_r2c_09.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_11",
+     "path": "src/03/z2ui5_cl_cgui_r2c_11.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_12",
+     "path": "src/03/z2ui5_cl_cgui_r2c_12.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_13",
+     "path": "src/03/z2ui5_cl_cgui_r2c_13.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_22",
+     "path": "src/03/z2ui5_cl_cgui_r2c_22.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_23",
+     "path": "src/03/z2ui5_cl_cgui_r2c_23.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_25",
+     "path": "src/03/z2ui5_cl_cgui_r2c_25.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_26",
+     "path": "src/03/z2ui5_cl_cgui_r2c_26.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_28",
+     "path": "src/03/z2ui5_cl_cgui_r2c_28.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_29",
+     "path": "src/03/z2ui5_cl_cgui_r2c_29.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_30",
+     "path": "src/03/z2ui5_cl_cgui_r2c_30.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_31",
+     "path": "src/03/z2ui5_cl_cgui_r2c_31.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_32",
+     "path": "src/03/z2ui5_cl_cgui_r2c_32.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_33",
+     "path": "src/03/z2ui5_cl_cgui_r2c_33.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_34",
+     "path": "src/03/z2ui5_cl_cgui_r2c_34.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_35",
+     "path": "src/03/z2ui5_cl_cgui_r2c_35.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_36",
+     "path": "src/03/z2ui5_cl_cgui_r2c_36.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_37",
+     "path": "src/03/z2ui5_cl_cgui_r2c_37.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_38",
+     "path": "src/03/z2ui5_cl_cgui_r2c_38.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_39",
+     "path": "src/03/z2ui5_cl_cgui_r2c_39.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_40",
+     "path": "src/03/z2ui5_cl_cgui_r2c_40.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_41",
+     "path": "src/03/z2ui5_cl_cgui_r2c_41.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_42",
+     "path": "src/03/z2ui5_cl_cgui_r2c_42.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_43",
+     "path": "src/03/z2ui5_cl_cgui_r2c_43.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_44",
+     "path": "src/03/z2ui5_cl_cgui_r2c_44.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_45",
+     "path": "src/03/z2ui5_cl_cgui_r2c_45.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_47",
+     "path": "src/03/z2ui5_cl_cgui_r2c_47.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_51",
+     "path": "src/03/z2ui5_cl_cgui_r2c_51.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_52",
+     "path": "src/03/z2ui5_cl_cgui_r2c_52.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CGUI_R2C_53",
+     "path": "src/03/z2ui5_cl_cgui_r2c_53.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "range-filter",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_SAMPLE_01",
+     "path": "src/00/z2ui5_cl_sel_sample_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_SAMPLE_02",
+     "path": "src/00/z2ui5_cl_sel_sample_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_CONTEXT",
+     "path": "src/01/z2ui5_cl_sel_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_MULTISEL",
+     "path": "src/01/z2ui5_cl_sel_multisel.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_MULTISEL_POP",
+     "path": "src/01/z2ui5_cl_sel_multisel_pop.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_VAR_DB",
+     "path": "src/01/z2ui5_cl_sel_var_db.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_VAR_POP_READ",
+     "path": "src/01/z2ui5_cl_sel_var_pop_read.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_SEL_VAR_POP_SAVE",
+     "path": "src/01/z2ui5_cl_sel_var_pop_save.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_SEL_ERROR",
+     "path": "src/01/z2ui5_cx_sel_error.clas.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_13",
+     "path": "src/01/z2ui5_t_13.tabl.xml",
+     "text": "variant headers"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "popups",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_CONTEXT",
+     "path": "src/00/z2ui5_cl_popup_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_POPUP_ERROR",
+     "path": "src/00/z2ui5_cx_popup_error.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_01",
+     "path": "src/02/z2ui5_cl_popup_sample_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_02",
+     "path": "src/02/z2ui5_cl_popup_sample_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_03",
+     "path": "src/02/z2ui5_cl_popup_sample_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_04",
+     "path": "src/02/z2ui5_cl_popup_sample_04.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_05",
+     "path": "src/02/z2ui5_cl_popup_sample_05.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_06",
+     "path": "src/02/z2ui5_cl_popup_sample_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_07",
+     "path": "src/02/z2ui5_cl_popup_sample_07.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_08",
+     "path": "src/02/z2ui5_cl_popup_sample_08.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_09",
+     "path": "src/02/z2ui5_cl_popup_sample_09.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_10",
+     "path": "src/02/z2ui5_cl_popup_sample_10.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_11",
+     "path": "src/02/z2ui5_cl_popup_sample_11.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_12",
+     "path": "src/02/z2ui5_cl_popup_sample_12.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_13",
+     "path": "src/02/z2ui5_cl_popup_sample_13.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_14",
+     "path": "src/02/z2ui5_cl_popup_sample_14.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_15",
+     "path": "src/02/z2ui5_cl_popup_sample_15.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_16",
+     "path": "src/02/z2ui5_cl_popup_sample_16.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_17",
+     "path": "src/02/z2ui5_cl_popup_sample_17.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_18",
+     "path": "src/02/z2ui5_cl_popup_sample_18.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SAMPLE_19",
+     "path": "src/02/z2ui5_cl_popup_sample_19.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SHLP",
+     "path": "src/03/z2ui5_cl_popup_shlp.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_VALUE_HELP",
+     "path": "src/03/z2ui5_cl_popup_value_help.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_DATA",
+     "path": "src/z2ui5_cl_popup_data.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_DEMO_OUT",
+     "path": "src/z2ui5_cl_popup_demo_out.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_ERROR",
+     "path": "src/z2ui5_cl_popup_error.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_FILE_DL",
+     "path": "src/z2ui5_cl_popup_file_dl.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_FILE_UL",
+     "path": "src/z2ui5_cl_popup_file_ul.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_GET_RANGE",
+     "path": "src/z2ui5_cl_popup_get_range.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_GET_RANGES",
+     "path": "src/z2ui5_cl_popup_get_ranges.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_GET_VALUES",
+     "path": "src/z2ui5_cl_popup_get_values.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_HTML",
+     "path": "src/z2ui5_cl_popup_html.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_IMAGE_EDIT",
+     "path": "src/z2ui5_cl_popup_image_edit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_INPUT_VAL",
+     "path": "src/z2ui5_cl_popup_input_val.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_JS_LOADER",
+     "path": "src/z2ui5_cl_popup_js_loader.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_MESSAGES",
+     "path": "src/z2ui5_cl_popup_messages.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_PDF",
+     "path": "src/z2ui5_cl_popup_pdf.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_SHOW_TR",
+     "path": "src/z2ui5_cl_popup_show_tr.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TABLE",
+     "path": "src/z2ui5_cl_popup_table.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TEXTEDIT",
+     "path": "src/z2ui5_cl_popup_textedit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TO_CONFIRM",
+     "path": "src/z2ui5_cl_popup_to_confirm.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TO_DECIDE",
+     "path": "src/z2ui5_cl_popup_to_decide.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TO_INFORM",
+     "path": "src/z2ui5_cl_popup_to_inform.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_POPUP_TO_SELECT",
+     "path": "src/z2ui5_cl_popup_to_select.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "layout-management",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_01",
+     "path": "src/01/z2ui5_cl_layo_sample_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_02",
+     "path": "src/01/z2ui5_cl_layo_sample_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_03",
+     "path": "src/01/z2ui5_cl_layo_sample_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_04",
+     "path": "src/01/z2ui5_cl_layo_sample_04.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_05",
+     "path": "src/01/z2ui5_cl_layo_sample_05.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_SAMPLE_06",
+     "path": "src/01/z2ui5_cl_layo_sample_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_AUTH",
+     "path": "src/03/z2ui5_cl_layo_auth.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_MANAGER",
+     "path": "src/03/z2ui5_cl_layo_manager.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_POP",
+     "path": "src/03/z2ui5_cl_layo_pop.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_POP_W_SEL",
+     "path": "src/03/z2ui5_cl_layo_pop_w_sel.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_XML_BUILDER",
+     "path": "src/03/z2ui5_cl_layo_xml_builder.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LAYO_XML_TREE",
+     "path": "src/03/z2ui5_cl_layo_xml_tree.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_LAYO_AUTH",
+     "path": "src/03/z2ui5_if_layo_auth.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_11",
+     "path": "src/03/z2ui5_t_11.tabl.xml",
+     "text": "Table Layout Header"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_12",
+     "path": "src/03/z2ui5_t_12.tabl.xml",
+     "text": "Table Layouts Settings"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_XML_S_GENERICTAG",
+     "path": "src/03/z2ui5_xml_s_generictag.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_XML_S_ICON",
+     "path": "src/03/z2ui5_xml_s_icon.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_XML_S_PROGRESSIND",
+     "path": "src/03/z2ui5_xml_s_progressind.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_XML_S_RADIALCHART",
+     "path": "src/03/z2ui5_xml_s_radialchart.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_XML_S_STATUSIND",
+     "path": "src/03/z2ui5_xml_s_statusind.tabl.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "rap-ext",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_ACTION_DIALOG",
+     "path": "src/z2ui5_cl_rap_action_dialog.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_ANNO_XCO",
+     "path": "src/z2ui5_cl_rap_anno_xco.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_EML",
+     "path": "src/z2ui5_cl_rap_eml.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_EML_KEY",
+     "path": "src/z2ui5_cl_rap_eml_key.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_EML_PERM",
+     "path": "src/z2ui5_cl_rap_eml_perm.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_EML_READ",
+     "path": "src/z2ui5_cl_rap_eml_read.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_FCL",
+     "path": "src/z2ui5_cl_rap_fcl.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_FCL_CLIENT",
+     "path": "src/z2ui5_cl_rap_fcl_client.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_FLOORPLAN",
+     "path": "src/z2ui5_cl_rap_floorplan.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_LIST_REPORT",
+     "path": "src/z2ui5_cl_rap_list_report.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_OBJECT_PAGE",
+     "path": "src/z2ui5_cl_rap_object_page.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_OVERVIEW_PAGE",
+     "path": "src/z2ui5_cl_rap_overview_page.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_QUERY",
+     "path": "src/z2ui5_cl_rap_query.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_START",
+     "path": "src/z2ui5_cl_rap_start.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_TEST",
+     "path": "src/z2ui5_cl_rap_test.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_TEST_START",
+     "path": "src/z2ui5_cl_rap_test_start.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_TREE",
+     "path": "src/z2ui5_cl_rap_tree.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_UTIL",
+     "path": "src/z2ui5_cl_rap_util.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_VALUE_HELP",
+     "path": "src/z2ui5_cl_rap_value_help.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_VARIANT",
+     "path": "src/z2ui5_cl_rap_variant.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RAP_WORKLIST",
+     "path": "src/z2ui5_cl_rap_worklist.clas.xml"
+    },
+    {
+     "type": "DDLS",
+     "name": "Z2UI5_DD_RAP_TEST_OP",
+     "path": "src/z2ui5_dd_rap_test_op.ddls.xml"
+    },
+    {
+     "type": "DDLS",
+     "name": "Z2UI5_DD_RAP_TEST_POPUP",
+     "path": "src/z2ui5_dd_rap_test_popup.ddls.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_RAP_EXT",
+     "path": "src/z2ui5_if_rap_ext.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_31",
+     "path": "src/z2ui5_t_31.tabl.xml",
+     "text": "abap2UI5 - RAP floorplan views per user"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "custom-controls",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_00",
+     "path": "src/00/z2ui5_cl_cci_sample_00.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_01",
+     "path": "src/00/z2ui5_cl_cci_sample_01.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_02",
+     "path": "src/00/z2ui5_cl_cci_sample_02.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_03",
+     "path": "src/00/z2ui5_cl_cci_sample_03.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_04",
+     "path": "src/00/z2ui5_cl_cci_sample_04.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_05",
+     "path": "src/00/z2ui5_cl_cci_sample_05.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_06",
+     "path": "src/00/z2ui5_cl_cci_sample_06.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_07",
+     "path": "src/00/z2ui5_cl_cci_sample_07.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_08",
+     "path": "src/00/z2ui5_cl_cci_sample_08.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_09",
+     "path": "src/00/z2ui5_cl_cci_sample_09.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_10",
+     "path": "src/00/z2ui5_cl_cci_sample_10.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_11",
+     "path": "src/00/z2ui5_cl_cci_sample_11.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SAMPLE_12",
+     "path": "src/00/z2ui5_cl_cci_sample_12.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_CCI      001108D002800838E37BDE4C3",
+     "path": "src/01/z2ui5_cci      001108d002800838e37bde4c3.sicf.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_CCI      E9D59E6D81BECBC8DFD57AEB7",
+     "path": "src/01/z2ui5_cci      e9d59e6d81becbc8dfd57aeb7.sicf.xml"
+    },
+    {
+     "type": "WAPA",
+     "name": "Z2UI5_CCI",
+     "path": "src/01/z2ui5_cci.wapa.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI",
+     "path": "src/z2ui5_cl_cci.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_ANIMATE_CSS",
+     "path": "src/z2ui5_cl_cci_animate_css.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_BARCODE",
+     "path": "src/z2ui5_cl_cci_barcode.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_BARCODE_SCANNER",
+     "path": "src/z2ui5_cl_cci_barcode_scanner.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_CHARTJS",
+     "path": "src/z2ui5_cl_cci_chartjs.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_CODE_EDITOR",
+     "path": "src/z2ui5_cl_cci_code_editor.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_DRIVERJS",
+     "path": "src/z2ui5_cl_cci_driverjs.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_FONT_AWESOME",
+     "path": "src/z2ui5_cl_cci_font_awesome.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_IMAGEMAPSTER",
+     "path": "src/z2ui5_cl_cci_imagemapster.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_JSON_FILTER",
+     "path": "src/z2ui5_cl_cci_json_filter.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_MARKDOWN",
+     "path": "src/z2ui5_cl_cci_markdown.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_RICH_TEXT_EDITOR",
+     "path": "src/z2ui5_cl_cci_rich_text_editor.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SIGNATURE_PAD",
+     "path": "src/z2ui5_cl_cci_signature_pad.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_SPREADSHEET",
+     "path": "src/z2ui5_cl_cci_spreadsheet.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCI_VALIDATOR",
+     "path": "src/z2ui5_cl_cci_validator.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "custom-controls-customer",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCC_SAMPLE_00",
+     "path": "src/00/z2ui5_cl_ccc_sample_00.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_CCC      4E1B211B6BFB61040291EEB86",
+     "path": "src/01/z2ui5_ccc      4e1b211b6bfb61040291eeb86.sicf.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_CCC      8D302F135405E74F3CCD28274",
+     "path": "src/01/z2ui5_ccc      8d302f135405e74f3ccd28274.sicf.xml"
+    },
+    {
+     "type": "WAPA",
+     "name": "Z2UI5_CCC",
+     "path": "src/01/z2ui5_ccc.wapa.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CCC",
+     "path": "src/z2ui5_cl_ccc.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "rfc-connector",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_RFC_CONNECTOR_HANDLER",
+     "path": "src/01/z2ui5_cl_rfc_connector_handler.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_RFC      8F398733D64F0CFDC20F68254",
+     "path": "src/01/z2ui5_rfc      8f398733d64f0cfdc20f68254.sicf.xml"
+    },
+    {
+     "type": "FUGR",
+     "name": "Z2UI5_FG_RFC_CONNECTOR",
+     "path": "src/02/z2ui5_fg_rfc_connector.fugr.xml"
+    },
+    {
+     "type": "SUSH",
+     "name": "Z2UI5_FM_RFC_CONECTOR         RF",
+     "path": "src/02/z2ui5_fm_rfc_conector         rf.sush.xml"
+    },
+    {
+     "type": "SUSH",
+     "name": "Z2UI5_FM_RFC_CONNECTOR        RF",
+     "path": "src/02/z2ui5_fm_rfc_connector        rf.sush.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_S_RFC_CONFIG",
+     "path": "src/z2ui5_s_rfc_config.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_S_RFC_REQ",
+     "path": "src/z2ui5_s_rfc_req.tabl.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_S_RFC_RES",
+     "path": "src/z2ui5_s_rfc_res.tabl.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "http-connector",
+   "branch": "standard",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_HTTP_CON_HANDLER",
+     "path": "src/01/z2ui5_cl_http_con_handler.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_HTTP     3D24FB6DBAC5514D216DC25FB",
+     "path": "src/01/z2ui5_http     3d24fb6dbac5514d216dc25fb.sicf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_HTTP_CON_SERVER",
+     "path": "src/02/z2ui5_cl_http_con_server.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_HTTP_SRV 8FF0DAC3706EB2CF5397C4DAA",
+     "path": "src/02/z2ui5_http_srv 8ff0dac3706eb2cf5397c4daa.sicf.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "launchpad-kpi",
+   "branch": "standard",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LP_KPI_DPC",
+     "path": "src/1/z2ui5_cl_lp_kpi_dpc.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LP_KPI_DPC_EXT",
+     "path": "src/1/z2ui5_cl_lp_kpi_dpc_ext.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LP_KPI_MPC",
+     "path": "src/1/z2ui5_cl_lp_kpi_mpc.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LP_KPI_MPC_EXT",
+     "path": "src/1/z2ui5_cl_lp_kpi_mpc_ext.clas.xml"
+    },
+    {
+     "type": "IWPR",
+     "name": "Z2UI5_PROXY_KPI",
+     "path": "src/1/z2ui5_proxy_kpi.iwpr.xml"
+    },
+    {
+     "type": "IWMO",
+     "name": "Z2UI5_PROXY_KPI_MDL             0001",
+     "path": "src/1/z2ui5_proxy_kpi_mdl             0001.iwmo.xml"
+    },
+    {
+     "type": "IWOM",
+     "name": "Z2UI5_PROXY_KPI_MDL_0001_BE",
+     "path": "src/1/z2ui5_proxy_kpi_mdl_0001_be.iwom.xml"
+    },
+    {
+     "type": "IWSV",
+     "name": "Z2UI5_PROXY_KPI_SRV                0001",
+     "path": "src/1/z2ui5_proxy_kpi_srv                0001.iwsv.xml"
+    },
+    {
+     "type": "IWSG",
+     "name": "Z2UI5_PROXY_KPI_SRV_0001",
+     "path": "src/1/z2ui5_proxy_kpi_srv_0001.iwsg.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LP_KPI_HELLO_WORLD",
+     "path": "src/z2ui5_cl_lp_kpi_hello_world.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_LP_KPI",
+     "path": "src/z2ui5_if_lp_kpi.intf.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "office-addin",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_XL_DEMO",
+     "path": "src/01/z2ui5_cl_xl_demo.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_XL       4114B41CCB077D7A60DE9EC0D",
+     "path": "src/02/z2ui5_xl       4114b41ccb077d7a60de9ec0d.sicf.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_XL       CAA9D8145D3A95CC523424E3B",
+     "path": "src/02/z2ui5_xl       caa9d8145d3a95cc523424e3b.sicf.xml"
+    },
+    {
+     "type": "WAPA",
+     "name": "Z2UI5_XL",
+     "path": "src/02/z2ui5_xl.wapa.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "abap-agent-runtime",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_ASSIST",
+     "path": "src/01/z2ui5_cl_agent_assist.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_AUDIT",
+     "path": "src/01/z2ui5_cl_agent_audit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_GEN_VOCAB",
+     "path": "src/01/z2ui5_cl_agent_gen_vocab.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_GENUI",
+     "path": "src/01/z2ui5_cl_agent_genui.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_LLM",
+     "path": "src/01/z2ui5_cl_agent_llm.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_LLM_CLAUDE",
+     "path": "src/01/z2ui5_cl_agent_llm_claude.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_LLM_DOUBLE",
+     "path": "src/01/z2ui5_cl_agent_llm_double.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_MCP",
+     "path": "src/01/z2ui5_cl_agent_mcp.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_SESSION",
+     "path": "src/01/z2ui5_cl_agent_session.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_SETTINGS",
+     "path": "src/01/z2ui5_cl_agent_settings.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_SNAPSHOT",
+     "path": "src/01/z2ui5_cl_agent_snapshot.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_VIEWXML",
+     "path": "src/01/z2ui5_cl_agent_viewxml.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_AGENT_LLM",
+     "path": "src/01/z2ui5_cx_agent_llm.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AGENT_APP",
+     "path": "src/01/z2ui5_if_agent_app.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AGENT_LLM",
+     "path": "src/01/z2ui5_if_agent_llm.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_AGENT_LLM_HTTP",
+     "path": "src/01/z2ui5_if_agent_llm_http.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_14",
+     "path": "src/01/z2ui5_t_14.tabl.xml",
+     "text": "agent - audit log"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_15",
+     "path": "src/01/z2ui5_t_15.tabl.xml",
+     "text": "agent - MCP client sessions"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_16",
+     "path": "src/01/z2ui5_t_16.tabl.xml",
+     "text": "agent - app sessions"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_17",
+     "path": "src/01/z2ui5_t_17.tabl.xml",
+     "text": "agent - settings"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_APP_ADMIN",
+     "path": "src/02/z2ui5_cl_agent_app_admin.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_APP_AUDIT",
+     "path": "src/02/z2ui5_cl_agent_app_audit.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_COPILOT",
+     "path": "src/02/z2ui5_cl_agent_copilot.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_DEMO",
+     "path": "src/02/z2ui5_cl_agent_demo.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_GENUI_DEMO",
+     "path": "src/02/z2ui5_cl_agent_genui_demo.clas.xml"
+    },
+    {
+     "type": "SICF",
+     "name": "Z2UI5_AGENT    431AB5AE0A7885F660D12582D",
+     "path": "src/03/z2ui5_agent    431ab5ae0a7885f660d12582d.sicf.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_HTTP",
+     "path": "src/03/z2ui5_cl_agent_http.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_LLM_STD",
+     "path": "src/03/z2ui5_cl_agent_llm_std.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_HTTP_CLOUD",
+     "path": "src/04/z2ui5_cl_agent_http_cloud.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_AGENT_LLM_CLOUD",
+     "path": "src/04/z2ui5_cl_agent_llm_cloud.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "config-management",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CONFIG_APP",
+     "path": "src/z2ui5_cl_config_app.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_CONFIG_SERVICE",
+     "path": "src/z2ui5_cl_config_service.clas.xml"
+    },
+    {
+     "type": "MSAG",
+     "name": "Z2UI5_CONF",
+     "path": "src/z2ui5_conf.msag.xml"
+    },
+    {
+     "type": "SUSO",
+     "name": "Z2UI5_CONF",
+     "path": "src/z2ui5_conf.suso.xml"
+    },
+    {
+     "type": "AUTH",
+     "name": "Z2UI5_CTYP",
+     "path": "src/z2ui5_ctyp.auth.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_CONFIG_ERROR",
+     "path": "src/z2ui5_cx_config_error.clas.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_29",
+     "path": "src/z2ui5_t_29.tabl.xml",
+     "text": "abap2UI5 - configuration values"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_30",
+     "path": "src/z2ui5_t_30.tabl.xml",
+     "text": "abap2UI5 - UI5 themes by UI5 version"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "lock-manager",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LOCK_APP_SM12",
+     "path": "src/z2ui5_cl_lock_app_sm12.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LOCK_CONTEXT",
+     "path": "src/z2ui5_cl_lock_context.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LOCK_MANAGER",
+     "path": "src/z2ui5_cl_lock_manager.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_LOCK_SAMPLE",
+     "path": "src/z2ui5_cl_lock_sample.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CX_LOCK_ERROR",
+     "path": "src/z2ui5_cx_lock_error.clas.xml"
+    },
+    {
+     "type": "PROG",
+     "name": "Z2UI5_RE_LOCK_BACKGROUND",
+     "path": "src/z2ui5_re_lock_background.prog.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_05",
+     "path": "src/z2ui5_t_05.tabl.xml",
+     "text": "Lock Requests"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_06",
+     "path": "src/z2ui5_t_06.tabl.xml",
+     "text": "Lock Request Parameters"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "admin-cockpit",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_AGENT",
+     "path": "src/01/z2ui5_cl_cockpit_agent.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_ALERT",
+     "path": "src/01/z2ui5_cl_cockpit_alert.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_APP",
+     "path": "src/01/z2ui5_cl_cockpit_app.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_AUTH",
+     "path": "src/01/z2ui5_cl_cockpit_auth.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_DRAFT",
+     "path": "src/01/z2ui5_cl_cockpit_draft.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_INST",
+     "path": "src/01/z2ui5_cl_cockpit_inst.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_JOB",
+     "path": "src/01/z2ui5_cl_cockpit_job.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_REC",
+     "path": "src/01/z2ui5_cl_cockpit_rec.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_REPRO",
+     "path": "src/01/z2ui5_cl_cockpit_repro.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_SESSION",
+     "path": "src/01/z2ui5_cl_cockpit_session.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_SETUP",
+     "path": "src/01/z2ui5_cl_cockpit_setup.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_STATS",
+     "path": "src/01/z2ui5_cl_cockpit_stats.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_WIRE",
+     "path": "src/01/z2ui5_cl_cockpit_wire.clas.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_COCKPIT_AUTH",
+     "path": "src/01/z2ui5_if_cockpit_auth.intf.xml"
+    },
+    {
+     "type": "INTF",
+     "name": "Z2UI5_IF_COCKPIT_NOTIFY",
+     "path": "src/01/z2ui5_if_cockpit_notify.intf.xml"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_20",
+     "path": "src/01/z2ui5_t_20.tabl.xml",
+     "text": "admin cockpit - live activity"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_21",
+     "path": "src/01/z2ui5_t_21.tabl.xml",
+     "text": "admin cockpit - administrators"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_22",
+     "path": "src/01/z2ui5_t_22.tabl.xml",
+     "text": "admin cockpit - roundtrip aggregates"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_23",
+     "path": "src/01/z2ui5_t_23.tabl.xml",
+     "text": "admin cockpit - alerts"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_24",
+     "path": "src/01/z2ui5_t_24.tabl.xml",
+     "text": "admin cockpit - change log"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_25",
+     "path": "src/01/z2ui5_t_25.tabl.xml",
+     "text": "admin cockpit - errors and slow roundtrips"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_26",
+     "path": "src/01/z2ui5_t_26.tabl.xml",
+     "text": "admin cockpit - settings"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_27",
+     "path": "src/01/z2ui5_t_27.tabl.xml",
+     "text": "admin cockpit - users per day and app"
+    },
+    {
+     "type": "TABL",
+     "name": "Z2UI5_T_28",
+     "path": "src/01/z2ui5_t_28.tabl.xml",
+     "text": "admin cockpit - recorded requests and responses"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_COCKPIT_MONITOR",
+     "path": "src/02/z2ui5_cl_cockpit_monitor.clas.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5-addons",
+   "repo": "fork-abapToC",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "FUGR",
+     "name": "ZABAP_TOC",
+     "path": "src/zabap_toc.fugr.xml"
+    },
+    {
+     "type": "FUGR",
+     "name": "ZABAP_TOC_DESCRIPTION",
+     "path": "src/zabap_toc_description.fugr.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCL_ZABAP_TOC",
+     "path": "src/zcl_zabap_toc.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCL_ZABAP_TOC_DESCRIPTION",
+     "path": "src/zcl_zabap_toc_description.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCL_ZABAP_TOC_REPORT",
+     "path": "src/zcl_zabap_toc_report.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCL_ZABAP_TOC_UI5",
+     "path": "src/zcl_zabap_toc_ui5.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCX_ZABAP_EXCEPTION",
+     "path": "src/zcx_zabap_exception.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "ZCX_ZABAP_USER_CANCEL",
+     "path": "src/zcx_zabap_user_cancel.clas.xml"
+    },
+    {
+     "type": "PROG",
+     "name": "ZTOC",
+     "path": "src/ztoc.prog.xml"
+    },
+    {
+     "type": "TRAN",
+     "name": "ZTOC",
+     "path": "src/ztoc.tran.xml"
+    }
+   ]
+  },
+  {
+   "org": "abap2UI5",
+   "repo": "headless-frontend",
+   "branch": "main",
+   "objects": [
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_FRONTEND_EXAMPLE",
+     "path": "src/z2ui5_cl_frontend_example.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_FRONTEND_FORM",
+     "path": "src/z2ui5_cl_frontend_form.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_FRONTEND_LAYERS",
+     "path": "src/z2ui5_cl_frontend_layers.clas.xml"
+    },
+    {
+     "type": "CLAS",
+     "name": "Z2UI5_CL_FRONTEND_SIM",
+     "path": "src/z2ui5_cl_frontend_sim.clas.xml"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+---
+/* Namespaces & tables: every ABAP object the addons ship, and where two of
+ * them collide - so a new addon (or a new object) can check its names
+ * before it takes them. The data is objects.json, which scripts/objects.mjs
+ * collects from the repositories before every build. */
+import Page from "../layouts/Page.astro";
+import { repos, collisions, segments, sharedSegments, tables, freeTables, others, url, generated } from "../data/objects";
+const total = repos.reduce((n, r) => n + r.objects.length, 0);
+const date = generated ? new Date(generated).toISOString().slice(0, 10) : undefined;
+---
+<Page title="Namespaces & tables - abap2UI5 addons" description="Every ABAP object of every abap2UI5 addon and the abap2UI5 core: name segments, table numbers, ICF nodes and BSPs - and where two of them collide." trail="Namespaces & tables">
+<div class="wrap ns">
+  <h1 class="welcome">Namespaces &amp; tables</h1>
+  <p class="lead">Every ABAP object of {repos.length} repositories - the abap2UI5 core and its addons, {total} objects{date && <> as of {date}</>}. Installed together in one system, no two of them may share a name: check here before you take one.</p>
+
+  <section class="group" id="collisions">
+    <h2>Collisions</h2>
+    {collisions.length === 0
+      ? <p class="state ok">No object is in two repositories.</p>
+      : <><p class="state bad">{collisions.length} object(s) in more than one repository - a pull of the second overwrites the first.</p>
+        <table class="objs"><thead><tr><th>Type</th><th>Name</th><th>Repositories</th></tr></thead><tbody>
+        {collisions.map((c) => <tr><td>{c.type}</td><td><code>{c.name}</code></td><td>{c.repos.join(", ")}</td></tr>)}
+        </tbody></table></>}
+    {sharedSegments.length > 0 &&
+      <p class="state warn">Name segment shared by more than one repository: {sharedSegments.map((s, i) => <>{i > 0 && ", "}<code>{s.segment}</code> ({s.owners.map((o) => o.repo).join(", ")})</>)} - no collision yet, but a new class in either can take a name of the other.</p>}
+  </section>
+
+  <section class="group" id="tables">
+    <h2>Tables</h2>
+    <p class="note">Database tables are numbered <code>Z2UI5_T_NN</code>, one number per table across all repositories. Free: {freeTables.map((t, i) => <>{i > 0 && ", "}<code>{t}</code></>)}.</p>
+    <table class="objs"><thead><tr><th>Table</th><th>Repository</th><th>Short text</th></tr></thead><tbody>
+    {tables.map((t) => <tr><td><a href={url(t.repo, t)}><code>{t.name}</code></a></td><td>{t.repo.repo}</td><td>{t.text}</td></tr>)}
+    </tbody></table>
+  </section>
+
+  <section class="group" id="segments">
+    <h2>Name segments</h2>
+    <p class="note">Classes and interfaces are named <code>z2ui5_cl_&lt;segment&gt;_…</code> - each segment belongs to one repository.</p>
+    <table class="objs"><thead><tr><th>Segment</th><th>Repository</th><th>Classes &amp; interfaces</th></tr></thead><tbody>
+    {segments.map((s) => <tr class={s.owners.length > 1 ? "shared" : undefined}><td><code>{s.segment}</code></td><td>{s.owners.map((o) => o.repo).join(", ")}</td><td>{s.owners.map((o) => o.count).join(" + ")}</td></tr>)}
+    </tbody></table>
+  </section>
+
+  <section class="group" id="other">
+    <h2>ICF nodes, BSPs and other objects</h2>
+    <table class="objs"><thead><tr><th>Type</th><th>Name</th><th>Repository</th></tr></thead><tbody>
+    {others.map((o) => <tr><td>{o.type}</td><td><a href={url(o.repo, o)}><code>{o.name}</code></a></td><td>{o.repo.repo}</td></tr>)}
+    </tbody></table>
+  </section>
+
+  <section class="group" id="all">
+    <h2>All objects by repository</h2>
+    {repos.map((r) => (
+      <details class="repo-objs">
+        <summary>{r.repo} <span class="count">{r.objects.length}</span></summary>
+        <table class="objs"><thead><tr><th>Type</th><th>Name</th></tr></thead><tbody>
+        {r.objects.map((o) => <tr><td>{o.type}</td><td><a href={url(r, o)}><code>{o.name}</code></a></td></tr>)}
+        </tbody></table>
+      </details>
+    ))}
+  </section>
+</div>
+</Page>

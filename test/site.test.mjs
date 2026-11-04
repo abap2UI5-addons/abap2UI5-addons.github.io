@@ -101,3 +101,21 @@ test("the search feed: every addon and tool once, leading to its page or its own
     assert.ok(e.links.length && e.links.every((l) => hosts.some((h) => l.url.includes(h)) || l.url.startsWith("https://github.com/abap2UI5-addons/")), `${e.code}: the repository`);
   }
 });
+
+test("the namespaces page lists every repository and no object is in two of them", () => {
+  const html = fs.readFileSync(path.join(DIST, "namespaces", "index.html"), "utf8");
+  noScript(html, "namespaces");
+  localOnly(html, "namespaces");
+  const data = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "..", "src", "data", "objects.json"), "utf8"));
+  assert.ok(data.repos.length >= 20, `${data.repos.length} repositories`);
+  for (const r of data.repos) assert.match(html, new RegExp(`<summary>${r.repo} `), `${r.repo} is listed`);
+  // the same object in two repositories: installed together, the second
+  // overwrites the first
+  const seen = new Map();
+  for (const r of data.repos) for (const o of r.objects) {
+    const k = `${o.type} ${o.name}`;
+    assert.ok(!seen.has(k) || seen.get(k) === r.repo, `${k} is in ${seen.get(k)} and ${r.repo}`);
+    seen.set(k, r.repo);
+  }
+  assert.match(home, /href="\/namespaces\/"/, "the overview links the page");
+});

@@ -85,3 +85,10 @@ npm run check    # build + test, what CI runs
   exactly (astro - the version is in `package.json`), actions pinned to
   commits. Deployment needs Settings → Pages → Source: "GitHub Actions"
   once.
+
+**Namespaces & tables.** `/namespaces/` lists every ABAP object of every addon
+and of the abap2UI5 core - name segments, `Z2UI5_T_NN` numbers, ICF nodes,
+BSPs - and shows collisions. `scripts/objects.mjs` collects them from the
+GitHub API into `src/data/objects.json` before every build (pages workflow);
+the committed file is the fallback. The test fails when two repositories ship
+the same object (type and name).
