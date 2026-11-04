@@ -103,3 +103,9 @@ whose `data-search` (title, tagline, repository, summary, features - set in
 `Tile.astro`) holds every word typed, hides empty groups, and offers the
 family's search when nothing is left. It fetches nothing; `?q=` is the
 address of a filtered view. It is the one script of this site.
+
+**A deploy that hangs.** `actions/deploy-pages` names a deployment after
+the commit. When one hangs on GitHub's side (the deploy job waits its ten
+minutes and is cancelled), Pages refuses every later deployment of the SAME
+commit at once ("Deployment cancelled") - rerunning the workflow does not
+help. A new commit on `main` does.
