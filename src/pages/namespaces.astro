@@ -8,7 +8,7 @@ import { repos, collisions, segments, sharedSegments, tables, freeTables, others
 const total = repos.reduce((n, r) => n + r.objects.length, 0);
 const date = generated ? new Date(generated).toISOString().slice(0, 10) : undefined;
 ---
-<Page title="Namespaces & tables - abap2UI5 addons" description="Every ABAP object of every abap2UI5 addon and the abap2UI5 core: name segments, table numbers, ICF nodes and BSPs - and where two of them collide." trail="Namespaces & tables">
+<Page title="Namespaces & Tables - abap2UI5 Addons & Tools" description="Every ABAP object of every abap2UI5 addon and the abap2UI5 core: name segments, table numbers, ICF nodes and BSPs - and where two of them collide." trail="Namespaces & tables">
 <div class="wrap ns">
   <h1 class="welcome">Namespaces &amp; tables</h1>
   <p class="lead">Every ABAP object of {repos.length} repositories - the abap2UI5 core and its addons, {total} objects{date && <> as of {date}</>}. Installed together in one system, no two of them may share a name: check here before you take one.</p>
