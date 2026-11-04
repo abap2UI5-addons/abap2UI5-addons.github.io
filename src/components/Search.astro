@@ -1,20 +1,16 @@
 ---
-/* The search box: the docs, the samples, the repositories, the tools, the
- * sister sites and the API, from the one index the docs publish
- * (/docs/search-index.json). public/search.js shows it and drives it: without
- * a script there is nothing it could do, so the markup ships it hidden.
- *
- * `page`: the box of /search/ - the results stay on the page under it instead
- * of opening as a list under the field, and the query is the page's ?q=. */
-interface Props { page?: boolean }
-const { page = false } = Astro.props;
+/* The search box of the overview: it narrows the tiles on this page to the
+ * ones that match - title, tagline, repository, summary and features of each
+ * addon (the tile's data-search). It looks like the home page's box and sits
+ * where that one sits, but searches only here; public/filter.js drives it,
+ * and without a script there is nothing it could do, so it ships hidden. */
 ---
-<div class="search" id="search" role="search" data-mode={page ? "page" : "box"} hidden>
+<div class="search" id="search" role="search" hidden>
   <label class="search-field">
     <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    <span class="sr-only">Search the documentation, the samples, the repositories and the API</span>
-    <input id="search-input" type="search" placeholder={page ? "Search docs, samples, repos, API" : "Search"} autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <span class="sr-only">Search the addons and tools on this page</span>
+    <input id="search-input" type="search" placeholder="Search addons" autocomplete="off" spellcheck="false" aria-controls="main">
     <kbd class="search-key" aria-hidden="true">Ctrl K</kbd>
   </label>
-  <div class="search-results" id="search-results" role="listbox" aria-label="Results" hidden></div>
 </div>
+<p class="search-none" id="search-none" role="status" hidden>No addon matches - <a href="https://abap2ui5.github.io/search/">search the whole abap2UI5 family</a> instead.</p>

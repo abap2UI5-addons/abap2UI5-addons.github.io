@@ -2,9 +2,10 @@
 /* The overview: every addon, in groups, one tile each. A tile opens the
  * addon's page on this site, or its own site where it has one. The tiles
  * fill the width in as many columns as fit; the groups follow each other
- * with their headings, no menu. There is no search of its own here: the
- * search box on https://abap2ui5.github.io/ finds every addon and tool, from
- * the search.json this site publishes. */
+ * with their headings, no menu. The search box under the greeting narrows
+ * the tiles of this page (public/filter.js); the family's search on
+ * https://abap2ui5.github.io/ finds every addon from the search.json this
+ * site publishes. */
 import Page from "../layouts/Page.astro";
 import Tile from "../components/Tile.astro";
 import Search from "../components/Search.astro";

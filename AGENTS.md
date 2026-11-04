@@ -71,10 +71,11 @@ npm run check    # build + test, what CI runs
   entries without `site` - the apps of the organisation not set up yet and the
   developer tools of the abap2UI5 organization, listed here so the overview is
   the one place for everything around the framework - keep their page here.
-- **No script.** The policy is `script-src 'self'` and no page ships one -
-  no search, no filter, no menu of the groups on the overview: the search
-  box on https://abap2ui5.github.io/ finds every addon and tool, from this
-  site's `search.json`. No inline script, no `on…=` handler, no inline
+- **One script.** The policy is `script-src 'self'`; the one script is the
+  overview's search box (`public/filter.js`, below), which narrows the tiles
+  of the page. No menu of the groups; the family's search on
+  https://abap2ui5.github.io/ finds every addon and tool from this site's
+  `search.json`. No inline script, no `on…=` handler, no inline
   `style=""` - the test refuses them.
 - **Nothing from another origin.** No CDN, no web font service, no analytics,
   no image from GitHub; the font, the logo and any screenshot are in `public/`.
@@ -94,10 +95,11 @@ the committed file is the fallback. The test fails when two repositories ship
 the same object (type and name). The page is linked from the abap2UI5
 documentation (Resources > Add-ons), not from the overview.
 
-**The search box.** The overview carries the home page's search box
-(`src/components/Search.astro`, `public/search.js`, `public/search-engine.js`,
-the CSS block of `.hello`/`.search`) - copied from abap2UI5/abap2UI5.github.io,
-where it is maintained; take changes from there. It reads the family's index
-from https://abap2ui5.github.io/docs/search-index.json (served with CORS `*`;
-`connect-src` names that origin), and "All results" leads to
-https://abap2ui5.github.io/search/. It is the one script of this site.
+**The search box.** The overview has a search box that looks like the home
+page's and sits where that one sits (`src/components/Search.astro`, the CSS
+block of `.hello`/`.search`, copied from abap2UI5/abap2UI5.github.io) - but
+it searches only this page: `public/filter.js` narrows the tiles to the ones
+whose `data-search` (title, tagline, repository, summary, features - set in
+`Tile.astro`) holds every word typed, hides empty groups, and offers the
+family's search when nothing is left. It fetches nothing; `?q=` is the
+address of a filtered view. It is the one script of this site.

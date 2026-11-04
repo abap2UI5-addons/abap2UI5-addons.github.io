@@ -17,12 +17,12 @@ const hosts = ["abap2ui5.github.io", "abap2ui5-addons.github.io", "github.com/ab
 const pages = facts.filter((r) => !own.some(([o]) => o === r));
 
 function noScript(html, name, { search = false } = {}) {
-  // no script but the search box: public/search.js, a module of this
-  // origin, on the overview only (the home page's box, copied)
+  // no script but the search box: public/filter.js, a module of this
+  // origin that narrows the tiles, on the overview only
   if (search) {
     assert.equal((html.match(/<script\b/gi) || []).length, 1, `${name}: one script`);
-    assert.match(html, /<script type="module" src="\/search\.js"><\/script>/, `${name}: the search module`);
-    html = html.replace(/<script type="module" src="\/search\.js"><\/script>/, "");
+    assert.match(html, /<script type="module" src="\/filter\.js"><\/script>/, `${name}: the search module`);
+    html = html.replace(/<script type="module" src="\/filter\.js"><\/script>/, "");
   }
   assert.doesNotMatch(html, /<script\b/i, `${name}: a script`);
   assert.doesNotMatch(html, /\son[a-z]+=/i, `${name}: an inline event handler`);
@@ -30,8 +30,6 @@ function noScript(html, name, { search = false } = {}) {
   const csp = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/);
   assert.ok(csp, `${name}: a Content-Security-Policy meta`);
   assert.match(csp[1], /script-src 'self'(;|$)/);
-  // the one place outside this origin: the family's search index
-  assert.match(csp[1], /connect-src 'self' https:\/\/abap2ui5\.github\.io(;|$)/);
 }
 function localOnly(html, name) {
   for (const ref of [...html.matchAll(/\s(?:src|href)="([^"#]+)"/g)].map((m) => m[1]).filter((u) => u.startsWith("/"))) {
@@ -65,12 +63,14 @@ test("the overview is the greeting and a tile per addon", () => {
     assert.match(home, new RegExp(`<section class="group" id="${id}"`), `#${id} is a section`);
   }
   assert.doesNotMatch(home, /<nav class="toc"|toc\.js/, "no menu of the groups");
-  // the home page's search box, on the family's index - no form, no filter
-  // of the tiles of its own
-  assert.match(home, /<div class="search" id="search" role="search" data-mode="box" hidden>/, "the family's search box");
-  assert.doesNotMatch(home, /<form|filter\.js/, "no form, no tile filter");
-  assert.ok(fs.existsSync(path.join(DIST, "search.js")) && fs.existsSync(path.join(DIST, "search-engine.js")), "search.js and its engine");
-  assert.ok(!fs.existsSync(path.join(DIST, "filter.js")), "filter.js is gone");
+  // the search box narrows the tiles of this page (public/filter.js): every
+  // tile carries what it is searched by
+  assert.match(home, /<div class="search" id="search" role="search" hidden>/, "the search box");
+  assert.doesNotMatch(home, /<form/, "no form");
+  assert.ok(fs.existsSync(path.join(DIST, "filter.js")), "filter.js");
+  const tiles = (home.match(/<a class="tile/g) || []).length;
+  assert.ok(tiles >= 20, `${tiles} tiles`);
+  assert.equal((home.match(/<li data-search="/g) || []).length, tiles, "every tile can be searched");
   assert.match(home, /<nav class="sites"[\s\S]*href="https:\/\/abap2ui5\.github\.io\/">Home<\/a>[\s\S]*\/<\/span>\s*<span aria-current="page">Addons &amp; Tools<\/span>/, "the breadcrumb reads Home / Addons & Tools, Addons current");
   noScript(home, "index", { search: true });
   localOnly(home, "index");

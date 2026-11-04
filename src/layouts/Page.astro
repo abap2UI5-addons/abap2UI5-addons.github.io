@@ -4,10 +4,9 @@
  *
  * THE POLICY. GitHub Pages sets no headers of ours, so the Content-Security-
  * Policy is a <meta>. The one script is the search box on the overview
- * (public/search.js, the home page's), a file of this origin - script-src is
- * 'self', no inline script, no handler attribute; it reads the family's index
- * from https://abap2ui5.github.io (connect-src), everything else is this
- * origin. test/site.test.mjs holds every page to it.
+ * (public/filter.js), a file of this origin that narrows the tiles and
+ * fetches nothing - script-src is 'self', no inline script, no handler
+ * attribute, and everything the page loads is this origin. test/site.test.mjs holds every page to it.
  *
  * THE TOP LINE. The one thing this site and the home page share: the
  * wordmark, the two as tabs with the current one marked - here Addons & Tools,
@@ -25,8 +24,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const CSP = [
   "default-src 'self'",
   "script-src 'self'",
-  // the search box reads the family's index from the home page's origin
-  "connect-src 'self' https://abap2ui5.github.io",
   "style-src 'self'",
   "img-src 'self'",
   "font-src 'self'",
@@ -41,7 +38,7 @@ const CSP = [
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content={CSP}>
-{search && <script type="module" src={`${base}search.js`} is:inline></script>}
+{search && <script type="module" src={`${base}filter.js`} is:inline></script>}
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>
