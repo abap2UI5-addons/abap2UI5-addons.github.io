@@ -46,7 +46,8 @@ const CSP = [
 <meta property="og:url" content={canonical}>
 <meta property="og:image" content={new URL(image ?? `${base}logo.png`, Astro.site).href}>
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href={`${base}favicon.png`}>
+<link rel="icon" type="image/svg+xml" href={`${base}addons-logo.svg`}>
+<link rel="icon" type="image/png" href={`${base}favicon.png`}>
 <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`}>
 <link rel="preload" href={`${base}fonts/inter-roman-latin.woff2`} as="font" type="font/woff2" crossorigin>
 </head>
