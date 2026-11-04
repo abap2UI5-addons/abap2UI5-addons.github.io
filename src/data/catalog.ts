@@ -43,7 +43,6 @@ export const groups: Group[] = [
       { repo: "layout-management", site: "https://abap2ui5-addons.github.io/layout-management/" },
       { repo: "rap-ext", site: "https://abap2ui5-addons.github.io/rap-ext/" },
       { repo: "custom-controls", site: "https://abap2ui5-addons.github.io/custom-controls/" },
-      { repo: "custom-controls-customer", site: "https://abap2ui5-addons.github.io/custom-controls-customer/" },
     ],
   },
   {
@@ -55,6 +54,7 @@ export const groups: Group[] = [
       { repo: "http-connector", site: "https://abap2ui5-addons.github.io/http-connector/" },
       { repo: "launchpad-kpi", site: "https://abap2ui5-addons.github.io/launchpad-kpi/" },
       { repo: "office-addin", site: "https://abap2ui5-addons.github.io/office-addin/" },
+      { repo: "custom-controls-customer", site: "https://abap2ui5-addons.github.io/custom-controls-customer/" },
       { repo: "embed-control", org: "abap2UI5" },
       { repo: "abap-agent-runtime", site: "https://abap2ui5-addons.github.io/abap-agent-runtime/" },
     ],
