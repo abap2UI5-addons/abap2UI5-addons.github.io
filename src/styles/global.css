@@ -78,13 +78,16 @@ img { max-width: 100%; height: auto; }
 }
 .welcome img { width: 40px; height: 40px; flex: none; }
 @media (max-width: 620px) { .welcome { margin: 24px 0 28px; } }
+/* the addons logo on the right of the heading, as on the addon sites' home */
+.welcome-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.welcome-row .addons-logo { width: 160px; height: 160px; flex: none; margin: 8px 0 24px; }
+@media (max-width: 620px) { .welcome-row .addons-logo { width: 72px; height: 72px; margin: 16px 0 20px; } }
 
 /* ---- the groups: a label, three tiles to a row at most ------------------- */
 /* the page is as wide as the Insights site (--width); in it the tiles fall
  * into three columns at most, two on a tablet, one on a phone. A tile keeps
  * at least 300px, so its two lines of text are never cut short */
 .group { margin: 0 0 36px; }
-.addons-logo { vertical-align: -6px; margin-right: 6px; }
 .join p { margin: 0 0 10px; max-width: 72ch; line-height: 1.55; }
 .group h2 { margin: 0 0 12px; font-size: 13px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; }

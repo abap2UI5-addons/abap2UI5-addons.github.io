@@ -14,7 +14,10 @@ const base = import.meta.env.BASE_URL;
 <Page title="abap2UI5 addons & tools" description="Every addon and developer tool of abap2UI5 in one place: what it does, what it needs, how it is installed - selection screens and ALV on ABAP Cloud, RFC and HTTP connectors, Launchpad KPIs, custom controls and more.">
 
 <div class="wrap">
-  <h1 class="welcome"><img class="addons-logo" src={`${base}addons-logo.svg`} alt="" width="40" height="40"> Addons &amp; Tools</h1>
+  <div class="welcome-row">
+    <h1 class="welcome">Addons &amp; Tools</h1>
+    <img class="addons-logo" src={`${base}addons-logo.svg`} alt="abap2UI5 addons" width="160" height="160">
+  </div>
 
   {groups.map((g) => (
     <section class="group" id={g.id}>
