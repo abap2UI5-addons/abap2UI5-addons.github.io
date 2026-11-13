@@ -23,7 +23,7 @@
       "Start a sample like any abap2UI5 app, e.g. ?app_start=z2ui5_cl_sel_sample_01"
     ]
   },
-  "usage": "\" on init\nmo_variant = z2ui5_cl_sel_multisel_pop=>factory_by_data( data        = mt_table\n                                                         var_handle1 = `ZMY_APP` ).\n\" on the Filter button\nclient->nav_app_call( mo_variant ).\n\n\" back in your app\nIF client->check_on_navigated( ).\n  DATA(lo_filter) = CAST z2ui5_cl_sel_multisel_pop( client->get_app_prev( ) ).\n  IF lo_filter->result( )-check_confirmed = abap_true.\n    z2ui5_cl_util=>filter_itab( EXPORTING filter = lo_filter->result( )-t_filter\n                                CHANGING  val    = mt_table ).\n  ENDIF.\nENDIF.",
+  "usage": "\" on init\nmo_variant = z2ui5_cl_sel_multisel_pop=>factory_by_data( data        = mt_table\n                                                         var_handle1 = `ZMY_APP` ).\n\" on the Filter button\nclient->nav_app_call( mo_variant ).\n\n\" back in your app\nIF client->check_on_navigated( ).\n  DATA(lo_filter) = CAST z2ui5_cl_sel_multisel_pop( client->get_app_prev( ) ).\n  IF lo_filter->result( )-check_confirmed = abap_true.\n    z2ui5_cl_sel_context=>filter_itab( EXPORTING filter = lo_filter->result( )-t_filter\n                                       CHANGING  val    = mt_table ).\n  ENDIF.\nENDIF.",
   "links": [
     {
       "text": "abap2UI5-addons/abap-cloud-gui",
@@ -38,5 +38,5 @@
   "status": "unknown",
   "license": "MIT",
   "cloud": true,
-  "nw702": false
+  "nw702": true
 }

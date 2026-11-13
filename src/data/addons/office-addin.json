@@ -46,5 +46,5 @@
   "status": "experimental",
   "license": "MIT",
   "cloud": false,
-  "nw702": false
+  "nw702": true
 }

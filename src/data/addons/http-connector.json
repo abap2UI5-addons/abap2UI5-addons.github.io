@@ -36,5 +36,5 @@
   "status": "unknown",
   "license": "MIT",
   "cloud": false,
-  "nw702": false
+  "nw702": true
 }
