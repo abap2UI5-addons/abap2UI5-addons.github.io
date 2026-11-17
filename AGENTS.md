@@ -27,6 +27,7 @@ build does not depend on them.
 | `public/shots/` | Optional: `<repo>.png` (or jpg, webp, gif) is shown on that addon's page. Empty today: the README images sit on GitHub's asset host and have to be saved here by hand |
 | `test/site.test.mjs` | `node:test` over `dist/` |
 | `.github/workflows/pages.yml` | Build + test on every PR; deploy on main |
+| `.github/workflows/bump-deps.yaml` | The monthly dependency pull request (npm, the pinned actions, the template pin), a call of `addon-bump-deps.yaml` of the shared CI template of abap2UI5-addons ([rap-ext](https://github.com/abap2UI5-addons/rap-ext/blob/main/.github/ci/README.md), pinned by commit); the actions and the template pin move only with the `DEPS_TOKEN` secret. `pages.yml` stays this site's own |
 
 ## Commands
 
