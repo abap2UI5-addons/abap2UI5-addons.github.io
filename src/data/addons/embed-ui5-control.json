@@ -1,18 +1,46 @@
 {
   "repo": "embed-ui5-control",
-  "title": "Embed Control",
-  "tagline": "Run an app inside your UI5 app, Fiori elements page or Work Zone.",
-  "summary": "Run an app inside your own UI5 app, Fiori elements page or Work Zone card.",
-  "features": [],
-  "requirements": [],
+  "title": "UI5 Control",
+  "tagline": "Run an app inside your UI5 app, Fiori elements page or Work Zone card.",
+  "summary": "The npm package @abap2ui5/embed-control: the UI5 control z2ui5.embed.Container, which runs an abap2UI5 app - an ABAP class implementing z2ui5_if_app - inside your own UI5 app, next to your own controls, each in its own backend session. The package is the control and nothing else: it loads the abap2UI5 frontend from the installation the app talks to, so it always has that backend's version. The repository carries examples for a freestyle app, Fiori elements apps for OData V4 and V2 and a UI Integration Card, delivered on the branches standard and rap.",
+  "features": [
+    "<z2ui5:Container app=\"Z2UI5_CL_MY_APP\" height=\"400px\"/> in an XML view, or new Container( ) in code",
+    "Any number of apps on one page, each in its own backend session",
+    "Fiori elements: custom sections and object page extensions that pass the object's keys to the app",
+    "A UI Integration Card for SAP Build Work Zone that runs any abap2UI5 app",
+    "No copy of the frontend in your app: it comes from the backend through ?z2ui5-bundle",
+    "UI5 1.71 or later; works with a strict Content-Security-Policy"
+  ],
+  "requirements": [
+    "abap2UI5 1.145.0 or later (the first release that serves the frontend through ?z2ui5-bundle); a host that routes by the URL hash, like Fiori elements, needs 1.146.0",
+    "A UI5 app built with the UI5 CLI 3 or 4",
+    "The app and the abap2UI5 service on one origin, or a proxy that makes them one"
+  ],
   "install": {
     "abapgit_url": "https://github.com/abap2UI5-addons/embed-ui5-control",
-    "notes": []
+    "notes": [
+      "In your UI5 app: npm install @abap2ui5/embed-control, list it under includeDependency in ui5.yaml and add the resourceRoot z2ui5.embed: ./thirdparty/z2ui5/embed/ to manifest.json",
+      "To try it on a system: pull the branch standard with abapGit - the freestyle example as the BSP Z2UI5_HOST",
+      "On a system with RAP: pull the branch rap - the Fiori elements example for OData V2 with its RAP service"
+    ]
   },
-  "usage": "",
-  "links": [],
+  "usage": "<mvc:View xmlns:mvc=\"sap.ui.core.mvc\" xmlns:z2ui5=\"z2ui5.embed\">\n  <z2ui5:Container app=\"Z2UI5_CL_UI5_APP_HI_WORLD\" height=\"400px\"/>\n</mvc:View>",
+  "links": [
+    {
+      "text": "@abap2ui5/embed-control on npm",
+      "href": "https://www.npmjs.com/package/@abap2ui5/embed-control"
+    },
+    {
+      "text": "The examples",
+      "href": "https://github.com/abap2UI5-addons/embed-ui5-control/tree/main/examples"
+    },
+    {
+      "text": "Fiori Elements Integration in the documentation",
+      "href": "https://abap2ui5.github.io/docs/advanced/fiori"
+    }
+  ],
   "screenshot": "",
-  "status": "unknown",
+  "status": "experimental",
   "license": "MIT",
   "cloud": false,
   "nw702": false
