@@ -3,9 +3,10 @@
  * and the addon pages share it, so they look alike.
  *
  * THE POLICY. GitHub Pages sets no headers of ours, so the Content-Security-
- * Policy is a <meta>. The one script is the search box on the overview
+ * Policy is a <meta>. The scripts are the search box on the overview
  * (public/filter.js), a file of this origin that narrows the tiles and
- * fetches nothing - script-src is 'self', no inline script, no handler
+ * fetches nothing, and the forwarder of moved addresses on the 404 page
+ * (public/moved.js) - script-src is 'self', no inline script, no handler
  * attribute, and everything the page loads is this origin. test/site.test.mjs holds every page to it.
  *
  * THE TOP LINE. The one thing this site and the home page share: the
@@ -17,8 +18,8 @@ import "../styles/global.css";
 
 /* `trail`: on an addon page, the repository's name after the Addons & Tools
  * tab, so the top line says where the page sits and is the way back. */
-interface Props { title: string; description: string; image?: string; trail?: string; search?: boolean }
-const { title, description, image, trail, search } = Astro.props;
+interface Props { title: string; description: string; image?: string; trail?: string; search?: boolean; moved?: boolean }
+const { title, description, image, trail, search, moved } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const CSP = [
@@ -39,6 +40,8 @@ const CSP = [
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content={CSP}>
 {search && <script type="module" src={`${base}filter.js`} is:inline></script>}
+{moved && <script type="module" src={`${base}moved.js`} is:inline></script>}
+{moved && <meta name="robots" content="noindex">}
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>

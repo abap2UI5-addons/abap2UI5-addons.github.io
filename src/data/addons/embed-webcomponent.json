@@ -1,0 +1,31 @@
+{
+  "repo": "embed-webcomponent",
+  "title": "Web Component",
+  "tagline": "Run an app in any web page as the custom element <abap2ui5-app>.",
+  "summary": "An alternative abap2UI5 frontend built on UI5 Web Components, without the UI5 core: one ES module and one custom element, <abap2ui5-app>, that runs an unchanged abap2UI5 app class standalone or embedded in any web app - React, Vue, Angular or plain HTML - in its own shadow root and backend session. It renders the controls of the portable view profile of the abap2UI5 protocol; a control outside it shows as a visible box.",
+  "features": [
+    "One ES module and one custom element: <abap2ui5-app endpoint=\"/sap/bc/z2ui5\" app=\"Z2UI5_CL_MY_APP\">",
+    "Standalone page or embedded in React, Vue, Angular or plain HTML, in its own shadow root",
+    "The core protocol in full: events, model deltas, sessions, popups, the app stack, the URL hash",
+    "All 65 controls of the portable view profile v1; anything else renders as a visible unsupported-control box",
+    "Reports what happens as DOM events"
+  ],
+  "requirements": [
+    "An abap2UI5 backend reachable from the page's origin",
+    "Views built from the controls of the portable view profile"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/embed-webcomponent",
+    "notes": [
+      "Nothing to install on the system: build dist/abap2ui5-wc.js with npm and load it in your page",
+      "Not yet published on npm (@abap2ui5/embed-webcomponent)"
+    ]
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "experimental",
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
+}

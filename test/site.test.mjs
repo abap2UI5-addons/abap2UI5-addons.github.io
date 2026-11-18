@@ -130,3 +130,14 @@ test("the namespaces page lists every repository and no object is in two of them
   }
   // linked from the abap2UI5 documentation (resources/addons), not from the overview
 });
+
+test("the old addresses of renamed addons land on the 404 page, which forwards them", async () => {
+  const page = fs.readFileSync(path.join(DIST, "404.html"), "utf8");
+  assert.match(page, /<script type="module" src="\/moved\.js"><\/script>/, "the forwarder");
+  assert.match(page, /<meta name="robots" content="noindex">/);
+  assert.match(page, /href="\/embed-excel\/"/, "a link for a reader without script");
+  const { movedTo } = await import(path.join(DIST, "moved.js"));
+  assert.equal(movedTo("/office-addin/guide/install"), "/embed-excel/guide/install");
+  assert.equal(movedTo("/embed-control"), "/embed-ui5-control/");
+  assert.equal(movedTo("/embed-controls/"), null, "a path that only starts like one");
+});
