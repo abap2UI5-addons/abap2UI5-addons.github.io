@@ -17,8 +17,10 @@ export const orgOf = (e: Entry) => e.org ?? "abap2UI5-addons";
 export type Group = { id: string; title: string; lead: string; entries: Entry[] };
 
 // Grouped by what a reader is after, not by technique: an app to install and
-// use, pieces to build an app from, a way to reach apps from elsewhere, what
-// many apps in production need, and the tools a developer works with.
+// use, pieces to build an app from, the app inside another host (embed-*),
+// the app from another system (*-connector), the other ways to reach apps
+// from elsewhere, what many apps in production need, and the tools a
+// developer works with.
 export const groups: Group[] = [
   {
     id: "apps",
@@ -46,16 +48,32 @@ export const groups: Group[] = [
     ],
   },
   {
-    id: "integration",
-    title: "Integration",
-    lead: "Your apps beyond the abap2UI5 page: other systems, the Fiori Launchpad, Excel, other UI5 apps and AI agents.",
+    id: "embed",
+    title: "Embed",
+    lead: "Your apps inside another host: Excel, your own UI5 app or Fiori elements page, any web page, a native mobile app.",
+    entries: [
+      { repo: "embed-excel", site: "https://abap2ui5-addons.github.io/embed-excel/" },
+      { repo: "embed-ui5-control" },
+      { repo: "embed-webcomponent" },
+      { repo: "embed-mobile" },
+    ],
+  },
+  {
+    id: "connectors",
+    title: "Connectors",
+    lead: "Your apps from another system: one system's users run the apps of another, over RFC or HTTP.",
     entries: [
       { repo: "rfc-connector", site: "https://abap2ui5-addons.github.io/rfc-connector/" },
       { repo: "http-connector", site: "https://abap2ui5-addons.github.io/http-connector/" },
+    ],
+  },
+  {
+    id: "integration",
+    title: "Integration",
+    lead: "Your apps beyond the abap2UI5 page: the Fiori Launchpad, your own frontend artefacts and AI agents.",
+    entries: [
       { repo: "launchpad-kpi", site: "https://abap2ui5-addons.github.io/launchpad-kpi/" },
-      { repo: "office-addin", site: "https://abap2ui5-addons.github.io/office-addin/" },
       { repo: "custom-controls-customer", site: "https://abap2ui5-addons.github.io/custom-controls-customer/" },
-      { repo: "embed-control", org: "abap2UI5" },
       { repo: "abap-agent-runtime", site: "https://abap2ui5-addons.github.io/abap-agent-runtime/" },
     ],
   },

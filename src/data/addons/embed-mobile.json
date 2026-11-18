@@ -1,0 +1,32 @@
+{
+  "repo": "embed-mobile",
+  "title": "Mobile Shell",
+  "tagline": "A native iOS and Android app that runs your apps, with scanner, push and biometrics.",
+  "summary": "A generic native shell for iOS and Android built for the SAP mobile stack: the regular abap2UI5 frontend runs in a WebView, and a small JavaScript bridge offers device features - the barcode scanner (z2ui5.cc.NativeBridgeScan), push notifications and a biometric confirmation. Every screen still comes from the ABAP class. A proof of concept without releases: onboarding through the SAP BTP SDK and push need SAP, Google and Apple accounts.",
+  "features": [
+    "Android (WebView, ZXing scan) and iOS (WKWebView, VisionKit scan) shells",
+    "QR onboarding, biometric app lock, managed configuration from device management",
+    "Push via FCM and APNs, with a Mobile Services push client for ABAP Cloud",
+    "z2ui5.cc.NativeBridgeScan in the framework scans through the bridge and stays a placeholder in a browser",
+    "Online only by design: every event is a server roundtrip"
+  ],
+  "requirements": [
+    "abap2UI5 with z2ui5.cc.NativeBridgeScan for the scanner",
+    "Android Studio or Xcode (XcodeGen) to build the shells",
+    "For onboarding and push: SAP Mobile Services, a Firebase project and an APNs key"
+  ],
+  "install": {
+    "abapgit_url": "https://github.com/abap2UI5-addons/embed-mobile",
+    "notes": [
+      "abap/src is the sample app, installable with abapGit; the shells are built from android/ and ios/",
+      "Status and open work: PLAN.md and docs/NEXT_STEPS.md in the repository"
+    ]
+  },
+  "usage": "",
+  "links": [],
+  "screenshot": "",
+  "status": "experimental",
+  "license": "MIT",
+  "cloud": false,
+  "nw702": false
+}

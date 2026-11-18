@@ -1,0 +1,26 @@
+---
+/* The organisation's root site answers every path that no project site
+ * claims - so the old addresses of addons whose repositories were renamed
+ * land here. public/moved.js forwards them to the new address with the rest
+ * of the path, the query and the fragment; without a script, the list below
+ * leads there by hand. Any other unknown path just gets the way back. */
+import Page from "../layouts/Page.astro";
+import { MOVED } from "../../public/moved.js";
+const base = import.meta.env.BASE_URL;
+---
+<Page trail="Not found" title="Page not found - abap2UI5 Addons" description="This address does not exist (anymore). Some addons moved; this page forwards their old addresses." moved>
+
+<div class="wrap prose">
+  <h1>Page not found</h1>
+  <p>This address does not exist. Some addons moved when their repositories
+  were renamed - an old address of one of them forwards to its new place by
+  itself. If nothing happens, follow the link:</p>
+  <ul>
+    {MOVED.map(([from, to]) => (
+      <li><code>{from}/</code> is now <a href={`${to}/`}><code>{to}/</code></a></li>
+    ))}
+  </ul>
+  <p>Anything else: all addons are on the <a href={base}>overview</a>.</p>
+</div>
+
+</Page>

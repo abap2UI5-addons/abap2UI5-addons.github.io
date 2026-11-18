@@ -1,5 +1,5 @@
 {
-  "repo": "office-addin",
+  "repo": "embed-excel",
   "title": "Excel Add-in",
   "tagline": "Show an app in Excel's task pane and read and write the workbook.",
   "summary": "An Office add-in that opens an abap2UI5 app in the task pane of Microsoft Excel: the real abap2UI5 UI5 frontend, served by your SAP system through a host page in the BSP Z2UI5_XL. The app stays an ABAP class and talks to the workbook through the custom control z2ui5.cc.ExcelBridge, which writes tables into sheets and reads selected cells. The repository holds the host page, a demo app, the manifest generator and the tests. It is a proof of concept: CI tests it against a stand-in for Office.js, nobody has run it in a real Excel yet.",
@@ -22,7 +22,7 @@
     "Node.js 22 for npm run manifest"
   ],
   "install": {
-    "abapgit_url": "https://github.com/abap2UI5-addons/office-addin",
+    "abapgit_url": "https://github.com/abap2UI5-addons/embed-excel",
     "notes": [
       "Pull with abapGit into a package of its own (for example $Z2UI5_XL) on the system that runs abap2UI5; it brings Z2UI5_CL_XL_DEMO, the BSP Z2UI5_XL and the ICF nodes /sap/bc/ui5_ui5/sap/z2ui5_xl and /sap/bc/bsp/sap/z2ui5_xl",
       "In SICF check that /sap/bc/ui5_ui5/sap/z2ui5_xl is active with the same logon settings as /sap/bc/z2ui5",
@@ -34,8 +34,8 @@
   "usage": "page->tag( n = `ExcelBridge` ns = `z2ui5`\n    )->a( n = `id`               v = `excel`\n    )->a( n = `rows`             v = client->_bind( materials )\n    )->a( n = `columns`          v = client->_bind( columns )\n    )->a( n = `target`           v = `newSheet`\n    )->a( n = `sheetName`        v = client->_bind( sheet_name )\n    )->a( n = `selection`        v = client->_bind( selection )\n    )->a( n = `selectionAddress` v = client->_bind( selection_address )\n    )->a( n = `OnWritten`        v = client->_event( val = `XL_WRITTEN` arg = `${$parameters>/address}` )\n    )->a( n = `OnRead`           v = client->_event( val = `XL_READ` arg = `${$parameters>/address}` )\n    )->a( n = `OnError`          v = client->_event( val   = `XL_ERROR`\n                                                     t_arg = VALUE #( ( `${$parameters>/message}` )\n                                                                      ( `${$parameters>/code}` ) ) ) ).",
   "links": [
     {
-      "text": "abap2UI5/embed-control",
-      "href": "https://github.com/abap2UI5/embed-control"
+      "text": "abap2UI5-addons/embed-ui5-control",
+      "href": "https://github.com/abap2UI5-addons/embed-ui5-control"
     },
     {
       "text": "abap2UI5",

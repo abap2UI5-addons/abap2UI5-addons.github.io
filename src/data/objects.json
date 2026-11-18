@@ -2387,7 +2387,7 @@
   },
   {
    "org": "abap2UI5-addons",
-   "repo": "office-addin",
+   "repo": "embed-excel",
    "branch": "main",
    "objects": [
     {
