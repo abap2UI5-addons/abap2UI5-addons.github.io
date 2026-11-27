@@ -25,7 +25,7 @@ build does not depend on them.
 | `src/pages/addons.json.ts` | `/addons.json`, for a program: `{ schema, url, addons }`, every record with `repo`, `org`, `github`, `site`, `group`, `title`, `tagline`, `summary`, `useWhen`, `entryPoints`, `dependsOn`, `requirements`, `install`, `usage`, `cloud`, `nw702`, `readme` |
 | `src/pages/llms.txt.ts` | `/llms.txt`, for a model, in the llms.txt convention: what an addon is and how it is installed, then a section per group with a link line per addon - when to use it, its entry points, what to install first. The overview's head names both (`rel="alternate"`) |
 | `src/pages/404.astro`, `public/moved.js` | The 404 page of the whole domain - GitHub Pages serves it for every path no project site claims - and its one script, which forwards the old addresses of renamed addons (`/office-addin/`, `/embed-control/`) to their new ones, with path, query and fragment. A rename is one line in `MOVED` |
-| `scripts/stats.mjs` | Writes `src/data/stats.json` (stars, last push) from the GitHub API; run by the workflow, never fails |
+| `scripts/stats.mjs` | Writes `src/data/stats.json` (stars, last push) from the GitHub API, every page of each organization (100 a page, up to five, `test/stats.test.mjs`); run by the workflow, never fails |
 | `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Addons as tabs), the one-line foot |
 | `src/styles/global.css` | The one stylesheet; the entry page's, plus the addon page |
 | `public/shots/` | Optional: `<repo>.png` (or jpg, webp, gif) is shown on that addon's page. Empty today: the README images sit on GitHub's asset host and have to be saved here by hand |
