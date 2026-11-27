@@ -3,6 +3,11 @@
   "title": "Headless Frontend",
   "tagline": "Drive and test apps from ABAP. No browser, no UI5, no HTTP.",
   "summary": "Drive and test apps from ABAP. No browser, no UI5, no HTTP.",
+  "useWhen": "Use when writing ABAP Unit tests for an app: z2ui5_cl_frontend_sim plays the browser - sets values, fires events, reads the view and the messages - instead of a hand-written double of the client.",
+  "entryPoints": [
+    "z2ui5_cl_frontend_sim"
+  ],
+  "dependsOn": [],
   "features": [],
   "requirements": [],
   "install": {

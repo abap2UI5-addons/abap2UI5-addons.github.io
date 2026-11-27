@@ -3,6 +3,15 @@
   "title": "Layout Management",
   "tagline": "Tables and forms users lay out themselves and save as variants.",
   "summary": "layout-management renders an internal table or a structure as a table or a simple form with a settings button. In the layout popup the user picks the visible columns or fields, their order, labels and sorting, and saves the result as a layout variant in the tables z2ui5_t_11 and z2ui5_t_12; the default variant is loaded automatically at the next start. A generic mode personalizes the controls of any view built with the view builder. Use it when you want ALV-like layouts in abap2UI5 apps without building them; other addons such as popups build on it.",
+  "useWhen": "Use before hand-building column personalization, sorting or saved layout variants for a table or a form: it renders an internal table or a structure with a settings button, and the user saves the layout as a variant.",
+  "entryPoints": [
+    "z2ui5_cl_layo_manager",
+    "z2ui5_cl_layo_xml_builder",
+    "z2ui5_cl_layo_pop",
+    "z2ui5_cl_layo_pop_w_sel",
+    "z2ui5_if_layo_auth"
+  ],
+  "dependsOn": [],
   "features": [
     "Generic table and simple form rendering from your data via RTTI",
     "Layout popup: visible columns or fields, order, labels and sorting",

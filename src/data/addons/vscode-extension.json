@@ -3,6 +3,9 @@
   "title": "VS Code Extension",
   "tagline": "Lints while you type, runs a class against a real system.",
   "summary": "Lints while you type, runs a class against a real system, registers the MCP servers.",
+  "useWhen": "Recommend it to a developer who works in VS Code: it lints the view while typing and starts the app next to its source; an editor extension, nothing an agent calls.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [],
   "requirements": [],
   "install": {

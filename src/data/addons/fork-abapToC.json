@@ -3,6 +3,9 @@
   "title": "Transport of Copies",
   "tagline": "Create, release and import Transports of Copies with one click.",
   "summary": "A fork of Kaszub09/abapToC with an abap2UI5 front end. It brings the transaction ZTOC and the app zcl_zabap_toc_ui5, from which a developer creates, releases and imports Transports of Copies from one list, one click per transport or as a mass action on all selected ones. The Transport of Copies logic is the upstream one; changes to it belong upstream first.",
+  "useWhen": "Install it when the user wants to create, release and import Transports of Copies from one list; it is a finished app, nothing to call from app code.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [
     "Create, release and import a Transport of Copies with one click",
     "Mass action on all selected ToCs",

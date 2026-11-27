@@ -13,3 +13,8 @@ npm run check    # build + test, what CI runs
 
 A new addon is one line in `src/data/catalog.ts` and one file in
 `src/data/addons/<repo>.json`. See [AGENTS.md](AGENTS.md) for the rules.
+
+For AI agents that build abap2UI5 apps the same catalogue is published as
+[`/llms.txt`](https://abap2ui5-addons.github.io/llms.txt) and
+[`/addons.json`](https://abap2ui5-addons.github.io/addons.json): when to use
+an addon, the classes app code calls and the repositories to install first.

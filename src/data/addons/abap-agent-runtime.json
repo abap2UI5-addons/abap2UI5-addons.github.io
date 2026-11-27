@@ -3,6 +3,15 @@
   "title": "ABAP Agent Runtime",
   "tagline": "An MCP endpoint in ABAP: AI agents operate your apps as the real user.",
   "summary": "An MCP server inside the SAP system, built on the headless frontend simulator, through which AI agents such as Claude, Copilot Studio or Joule read the screen of an abap2UI5 app as structured data, fill its fields and fire its events. Every call runs as the SAP user of the HTTP request through the app's own main( ), with its validation and authority checks; no second API per app is needed. Apps opt in with the interface z2ui5_if_agent_app, events can be classified allowed, confirm or forbidden, and every call is audited. On top of the endpoint it brings a language model client, generative UI and an in-app copilot, all off by default.",
+  "useWhen": "Use when AI agents have to operate an app as the SAP user through MCP, or when an app needs an in-app copilot or generative UI: opt the app in with z2ui5_if_agent_app instead of writing a second API for it.",
+  "entryPoints": [
+    "z2ui5_if_agent_app",
+    "z2ui5_cl_agent_copilot",
+    "z2ui5_cl_agent_genui"
+  ],
+  "dependsOn": [
+    "abap2UI5/headless-frontend"
+  ],
   "features": [
     "MCP Streamable HTTP endpoint with the tools app_list, app_start, app_describe and app_act",
     "Agent snapshot v1 of the screen: fields, actions, tables, messages, pending values",

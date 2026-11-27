@@ -18,8 +18,8 @@ import "../styles/global.css";
 
 /* `trail`: on an addon page, the repository's name after the Addons & Tools
  * tab, so the top line says where the page sits and is the way back. */
-interface Props { title: string; description: string; image?: string; trail?: string; search?: boolean; moved?: boolean }
-const { title, description, image, trail, search, moved } = Astro.props;
+interface Props { title: string; description: string; image?: string; trail?: string; search?: boolean; moved?: boolean; feeds?: boolean }
+const { title, description, image, trail, search, moved, feeds } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const CSP = [
@@ -45,6 +45,9 @@ const CSP = [
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>
+{/* the overview as an agent reads it: llms.txt for a model, addons.json for a program */}
+{feeds && <link rel="alternate" type="text/markdown" href={`${base}llms.txt`} title="The addons, for AI agents (llms.txt)">}
+{feeds && <link rel="alternate" type="application/json" href={`${base}addons.json`} title="The addons, machine-readable">}
 <meta property="og:type" content="website">
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>

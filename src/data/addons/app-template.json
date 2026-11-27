@@ -3,6 +3,9 @@
   "title": "App Template",
   "tagline": "Starter repository with an example app, linting and CI set up.",
   "summary": "Starter repository for an app project: example app, linting and CI preconfigured.",
+  "useWhen": "Start a new app repository from it instead of an empty one: an example app, abaplint, the linter, CI and the agent instructions are set up.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [],
   "requirements": [],
   "install": {

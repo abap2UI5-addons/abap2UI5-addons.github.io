@@ -3,6 +3,11 @@
   "title": "Custom Controls (customer)",
   "tagline": "Template for your own controls, icon fonts and CSS, in your own BSP.",
   "summary": "A template repository for a company's own frontend artefacts in abap2UI5: a UI5 reuse library, an icon font, corporate CSS or a custom control, served from the BSP Z2UI5_CCC under the resourceRoot z2ui5_ccc that abap2UI5 reserves. Fork it, put your files under app/webapp/, declare resource roots, libraries, icon fonts and stylesheets in cc/Extension.js, run npm run app2bsp and install the result with abapGit. Nothing in abap2UI5 or its frontend BSP has to be patched, so the artefacts survive framework updates. Use it for things only your company needs; generally useful controls belong in abap2UI5-addons/custom-controls.",
+  "useWhen": "Use when an app needs frontend artefacts of the user's own company - a UI5 reuse library, an icon font, corporate CSS, a custom control: fork this template and load them with z2ui5_cl_ccc=>render( ), instead of patching abap2UI5 or its frontend BSP.",
+  "entryPoints": [
+    "z2ui5_cl_ccc"
+  ],
+  "dependsOn": [],
   "features": [
     "Registers resource roots, UI5 reuse libraries, icon fonts and stylesheets at page level",
     "Replaces the four framework patches that a framework update would overwrite",

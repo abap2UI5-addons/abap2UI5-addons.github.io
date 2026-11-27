@@ -3,6 +3,27 @@
   "title": "Custom Controls",
   "tagline": "Thirteen ready-to-use custom controls, one builder class each.",
   "summary": "A library of thirteen custom controls for abap2UI5: signature pad, Chart.js charts, barcodes, a camera scanner that reads several barcodes at once, Excel export, form validation, product tours, Font Awesome, animations, clickable image maps, Markdown, a code editor and a rich text editor. The controls ship in their own BSP Z2UI5_CCI, so nothing in abap2UI5 or its frontend has to change. Each control is used from ABAP through a builder class with one render( ) method; properties bind, values come back into ABAP variables and events arrive in the app like for any built-in control. The overview app z2ui5_cl_cci_sample_00 lists every control with its sample.",
+  "useWhen": "Use before writing a custom control or frontend JavaScript for a signature pad, a Chart.js chart, a barcode or a camera barcode scanner, a spreadsheet export, form validation, a product tour, Markdown, a code editor or a rich text editor: each control is one builder class with a render( ) method.",
+  "entryPoints": [
+    "z2ui5_cl_cci",
+    "z2ui5_cl_cci_signature",
+    "z2ui5_cl_cci_chartjs",
+    "z2ui5_cl_cci_barcode",
+    "z2ui5_cl_cci_barcode_scan",
+    "z2ui5_cl_cci_scan_input",
+    "z2ui5_cl_cci_spreadsheet",
+    "z2ui5_cl_cci_validator",
+    "z2ui5_cl_cci_driverjs",
+    "z2ui5_cl_cci_font_awesome",
+    "z2ui5_cl_cci_animate_css",
+    "z2ui5_cl_cci_imagemapster",
+    "z2ui5_cl_cci_markdown",
+    "z2ui5_cl_cci_code_editor",
+    "z2ui5_cl_cci_rich_text",
+    "z2ui5_cl_cci_net_status",
+    "z2ui5_cl_cci_clock"
+  ],
+  "dependsOn": [],
   "features": [
     "SignaturePad, Validator, ExportSpreadsheet, CodeEditor without external libraries",
     "ChartJs, Barcode, DriverJs, FontAwesome, AnimateCss, Markdown wrap well-known JS libraries",
@@ -28,7 +49,7 @@
       "Bind configuration structures with omit_initial = abap_true and the camelCase mapper where the library expects it"
     ]
   },
-  "usage": "z2ui5_cl_cci_rich_text_editor=>render(\n    view   = page\n    value  = client->_bind( mv_html )\n    height = `20rem`\n    change = client->_event( `TEXT_CHANGED` ) ).",
+  "usage": "z2ui5_cl_cci_rich_text=>render(\n    view   = page\n    value  = client->_bind( mv_html )\n    height = `20rem`\n    change = client->_event( `TEXT_CHANGED` ) ).",
   "links": [
     {
       "text": "abap2UI5-addons/custom-controls-customer",

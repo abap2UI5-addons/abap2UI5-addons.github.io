@@ -3,6 +3,32 @@
   "title": "Popups",
   "tagline": "Ready-to-use popups and dialogs, one factory( ) call each.",
   "summary": "popups is a library of finished dialog classes for abap2UI5 apps: confirm, inform, select from a list, decide, get values, edit a text, upload and download files, show a table, a PDF, HTML or messages, pick a range, a value help or a search help. Each popup is an abap2UI5 app of its own that you call with client->nav_app_call( ) and that hands its result back as an event you name or through its result( ) method. The classes were moved here from the abap2UI5 core framework. Use it when you need standard dialogs without writing views, or as counterparts for POPUP_TO_CONFIRM, POPUP_TO_INFORM and CL_DEMO_OUTPUT when moving classic code.",
+  "useWhen": "Use before hand-building a confirm, inform, select, decide, input, text, file upload or download, table, message, range, value help, search help, PDF or HTML dialog: each one is a finished class, called with client->nav_app_call( <class>=>factory( ... ) ), and its result is read through z2ui5_if_popup_result.",
+  "entryPoints": [
+    "z2ui5_cl_popup_to_confirm",
+    "z2ui5_cl_popup_to_inform",
+    "z2ui5_cl_popup_to_select",
+    "z2ui5_cl_popup_to_decide",
+    "z2ui5_cl_popup_input_val",
+    "z2ui5_cl_popup_get_values",
+    "z2ui5_cl_popup_textedit",
+    "z2ui5_cl_popup_file_ul",
+    "z2ui5_cl_popup_file_dl",
+    "z2ui5_cl_popup_table",
+    "z2ui5_cl_popup_messages",
+    "z2ui5_cl_popup_msgpopover",
+    "z2ui5_cl_popup_error",
+    "z2ui5_cl_popup_get_range",
+    "z2ui5_cl_popup_get_ranges",
+    "z2ui5_cl_popup_value_help",
+    "z2ui5_cl_popup_shlp",
+    "z2ui5_cl_popup_pdf",
+    "z2ui5_cl_popup_html",
+    "z2ui5_if_popup_result"
+  ],
+  "dependsOn": [
+    "abap2UI5-addons/layout-management"
+  ],
   "features": [
     "Confirm, Inform, Select, Decide and Get Values popups",
     "File upload and download, including binary and multiple files",

@@ -3,6 +3,12 @@
   "title": "SE16N",
   "tagline": "Browse and filter table content: the classic SE16N in the browser.",
   "summary": "se16n is an abap2UI5 app that shows the content of any table: enter a table name, narrow the selection with select-options for every field, pick a saved layout and see the result as a table whose columns you can rearrange and save as a layout. It runs on ABAP Cloud, where there is no SE16N, as well as on premise. The selection comes from the range-filter addon and the result table and its layouts from layout-management. It is a developer tool without authorization checks of its own, so add your own before using it beyond a development system.",
+  "useWhen": "Install it when the user wants to browse and filter the content of any table in the browser, instead of writing a table browser app.",
+  "entryPoints": [],
+  "dependsOn": [
+    "abap2UI5-addons/layout-management",
+    "abap2UI5-addons/range-filter"
+  ],
   "features": [
     "Table name input with select-options for all fields and saved variants",
     "Choose Layout picks a layout saved earlier for the table",
