@@ -20,7 +20,7 @@
   "requirements": [
     "abap2UI5",
     "ABAP Cloud (S/4 Public Cloud, BTP ABAP Environment), S/4 Private Cloud or On-Premise, or NetWeaver 7.50 or higher",
-    "No 7.02 downport branch"
+    "NetWeaver 7.02 - 7.40: the branch 702, downported automatically from main on every push - pull abap2UI5 from its 702 branch as well"
   ],
   "install": {
     "abapgit_url": "https://github.com/abap2UI5-addons/range-filter",

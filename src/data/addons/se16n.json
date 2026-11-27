@@ -21,7 +21,7 @@
     "abap2UI5-addons/layout-management",
     "abap2UI5-addons/range-filter",
     "ABAP Cloud (S/4 Public Cloud, BTP ABAP Environment), S/4 Private Cloud or On-Premise, or NetWeaver 7.50 or higher",
-    "No 7.02 downport"
+    "NetWeaver 7.02 - 7.40: the branch 702, downported automatically from main on every push - pull abap2UI5, layout-management and range-filter from their 702 branches as well"
   ],
   "install": {
     "abapgit_url": "https://github.com/abap2UI5-addons/se16n",
