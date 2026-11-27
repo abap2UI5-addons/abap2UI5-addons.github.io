@@ -23,8 +23,11 @@ const get = async (url) => {
   return res.json();
 };
 
-// the core first: its names are the ones an addon must not take
-const repos = [{ org: "abap2UI5", repo: "abap2UI5" }];
+// the core first: its names are the ones an addon must not take - and with
+// it abap2UI5-ext, which holds what left the core's src/99 (z2ui5_cl_xml_view,
+// the z2ui5_cl_pop_* popups, z2ui5_cl_util*, z2ui5_t_91) and is installed
+// next to it wherever an app still needs those
+const repos = [{ org: "abap2UI5", repo: "abap2UI5" }, { org: "abap2UI5", repo: "abap2UI5-ext" }];
 for (const g of groups) for (const e of g.entries) repos.push({ org: orgOf(e), repo: e.repo });
 
 const result = { generated: new Date().toISOString(), repos: [] };

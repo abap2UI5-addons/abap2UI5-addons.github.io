@@ -1,4 +1,4 @@
-/* The ABAP objects of every addon and of the abap2UI5 core, as
+/* The ABAP objects of every addon, of the abap2UI5 core and of abap2UI5-ext, as
  * scripts/objects.mjs collected them into objects.json, and what they claim:
  * a name segment (z2ui5_cl_<segment>_...), a table number (z2ui5_t_NN), an
  * ICF node, a BSP... - and where two repositories claim the same. */
