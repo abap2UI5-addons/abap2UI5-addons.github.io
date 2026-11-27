@@ -3,6 +3,9 @@
   "title": "HTTP Connector",
   "tagline": "Call abap2UI5 apps on another system via HTTP.",
   "summary": "The browser talks to a consumer system, which forwards each abap2UI5 roundtrip through an SM59 destination to the source system where the abap2UI5 apps run. The apps stay where they are and run unchanged. It is for landscapes where users should reach the apps of another system through one entry point, and follows the same approach as the rfc-connector with an HTTP connection instead of RFC.",
+  "useWhen": "Install it when the users of one system have to run the abap2UI5 apps of another system over an HTTP destination; a system setup, the apps stay unchanged.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [
     "Thin ICF handler Z2UI5_CL_HTTP_CON_HANDLER on the consumer system",
     "Server endpoint Z2UI5_CL_HTTP_CON_SERVER on the source system",

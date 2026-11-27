@@ -3,6 +3,11 @@
   "title": "Launchpad KPI",
   "tagline": "Show KPIs of your apps on Fiori Launchpad tiles.",
   "summary": "A connector that lets an abap2UI5 app show a live number on a SAP Fiori Launchpad tile. A tile reads its number from an OData $count call, which an abap2UI5 app does not have; this repository brings the generic OData service Z2UI5_PROXY_KPI_SRV, which creates the class named in the filter and asks it for the count. Every app only has to implement the interface Z2UI5_IF_LP_KPI with its method count. A second FILTER condition in the OData call can pass a JSON string for different calculations.",
+  "useWhen": "Use when an app has to show a live number on a Fiori Launchpad tile: implement z2ui5_if_lp_kpi~count in the app class instead of writing an OData service for the $count call of the tile.",
+  "entryPoints": [
+    "z2ui5_if_lp_kpi"
+  ],
+  "dependsOn": [],
   "features": [
     "Generic OData service Z2UI5_PROXY_KPI_SRV answers $count for the class in the filter",
     "Implement one interface and one method (z2ui5_if_lp_kpi~count) in your app",

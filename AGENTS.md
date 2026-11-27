@@ -14,13 +14,16 @@ build does not depend on them.
 | Path | Purpose |
 | --- | --- |
 | `src/data/catalog.ts` | The catalogue: every addon, in groups, in order; which addon has a site of its own |
-| `src/data/addons/<repo>.json` | The facts of one addon - title, tagline, summary, features, requirements, install notes, usage snippet, links, status, license |
+| `src/data/addons/<repo>.json` | The facts of one addon - title, tagline, summary, features, requirements, install notes, usage snippet, links, status, license - and what an agent needs of it: `useWhen`, `entryPoints`, `dependsOn` |
 | `src/data/addons.ts` | Reads the JSON at build time and holds it to the shape; a missing or empty file fails the build |
 | `src/pages/index.astro` | The overview: the heading, then the groups with a tile per addon across the full width - no menu, no search, no prose |
 | `src/pages/[repo].astro` | The addon page, one shape for all: title and tagline, the two buttons, then what it does, requirements, installation, usage, links |
 | `src/components/Tile.astro` | One tile of the overview: title, tagline, badges |
 | `src/components/Badges.astro` | The badge row, the same on the tile and on the addon page |
 | `src/pages/search.json.ts` | What the family's search finds of this site: one entry per addon and tool (title, tagline, the five sections, the words of its facts, the repository as an action). abap2UI5/docs fetches it at build time into the one search index the home page https://abap2ui5.github.io/ and the playground read; the shape `{ site, url, entries }` is the same on every site of the family |
+| `src/data/agents.ts` | The catalogue as an agent reads it: one record per addon in catalogue order, a projection of `catalog.ts` and the fact files and nothing else. Both endpoints below read it |
+| `src/pages/addons.json.ts` | `/addons.json`, for a program: `{ schema, url, addons }`, every record with `repo`, `org`, `github`, `site`, `group`, `title`, `tagline`, `summary`, `useWhen`, `entryPoints`, `dependsOn`, `requirements`, `install`, `usage`, `cloud`, `nw702`, `readme` |
+| `src/pages/llms.txt.ts` | `/llms.txt`, for a model, in the llms.txt convention: what an addon is and how it is installed, then a section per group with a link line per addon - when to use it, its entry points, what to install first. The overview's head names both (`rel="alternate"`) |
 | `src/pages/404.astro`, `public/moved.js` | The 404 page of the whole domain - GitHub Pages serves it for every path no project site claims - and its one script, which forwards the old addresses of renamed addons (`/office-addin/`, `/embed-control/`) to their new ones, with path, query and fragment. A rename is one line in `MOVED` |
 | `scripts/stats.mjs` | Writes `src/data/stats.json` (stars, last push) from the GitHub API; run by the workflow, never fails |
 | `src/layouts/Page.astro` | The document: head, the Content-Security-Policy, the top line (the wordmark, Home and Addons as tabs), the one-line foot |
@@ -50,6 +53,27 @@ npm run check    # build + test, what CI runs
   the page then says so in one line (`requirements`, `usage`) rather than
   inventing. `status` is `stable`, `experimental`, `archived` or `unknown`,
   as the README states it; `unknown` shows nothing.
+- **The agent fields are verified, not guessed.** An AI agent that builds an
+  app learns from `/llms.txt` and `/addons.json` that an addon exists before
+  it writes a dialog by hand. Three optional fields of the fact file feed
+  them. `useWhen` is one sentence to that agent: when to reach for the addon
+  instead of writing it. `entryPoints` are the classes and interfaces app
+  code calls, lower case, each one a file under the addon's `src/` and named
+  in its README - no samples, no internals; empty for what is installed and
+  opened rather than called. `dependsOn` is `<org>/<repo>` of every other
+  repository whose ABAP objects the addon needs to compile - read off its
+  `abaplint.jsonc` dependencies, its `.github/deps.json` and the classes its
+  source really names, not off prose. abap2UI5 itself is never listed; what a
+  dependency needs is listed too, before it, so the list is the install
+  order (the test holds it to that). A repository named only in a string or
+  as "optional" is not a dependency. A value nobody checked is left out - the
+  feed then says `null`, which is not "none".
+- **The two agent endpoints are projections.** `src/data/agents.ts` copies
+  from the catalogue and the fact files; nothing is computed, fetched or
+  worded there. `/addons.json` keeps catalogue order. `/llms.txt` puts
+  "Building blocks" first - the addons app code calls - and keeps catalogue
+  order for the rest. `schema` moves when a field changes its meaning or
+  goes, not when one is added.
 - **Badges say only what is true.** Stars and "Active" (a push in the last 60
   days) come from the API at build time. "Beta" is `status: experimental`;
   "ABAP Cloud" (`cloud`) and "7.02" (`nw702`) are set by hand in the JSON,

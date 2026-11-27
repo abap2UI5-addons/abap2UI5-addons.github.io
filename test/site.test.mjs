@@ -141,3 +141,110 @@ test("the old addresses of renamed addons land on the 404 page, which forwards t
   assert.equal(movedTo("/embed-control"), "/embed-ui5-control/");
   assert.equal(movedTo("/embed-controls/"), null, "a path that only starts like one");
 });
+
+// What an agent that builds an app reads: addons.json (a program) and
+// llms.txt (a model), both from the catalogue and the fact files.
+const order = [...catalog.matchAll(/repo: "([^"]+)"/g)].map((m) => m[1]);
+const fact = (r) => JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "..", "src", "data", "addons", `${r}.json`), "utf8"));
+
+test("the agent fields of the fact files: when to use it, what to call, what it needs", () => {
+  for (const r of facts) {
+    const a = fact(r);
+    assert.ok(typeof a.useWhen === "string" && /^[A-Z].*\.$/.test(a.useWhen) && a.useWhen.length >= 40, `${r}: useWhen is one sentence for an agent`);
+    assert.doesNotMatch(a.useWhen, /\n/, `${r}: useWhen is one line`);
+    for (const key of ["entryPoints", "dependsOn"]) {
+      if (a[key] === undefined) continue; // not verified: left out, not guessed
+      assert.ok(Array.isArray(a[key]), `${r}: ${key} is a list`);
+      assert.equal(new Set(a[key]).size, a[key].length, `${r}: ${key} names nothing twice`);
+    }
+    // a class or an interface of the z2ui5 namespace, in lower case
+    for (const c of a.entryPoints ?? []) assert.match(c, /^z2ui5_(cl|if)_[a-z0-9_]+$/, `${r}: entry point ${c}`);
+    const deps = a.dependsOn ?? [];
+    deps.forEach((d, i) => {
+      assert.match(d, /^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9._-]+$/, `${r}: dependsOn ${d} is <org>/<repo>`);
+      const [org, repo] = d.split("/");
+      assert.notEqual(d, "abap2UI5/abap2UI5", `${r}: the core is not named, every addon needs it`);
+      assert.notEqual(repo, r, `${r} does not depend on itself`);
+      // a repository of the project is one of the catalogue, under the organization the catalogue gives it
+      if (org === "abap2UI5-addons" || org === "abap2UI5") {
+        assert.ok(facts.includes(repo), `${r}: dependsOn ${d} is not in the catalogue`);
+        const listedOrg = new RegExp(`repo: "${repo}"[^}]*org: "abap2UI5"`).test(catalog) ? "abap2UI5" : "abap2UI5-addons";
+        assert.equal(org, listedOrg, `${r}: ${repo} is a repository of ${listedOrg}`);
+        // the list is complete and in install order: what a dependency needs comes before it
+        for (const dd of fact(repo).dependsOn ?? []) {
+          assert.ok(deps.indexOf(dd) > -1 && deps.indexOf(dd) < i, `${r}: ${d} needs ${dd}, which has to be listed before it`);
+        }
+      }
+    });
+  }
+  // the case the fields were made for
+  assert.deepEqual(fact("popups").dependsOn, ["abap2UI5-addons/layout-management"]);
+  assert.ok(fact("popups").entryPoints.includes("z2ui5_cl_popup_to_confirm"));
+});
+
+test("addons.json: every addon once, in catalogue order, with the facts of its file", () => {
+  const feed = JSON.parse(fs.readFileSync(path.join(DIST, "addons.json"), "utf8"));
+  assert.equal(feed.schema, 1);
+  assert.equal(feed.url, "https://abap2ui5-addons.github.io/");
+  assert.deepEqual(feed.addons.map((a) => a.repo), order, "catalogue order");
+  const groupIds = [...catalog.matchAll(/id: "([^"]+)"/g)].map((m) => m[1]);
+  const keys = ["repo", "org", "github", "site", "group", "title", "tagline", "summary", "useWhen", "entryPoints", "dependsOn", "requirements", "install", "usage", "cloud", "nw702", "readme"];
+  for (const a of feed.addons) {
+    assert.deepEqual(Object.keys(a), keys, `${a.repo}: the fields, in this order`);
+    const f = fact(a.repo);
+    assert.match(a.org, /^abap2UI5(-addons)?$/, `${a.repo}: org`);
+    assert.equal(a.github, `https://github.com/${a.org}/${a.repo}`);
+    assert.equal(a.readme, `https://raw.githubusercontent.com/${a.org}/${a.repo}/HEAD/README.md`);
+    const ownSite = own.find(([r]) => r === a.repo);
+    assert.equal(a.site, ownSite ? ownSite[1] : `https://abap2ui5-addons.github.io/${a.repo}/`, `${a.repo}: its own site or its page here`);
+    if (!ownSite) assert.ok(fs.existsSync(path.join(DIST, a.repo, "index.html")), `${a.repo}: the page it names is built`);
+    assert.ok(groupIds.includes(a.group), `${a.repo}: group ${a.group}`);
+    // a projection: nothing but what the file says
+    for (const key of ["title", "tagline", "summary", "requirements", "install", "usage"]) assert.deepEqual(a[key], f[key], `${a.repo}: ${key}`);
+    assert.equal(a.useWhen, f.useWhen ?? null, `${a.repo}: useWhen`);
+    assert.deepEqual(a.entryPoints, f.entryPoints ?? [], `${a.repo}: entryPoints`);
+    assert.deepEqual(a.dependsOn, f.dependsOn ?? null, `${a.repo}: dependsOn`);
+    assert.equal(a.cloud, f.cloud === true);
+    assert.equal(a.nw702, f.nw702 === true);
+  }
+  // the groups are contiguous, in the catalogue's order
+  assert.deepEqual([...new Set(feed.addons.map((a) => a.group))], groupIds);
+});
+
+test("llms.txt: the convention, every addon with what to call and what to install first", () => {
+  const txt = fs.readFileSync(path.join(DIST, "llms.txt"), "utf8");
+  const lines = txt.split("\n");
+  assert.equal(lines[0], "# abap2UI5 Addons & Tools", "one H1, first");
+  assert.equal(lines.filter((l) => /^# /.test(l)).length, 1);
+  assert.match(lines[2], /^> \S/, "the summary as a blockquote");
+  assert.match(txt, /abapGit/, "how an addon is installed");
+  assert.match(txt, /https:\/\/abap2ui5-addons\.github\.io\/addons\.json/, "names the machine-readable form");
+  assert.match(txt, /\]\(https:\/\/github\.com\/abap2UI5\/abap2UI5\/blob\/main\/llms\.txt\)/, "the core's map");
+  assert.match(txt, /\]\(https:\/\/abap2ui5\.github\.io\/docs\/llms\.txt\)/, "the documentation's map");
+  // one section per group, by its title; the building blocks first
+  const titles = [...catalog.matchAll(/id: "[^"]+",\s*title: "([^"]+)"/g)].map((m) => m[1]);
+  const h2 = lines.filter((l) => l.startsWith("## ")).map((l) => l.slice(3));
+  assert.deepEqual(h2, ["Building blocks", ...titles.filter((t) => t !== "Building blocks"), "Related"]);
+  // every addon once, as a link line, inside its group in catalogue order
+  const listed = [];
+  for (const r of order) {
+    const a = fact(r);
+    const mine = lines.filter((l) => new RegExp(`^- \\[[^\\]]+\\]\\(https://raw\\.githubusercontent\\.com/abap2UI5(-addons)?/${r}/HEAD/README\\.md\\): `).test(l));
+    assert.equal(mine.length, 1, `${r}: one link line`);
+    listed.push(lines.indexOf(mine[0]));
+    assert.ok(mine[0].includes(`[${a.title}]`) && mine[0].includes(a.useWhen), `${r}: its title and when to use it`);
+    for (const c of a.entryPoints ?? []) assert.ok(mine[0].includes(`\`${c}\``), `${r}: names ${c}`);
+    for (const d of a.dependsOn ?? []) assert.ok(mine[0].includes(d), `${r}: names ${d}`);
+    assert.match(mine[0], new RegExp(`Repository: https://github\\.com/abap2UI5(-addons)?/${r}$`), `${r}: its repository`);
+  }
+  const blocks = order.filter((r) => new RegExp(`id: "building-blocks"[\\s\\S]*?repo: "${r}"[\\s\\S]*?id: "embed"`).test(catalog));
+  assert.ok(blocks.length >= 5, "the building blocks of the catalogue");
+  const at = (r) => listed[order.indexOf(r)];
+  for (const r of order) if (!blocks.includes(r)) assert.ok(at(r) > Math.max(...blocks.map(at)), `${r} comes after the building blocks`);
+  for (const part of [blocks, order.filter((r) => !blocks.includes(r))]) assert.deepEqual([...part].sort((a, b) => at(a) - at(b)), part, "catalogue order");
+  // plain text of this site: no markup a page would need a policy for
+  assert.doesNotMatch(txt, /<script|<style|<img/i);
+  // the overview names both, for whoever reads the head
+  assert.match(home, /<link rel="alternate" type="text\/markdown" href="\/llms\.txt"/);
+  assert.match(home, /<link rel="alternate" type="application\/json" href="\/addons\.json"/);
+});

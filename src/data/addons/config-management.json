@@ -3,6 +3,11 @@
   "title": "Config Management",
   "tagline": "Keep the settings of the abap2UI5 page in tables, not in code.",
   "summary": "Theme, UI5 bootstrap source, custom CSS and Content-Security-Policy are kept in database tables and edited in a popup app; a user exit of your own applies them to every page abap2UI5 serves. It is for abap2UI5 administrators who want to change those settings at runtime without touching the HTTP handler. The service caches the configuration, supports user-specific and global values and keeps the abap2UI5 default wherever nothing is stored.",
+  "useWhen": "Use when theme, UI5 bootstrap source, custom CSS or the Content-Security-Policy of the abap2UI5 page have to be changed at runtime: read them with z2ui5_cl_config_service in the z2ui5_if_ui5_exit class instead of hard-coding them there.",
+  "entryPoints": [
+    "z2ui5_cl_config_service"
+  ],
+  "dependsOn": [],
   "features": [
     "Configurable parameters: THEME, APP_TITLE, UI5_SRC, DEBUG_MODE, STYLES_CSS, CSP_POLICY",
     "Configuration popup app z2ui5_cl_config_app with real-time theme preview",

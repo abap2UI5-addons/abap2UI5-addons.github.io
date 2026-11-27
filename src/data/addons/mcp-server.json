@@ -3,6 +3,9 @@
   "title": "MCP Server",
   "tagline": "Lets an agent find samples, validate, run and screenshot an app.",
   "summary": "An agent searches the samples, validates, deploys, runs and screenshots an app.",
+  "useWhen": "Register it with your MCP client before building an app when no SAP system is at hand: it finds samples, validates and screenshots a view, deploys and runs the app headless.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [],
   "requirements": [],
   "install": {

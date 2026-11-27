@@ -10,6 +10,18 @@ export type Addon = {
   title: string;
   tagline: string;
   summary: string;
+  /* For an agent that builds an app (addons.json, llms.txt), not shown on a
+   * page. Optional: a field that could not be verified is left out, never
+   * guessed.
+   * useWhen     - one sentence: when to reach for this instead of writing it
+   * entryPoints - the classes and interfaces app code calls, lower case; empty
+   *               for what is installed and opened, not called
+   * dependsOn   - "<org>/<repo>" of every other repository whose ABAP objects
+   *               it needs (abap2UI5 itself is not named), dependencies of
+   *               dependencies included, in the order to install them */
+  useWhen?: string;
+  entryPoints?: string[];
+  dependsOn?: string[];
   features: string[];
   requirements: string[];
   install: { abapgit_url: string; notes: string[] };
@@ -42,6 +54,10 @@ for (const [file, mod] of Object.entries(files)) {
   for (const key of ["title", "tagline", "summary"] as const) {
     if (typeof a[key] !== "string" || a[key].trim() === "") throw new Error(`${file}: ${key} is empty`);
   }
+  for (const key of ["entryPoints", "dependsOn"] as const) {
+    if (a[key] !== undefined && !(Array.isArray(a[key]) && a[key].every((v) => typeof v === "string"))) throw new Error(`${file}: ${key} is not a list of strings`);
+  }
+  if (a.useWhen !== undefined && (typeof a.useWhen !== "string" || a.useWhen.trim() === "")) throw new Error(`${file}: useWhen is empty`);
   byRepo.set(name, a);
 }
 

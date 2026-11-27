@@ -3,6 +3,13 @@
   "title": "Range Filter",
   "tagline": "Select-options with saved variants, from a table name or your data.",
   "summary": "range-filter builds one select-option per field of a database table or an internal table, read via RTTI, and renders them inline in your page or as a filter popup. Users enter ranges in a popup and save or load the whole selection as a variant, kept in the table z2ui5_t_13 per app and optionally per user. Your app gets the filter back and turns it into a SQL WHERE clause or filters an internal table with it. Use it in data browsers and reports on abap2UI5 that select data on user-defined criteria.",
+  "useWhen": "Use before hand-building select-options, a filter bar with ranges or saved selection variants: it builds one select-option per field of a table or of your data, inline or as a popup, and turns the result into a SQL WHERE clause or a filter of an internal table.",
+  "entryPoints": [
+    "z2ui5_cl_sel_multisel",
+    "z2ui5_cl_sel_multisel_pop",
+    "z2ui5_cl_sel_context"
+  ],
+  "dependsOn": [],
   "features": [
     "Select-options for every field of a table name, an internal table or a filter",
     "Range popup per field, Clear, Load and Save variant handled in main( )",

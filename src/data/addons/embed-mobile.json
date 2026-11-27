@@ -3,6 +3,9 @@
   "title": "Mobile Shell",
   "tagline": "A native iOS and Android app that runs your apps, with scanner, push and biometrics.",
   "summary": "A generic native shell for iOS and Android built for the SAP mobile stack: the regular abap2UI5 frontend runs in a WebView, and a small JavaScript bridge offers device features - the barcode scanner (z2ui5.cc.NativeBridgeScan), push notifications and a biometric confirmation. Every screen still comes from the ABAP class. A proof of concept without releases: onboarding through the SAP BTP SDK and push need SAP, Google and Apple accounts.",
+  "useWhen": "Use when the apps have to run in a native iOS or Android shell with the device's barcode scanner, push notifications or biometrics; a proof of concept, built with Xcode or Android Studio, nothing to install in ABAP.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [
     "Android (WebView, ZXing scan) and iOS (WKWebView, VisionKit scan) shells",
     "QR onboarding, biometric app lock, managed configuration from device management",

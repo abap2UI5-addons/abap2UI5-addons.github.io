@@ -3,6 +3,9 @@
   "title": "Linter",
   "tagline": "Check an app class and its view without an SAP system.",
   "summary": "Static and headless-render checks over an app class and its view, without an SAP system.",
+  "useWhen": "Run it (npx @abap2ui5/linter src) on every app class you write or change, before calling the work done: it checks the ABAP source and the view it builds together, without an SAP system.",
+  "entryPoints": [],
+  "dependsOn": [],
   "features": [],
   "requirements": [],
   "install": {
