@@ -49,7 +49,7 @@
       "Bind configuration structures with omit_initial = abap_true and the camelCase mapper where the library expects it"
     ]
   },
-  "usage": "z2ui5_cl_cci_rich_text_editor=>render(\n    view   = page\n    value  = client->_bind( mv_html )\n    height = `20rem`\n    change = client->_event( `TEXT_CHANGED` ) ).",
+  "usage": "z2ui5_cl_cci_rich_text=>render(\n    view   = page\n    value  = client->_bind( mv_html )\n    height = `20rem`\n    change = client->_event( `TEXT_CHANGED` ) ).",
   "links": [
     {
       "text": "abap2UI5-addons/custom-controls-customer",
