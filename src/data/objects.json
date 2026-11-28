@@ -2187,11 +2187,6 @@
     },
     {
      "type": "CLAS",
-     "name": "Z2UI5_CL_CCI_JSON_FILTER",
-     "path": "src/z2ui5_cl_cci_json_filter.clas.xml"
-    },
-    {
-     "type": "CLAS",
      "name": "Z2UI5_CL_CCI_MARKDOWN",
      "path": "src/z2ui5_cl_cci_markdown.clas.xml"
     },
